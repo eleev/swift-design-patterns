@@ -16,6 +16,9 @@
 		A9BCE1ED208CA90B009F0A06 /* ios_design_patternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1EC208CA90B009F0A06 /* ios_design_patternsUITests.swift */; };
 		A9BCE1FC208CA952009F0A06 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1FB208CA952009F0A06 /* Singleton.swift */; };
 		A9BCE1FE208CA9CB009F0A06 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = A9BCE1FD208CA9CB009F0A06 /* .gitignore */; };
+		A9BCE201208CAA18009F0A06 /* DelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE200208CAA18009F0A06 /* DelegateProtocol.swift */; };
+		A9BCE203208CAA36009F0A06 /* Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE202208CAA36009F0A06 /* Delegate.swift */; };
+		A9BCE205208CAA3E009F0A06 /* Listener.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE204208CAA3E009F0A06 /* Listener.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,9 @@
 		A9BCE1EE208CA90B009F0A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A9BCE1FB208CA952009F0A06 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 		A9BCE1FD208CA9CB009F0A06 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		A9BCE200208CAA18009F0A06 /* DelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateProtocol.swift; sourceTree = "<group>"; };
+		A9BCE202208CAA36009F0A06 /* Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Delegate.swift; sourceTree = "<group>"; };
+		A9BCE204208CAA3E009F0A06 /* Listener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Listener.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +108,7 @@
 		A9BCE1CB208CA90A009F0A06 /* ios-design-patterns */ = {
 			isa = PBXGroup;
 			children = (
+				A9BCE1FF208CAA0C009F0A06 /* Delegation */,
 				A9BCE1FA208CA92C009F0A06 /* Singleton */,
 				A9BCE1CC208CA90A009F0A06 /* AppDelegate.swift */,
 				A9BCE1CE208CA90A009F0A06 /* ViewController.swift */,
@@ -137,6 +144,16 @@
 				A9BCE1FB208CA952009F0A06 /* Singleton.swift */,
 			);
 			path = Singleton;
+			sourceTree = "<group>";
+		};
+		A9BCE1FF208CAA0C009F0A06 /* Delegation */ = {
+			isa = PBXGroup;
+			children = (
+				A9BCE200208CAA18009F0A06 /* DelegateProtocol.swift */,
+				A9BCE202208CAA36009F0A06 /* Delegate.swift */,
+				A9BCE204208CAA3E009F0A06 /* Listener.swift */,
+			);
+			path = Delegation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +289,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BCE1CF208CA90A009F0A06 /* ViewController.swift in Sources */,
+				A9BCE205208CAA3E009F0A06 /* Listener.swift in Sources */,
+				A9BCE203208CAA36009F0A06 /* Delegate.swift in Sources */,
+				A9BCE201208CAA18009F0A06 /* DelegateProtocol.swift in Sources */,
 				A9BCE1FC208CA952009F0A06 /* Singleton.swift in Sources */,
 				A9BCE1CD208CA90A009F0A06 /* AppDelegate.swift in Sources */,
 			);
