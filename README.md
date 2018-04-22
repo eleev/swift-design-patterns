@@ -40,7 +40,7 @@ Creational design patterns are design patterns that deal with object creation me
 - Lazy initialization pattern: tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
 - Object pool pattern: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
 - Prototype pattern: used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
-- Singleton pattern: restrict instantiation of a class to one object
+- [**Singleton pattern:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Singleton) restrict instantiation of a class to one object
 
 ### Structural 
 Structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
@@ -54,13 +54,13 @@ Structural design patterns are design patterns that ease the design by identifyi
 - Composite pattern: a tree structure of objects where every object has the same interface
 - Decorator pattern: add additional functionality to a class at runtime where subclassing would result in an exponential rise of new classes
 - Extensibility pattern: a.k.a. Framework - hide complex code behind a simple interface
-- Facade pattern: create a simplified interface of an existing interface to ease usage for common tasks
+- [**Facade pattern:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Facade) create a simplified interface of an existing interface to ease usage for common tasks
 - Flyweight pattern: a large quantity of objects share a common properties object to save space
 - Marker pattern: an empty interface to associate metadata with a class.
 - Pipes and filters: a chain of processes where the output of each process is the input of the next
 - Opaque pointer: a pointer to an undeclared or private type, to hide implementation details
 - Proxy pattern: a class functioning as an interface to another thing
-
+- [**Delegation pattern:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Delegation) allows object composition to achieve the same code reuse as inheritance
 
 ## Concurrency Design Patterns
 Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
