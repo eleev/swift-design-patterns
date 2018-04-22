@@ -126,7 +126,7 @@
 		A9BCE1CB208CA90A009F0A06 /* ios-design-patterns */ = {
 			isa = PBXGroup;
 			children = (
-				A9BCE208208CACCE009F0A06 /* Builder */,
+				A9BCE208208CACCE009F0A06 /* Facade */,
 				A9BCE1FF208CAA0C009F0A06 /* Delegation */,
 				A9BCE1FA208CA92C009F0A06 /* Singleton */,
 				A9BCE1CC208CA90A009F0A06 /* AppDelegate.swift */,
@@ -175,7 +175,7 @@
 			path = Delegation;
 			sourceTree = "<group>";
 		};
-		A9BCE208208CACCE009F0A06 /* Builder */ = {
+		A9BCE208208CACCE009F0A06 /* Facade */ = {
 			isa = PBXGroup;
 			children = (
 				A9BCE21B208CB0CE009F0A06 /* Facade */,
@@ -183,7 +183,7 @@
 				A9BCE21A208CB0B7009F0A06 /* Logic */,
 				A9BCE217208CB09C009F0A06 /* Protocols */,
 			);
-			path = Builder;
+			path = Facade;
 			sourceTree = "<group>";
 		};
 		A9BCE217208CB09C009F0A06 /* Protocols */ = {
