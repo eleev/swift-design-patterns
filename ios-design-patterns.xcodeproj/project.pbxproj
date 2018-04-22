@@ -14,6 +14,7 @@
 		A9BCE1D7208CA90B009F0A06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BCE1D5208CA90B009F0A06 /* LaunchScreen.storyboard */; };
 		A9BCE1E2208CA90B009F0A06 /* ios_design_patternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1E1208CA90B009F0A06 /* ios_design_patternsTests.swift */; };
 		A9BCE1ED208CA90B009F0A06 /* ios_design_patternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1EC208CA90B009F0A06 /* ios_design_patternsUITests.swift */; };
+		A9BCE1FC208CA952009F0A06 /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1FB208CA952009F0A06 /* Singleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A9BCE1E8208CA90B009F0A06 /* ios-design-patternsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "ios-design-patternsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BCE1EC208CA90B009F0A06 /* ios_design_patternsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_design_patternsUITests.swift; sourceTree = "<group>"; };
 		A9BCE1EE208CA90B009F0A06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A9BCE1FB208CA952009F0A06 /* Singleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 		A9BCE1CB208CA90A009F0A06 /* ios-design-patterns */ = {
 			isa = PBXGroup;
 			children = (
+				A9BCE1FA208CA92C009F0A06 /* Singleton */,
 				A9BCE1CC208CA90A009F0A06 /* AppDelegate.swift */,
 				A9BCE1CE208CA90A009F0A06 /* ViewController.swift */,
 				A9BCE1D0208CA90A009F0A06 /* Main.storyboard */,
@@ -123,6 +126,14 @@
 				A9BCE1EE208CA90B009F0A06 /* Info.plist */,
 			);
 			path = "ios-design-patternsUITests";
+			sourceTree = "<group>";
+		};
+		A9BCE1FA208CA92C009F0A06 /* Singleton */ = {
+			isa = PBXGroup;
+			children = (
+				A9BCE1FB208CA952009F0A06 /* Singleton.swift */,
+			);
+			path = Singleton;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9BCE1CF208CA90A009F0A06 /* ViewController.swift in Sources */,
+				A9BCE1FC208CA952009F0A06 /* Singleton.swift in Sources */,
 				A9BCE1CD208CA90A009F0A06 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
