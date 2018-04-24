@@ -33,13 +33,13 @@ Command pattern: Command objects encapsulate an action and its parameters
 ### Creational 
 Creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
 
-- Abstract Factory pattern: a class requests the objects it requires from a factory object instead of creating the objects directly
-- Factory method pattern: centralize creation of an object of a specific type choosing one of several implementations
-- Builder pattern: separate the construction of a complex object from its representation so that the same construction process can create different representations
-- Dependency Injection pattern: a class accepts the objects it requires from an injector instead of creating the objects directly
-- Lazy initialization pattern: tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
-- Object pool pattern: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
-- Prototype pattern: used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
+- **Abstract Factory pattern**: a class requests the objects it requires from a factory object instead of creating the objects directly
+- **Factory method pattern**: centralize creation of an object of a specific type choosing one of several implementations
+- **Builder pattern**: separate the construction of a complex object from its representation so that the same construction process can create different representations
+- **Dependency Injection pattern**: a class accepts the objects it requires from an injector instead of creating the objects directly
+- **Lazy initialization pattern**: tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
+- **Object pool pattern**: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
+- **Prototype pattern**: used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
 - [**Singleton pattern:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Singleton) restrict instantiation of a class to one object
 
 ### Structural 
