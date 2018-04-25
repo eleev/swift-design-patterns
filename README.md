@@ -73,11 +73,11 @@ Concurrency patterns are those types of design patterns that deal with the multi
 - **Leaders/followers pattern**
 - **Monitor Object**
 - **Nuclear reaction**
-- Reactor pattern
-- Read write lock pattern
-- Scheduler pattern
-- Thread pool pattern
-- Thread-local storage
+- **Reactor pattern**
+- **Read write lock pattern**
+- **Scheduler pattern**
+- **Thread pool pattern**
+- **Thread-local storage**
 
 ## iOS Specific Design Patterns
 In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime.
