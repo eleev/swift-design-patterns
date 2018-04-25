@@ -65,14 +65,14 @@ Structural design patterns are design patterns that ease the design by identifyi
 ## Concurrency Design Patterns
 Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
 
-- Active Object
-- Balking pattern
-- Barrier
-- Double-checked locking
-- Guarded suspension
- Leaders/followers pattern
-- Monitor Object
-- Nuclear reaction
+- **Active Object**
+- **Balking pattern**
+- **Barrier**
+- **Double-checked locking**
+- **Guarded suspension**
+- **Leaders/followers pattern**
+- **Monitor Object**
+- **Nuclear reaction**
 - Reactor pattern
 - Read write lock pattern
 - Scheduler pattern
