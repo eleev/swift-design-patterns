@@ -65,19 +65,19 @@ Structural design patterns are design patterns that ease the design by identifyi
 ## Concurrency Design Patterns
 Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
 
-- Active Object
-- Balking pattern
-- Barrier
-- Double-checked locking
-- Guarded suspension
- Leaders/followers pattern
-- Monitor Object
-- Nuclear reaction
-- Reactor pattern
-- Read write lock pattern
-- Scheduler pattern
-- Thread pool pattern
-- Thread-local storage
+- **Active Object**
+- **Balking pattern**
+- **Barrier**
+- **Double-checked locking**
+- **Guarded suspension**
+- **Leaders/followers pattern**
+- **Monitor Object**
+- **Nuclear reaction**
+- **Reactor pattern**
+- **Read write lock pattern**
+- **Scheduler pattern**
+- **Thread pool pattern**
+- **Thread-local storage**
 
 ## iOS Specific Design Patterns
 In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime.
