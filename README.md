@@ -104,4 +104,4 @@ There were used a number of reference materials such as:
 [Astemir Eleev](https://github.com/jVirus)
 
 # Licence
-The project is availabe under [MIT licence]().
+The project is availabe under [MIT licence](https://github.com/jVirus/ios-design-patterns/blob/master/LICENSE).
