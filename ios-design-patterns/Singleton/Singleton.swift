@@ -12,11 +12,21 @@ class Singleton {
     
     // MARK: - Singleton property
     
-    let instnage = Singleton()
+    static let instnage = Singleton()
     
     // MARK: - Private initializer
     
     private init() {
         // Private initialier ensires that there will no access to from the outside, so instances can only be created inside the class
+    }
+    
+    // MARK: - Methods
+    
+    func foo() {
+        print(#function + " foo")
+    }
+    
+    func bar() {
+        print(#function + " bar")
     }
 }
