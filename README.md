@@ -82,6 +82,9 @@ Concurrency patterns are those types of design patterns that deal with the multi
 ## iOS Specific Design Patterns
 In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime.
 
+### Native Patterns 
+The following patterns are native for `Swift` and are described by `Apple` [here](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
+
 - **Wildcard Pattern**: A wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against. 
 - **Identifier Pattern**: An identifier pattern matches any value and binds the matched value to a variable or constant name.
 - **Value-Binding Pattern**: A value-binding pattern binds matched values to variable or constant names. Value-binding patterns that bind a matched value to the name of a constant begin with the let keyword; those that bind to the name of variable begin with the var keyword.
@@ -91,6 +94,11 @@ In Swift, there are two basic kinds of patterns: those that successfully match a
 - **Type-Casting Patterns**: There are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels. 
 - **Expression Pattern**: An expression pattern represents the value of an expression. Expression patterns appear only in switch statement case labels.
 
+### Other 
+Uncategorized list of design patterns. 
+
+- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
+
 
 # References
 There were used a number of reference materials such as:
@@ -99,6 +107,7 @@ There were used a number of reference materials such as:
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_lpo_sbs_14_img_0?_encoding=UTF8&psc=1&refRID=GTMN22S3KHGP59KCCANC&dpID=515iEcDr1GL&preST=_SX258_BO1,204,203,200_QL70_&dpSrc=detail)
 - [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
+- [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
 
 # Author 
 [Astemir Eleev](https://github.com/jVirus)
