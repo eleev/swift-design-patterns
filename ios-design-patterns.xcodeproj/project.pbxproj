@@ -11,6 +11,9 @@
 		A97098922090EC3B009C9DDD /* HamburgerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97098912090EC3B009C9DDD /* HamburgerBuilder.swift */; };
 		A97098942090ECC6009C9DDD /* CheeseBurgerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97098932090ECC6009C9DDD /* CheeseBurgerBuilder.swift */; };
 		A97098972090ED2F009C9DDD /* Burger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97098962090ED2F009C9DDD /* Burger.swift */; };
+		A99F78C02094E145001EAD46 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99F78BF2094E145001EAD46 /* Coordinator.swift */; };
+		A99F78C22094E5D2001EAD46 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99F78C12094E5D2001EAD46 /* Storyboard.swift */; };
+		A99F78C42094E5E5001EAD46 /* FlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A99F78C32094E5E5001EAD46 /* FlowCoordinator.swift */; };
 		A9BCE1CD208CA90A009F0A06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1CC208CA90A009F0A06 /* AppDelegate.swift */; };
 		A9BCE1CF208CA90A009F0A06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9BCE1CE208CA90A009F0A06 /* ViewController.swift */; };
 		A9BCE1D2208CA90A009F0A06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9BCE1D0208CA90A009F0A06 /* Main.storyboard */; };
@@ -56,6 +59,9 @@
 		A97098912090EC3B009C9DDD /* HamburgerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerBuilder.swift; sourceTree = "<group>"; };
 		A97098932090ECC6009C9DDD /* CheeseBurgerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheeseBurgerBuilder.swift; sourceTree = "<group>"; };
 		A97098962090ED2F009C9DDD /* Burger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Burger.swift; sourceTree = "<group>"; };
+		A99F78BF2094E145001EAD46 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		A99F78C12094E5D2001EAD46 /* Storyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		A99F78C32094E5E5001EAD46 /* FlowCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowCoordinator.swift; sourceTree = "<group>"; };
 		A9BCE1C9208CA90A009F0A06 /* ios-design-patterns.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ios-design-patterns.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9BCE1CC208CA90A009F0A06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A9BCE1CE208CA90A009F0A06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +130,9 @@
 		A99F78BE2094DE76001EAD46 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				A99F78BF2094E145001EAD46 /* Coordinator.swift */,
+				A99F78C12094E5D2001EAD46 /* Storyboard.swift */,
+				A99F78C32094E5E5001EAD46 /* FlowCoordinator.swift */,
 			);
 			path = Coordinator;
 			sourceTree = "<group>";
@@ -393,8 +402,11 @@
 				A9BCE1CF208CA90A009F0A06 /* ViewController.swift in Sources */,
 				A9BCE205208CAA3E009F0A06 /* Listener.swift in Sources */,
 				A9BCE20C208CAD41009F0A06 /* HotelBooking.swift in Sources */,
+				A99F78C22094E5D2001EAD46 /* Storyboard.swift in Sources */,
 				A9BCE214208CB00D009F0A06 /* RentalCar.swift in Sources */,
+				A99F78C42094E5E5001EAD46 /* FlowCoordinator.swift in Sources */,
 				A9BCE203208CAA36009F0A06 /* Delegate.swift in Sources */,
+				A99F78C02094E145001EAD46 /* Coordinator.swift in Sources */,
 				A9BCE219208CB0B0009F0A06 /* Booking.swift in Sources */,
 				A9BCE201208CAA18009F0A06 /* DelegateProtocol.swift in Sources */,
 				A97098902090EBDF009C9DDD /* BurgerBuilder.swift in Sources */,
