@@ -121,6 +121,13 @@
 			path = Builder;
 			sourceTree = "<group>";
 		};
+		A99F78BE2094DE76001EAD46 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
 		A9BCE1C0208CA90A009F0A06 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +152,7 @@
 		A9BCE1CB208CA90A009F0A06 /* ios-design-patterns */ = {
 			isa = PBXGroup;
 			children = (
+				A99F78BE2094DE76001EAD46 /* Coordinator */,
 				A970988E2090EBB0009C9DDD /* Builder */,
 				A9BCE208208CACCE009F0A06 /* Facade */,
 				A9BCE1FF208CAA0C009F0A06 /* Delegation */,
