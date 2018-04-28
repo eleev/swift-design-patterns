@@ -6,7 +6,7 @@
 //  Copyright © 2018 Astemir Eleev. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class FlowCoordinator: Coordinator {
     
