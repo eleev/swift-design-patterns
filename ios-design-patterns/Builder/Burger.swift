@@ -34,3 +34,33 @@ struct Burger: BurgerBuilder {
     }
     
 }
+
+extension Burger: CustomStringConvertible, CustomDebugStringConvertible {
+    
+    // MARK: - Properties
+    
+    var description: String {
+        return compose()
+    }
+    
+    var debugDescription: String {
+        return compose()
+    }
+    
+    // MARK: - Private methods
+    
+    private func compose() -> String {
+        let description = """
+        name: \(name),
+        patties: \(patties),
+        bacon: \(bacon),
+        cheese: \(cheese),
+        pickles: \(pickles),
+        mustard: \(mustard),
+        tomato: \(tomato),
+        """
+        return description
+    }
+    
+    
+}
