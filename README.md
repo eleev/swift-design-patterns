@@ -1,4 +1,4 @@
-# ios-design-patterns
+# swift-design-patterns
 🚀 The ultimate collection of various Design Patterns implemented using the latest verion of Swift Programming Language. 
 
 # About 
@@ -79,11 +79,11 @@ Concurrency patterns are those types of design patterns that deal with the multi
 - **Thread pool pattern**
 - **Thread-local storage**
 
-## iOS Specific Design Patterns
-In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime.
+## Swift Design Patterns
+In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
 
 ### Native Patterns 
-The following patterns are native for `Swift` and are described by `Apple` [here](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
+The following patterns are native for [`Swift`](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
 
 - **Wildcard Pattern**: A wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against. 
 - **Identifier Pattern**: An identifier pattern matches any value and binds the matched value to a variable or constant name.
@@ -94,11 +94,17 @@ The following patterns are native for `Swift` and are described by `Apple` [here
 - **Type-Casting Patterns**: There are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels. 
 - **Expression Pattern**: An expression pattern represents the value of an expression. Expression patterns appear only in switch statement case labels.
 
-### Other 
-Uncategorized list of design patterns. 
+### iOS Design Patterns
+Design patterns that are specific to `iOS` platform.
 
 - **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
 
+### Other (need to refactor)
+- [MVC]()
+- [MVVM]()
+- [MVVM-P]()
+- [MVVM-C]()
+- [VIPER]()
 
 # References
 There were used a number of reference materials such as:
