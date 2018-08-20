@@ -79,11 +79,29 @@ Concurrency patterns are those types of design patterns that deal with the multi
 - **Thread pool pattern**
 - **Thread-local storage**
 
-## Swift Design Patterns
-In Swift, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
+## iOS Design Patterns
+Design patterns that are specific to `iOS` platform.
 
-### Native Patterns 
-The following patterns are native for [`Swift`](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
+- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
+
+## Architectural Patterns
+Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software is built by structuring and separating different abstractions into reusable layers. Sometimes design and architectural patterns are combined together 
+
+- [MVC]() - 
+- [MVVM]() - 
+- [MVVM-C]() - 
+- [MVP]() - 
+- [VIPER]() - 
+- [DAO]() - DAO stands for Data Access Object. DAO provides abstract interface to a database or other persistence storage mechanism. 
+
+## Swift Patterns
+In [`Swift`](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419), there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
+
+>  The first kind of pattern is used for destructuring values in simple variable, constant, and optional bindings. These include wildcard patterns, identifier patterns, and any value binding or tuple patterns containing them. You can specify a type annotation for these patterns to constrain them to match only values of a certain type.
+
+>  The second kind of pattern is used for full pattern matching, where the values you’re trying to match against may not be there at runtime. These include enumeration case patterns, optional patterns, expression patterns, and type-casting patterns. You use these patterns in a case label of a switch statement, a catch clause of a do statement, or in the case condition of an if, while, guard, or for-in statement.
+
+The following patterns are not part of the topic about `design patterns`. However they have some relation to the topic since they offer reusable solutions for common design scenarious. 
 
 - **Wildcard Pattern**: A wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against. 
 - **Identifier Pattern**: An identifier pattern matches any value and binds the matched value to a variable or constant name.
@@ -93,21 +111,6 @@ The following patterns are native for [`Swift`](https://developer.apple.com/libr
 - **Optional Pattern**: An optional pattern matches values wrapped in a some(Wrapped) case of an Optional<Wrapped> enumeration. Optional patterns consist of an identifier pattern followed immediately by a question mark and appear in the same places as enumeration case patterns.
 - **Type-Casting Patterns**: There are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels. 
 - **Expression Pattern**: An expression pattern represents the value of an expression. Expression patterns appear only in switch statement case labels.
-
-### iOS Design Patterns
-Design patterns that are specific to `iOS` platform.
-
-- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
-
-### Architectural Patterns
-Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software is built by structuring and separating different abstractions into reusable layers. Sometimes design and architectural patterns are combined together 
-
-- [MVC]() - 
-- [MVVM]() - 
-- [MVVM-C]() - 
-- [MVP]() - 
-- [VIPER]() - 
-- [DAO]() - DAO stands for Data Access Object. DAO provides abstract interface to a database or other persistence storage mechanism. 
 
 # References
 There were used a number of reference materials such as:
