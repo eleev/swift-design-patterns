@@ -1,8 +1,8 @@
 # Builder Design Pattern
 
-Builder is a cretional design pattern which purpose is aimed to simplify creation of objects. There are cases when object needs to accept too many parameters. For instance let's take a look at hte following example:
+Builder is a cretional design pattern which purpose is aimed to simplify creation of complex objects. There are cases when object needs to accept too many parameters or the parameters are passed using a specific algorithm. For instance let's take a look at the following example:
 
-```
+```swift
 struct Burger {
 
     // MARK: - Properties 
@@ -31,7 +31,7 @@ struct Burger {
 
 We defined a simple  `struct` called Burger. The struct defines a set of properties that define a particular burger. However there are too many properties to be defined each time when we need to create new burger: 
 
-```
+```swift
 let cheeseBurger = Burger(name: "Cheese Burger", patties: 1, bacon: false, cheese: true, pickles: true, mustard: true, tomato: false)
 
 let hamburgerBurger = Burger(name: "Hamburger", patties: 1, bacon: false, cheese: false, pickles: true, mustard: true, tomato: false)
@@ -41,7 +41,7 @@ The problem here is that it is very easy to make a mistake when passing all thos
 
 We can resolve this issue by decoupling the parameters into separate code-blocks. Then reuse those blocks in order to be able to build objects of value or reference types. We are going to start from declaring a common protocol which defines public data that needs to be set up at initialization time of object. 
 
-```
+```swift
 protocol BurgerBuilder {
 
     var name: String { get }
@@ -56,7 +56,7 @@ protocol BurgerBuilder {
 
 Then we create structures that conform to the BurgerProtocol and we initialize each of the properties in the specialized structures: 
 
-```
+```swift
 struct CheeseBurgerBuilder: BurgerBuilder {
 
     // MARK: - Properties
@@ -87,7 +87,7 @@ struct HamburgerBuilder: BurgerBuilder {
 
 As a result we no longer need to pass all those parameters into `Burger struct` :
 
-```
+```swift
 struct Burger: BurgerBuilder {
 
     // MARK: - Properties
@@ -117,11 +117,73 @@ struct Burger: BurgerBuilder {
 
 The only thing that was changed is the parameter list for the initializer. Instead of passing each property of the `Burger` we pass a type tha conforms to BurgerBuilder protocol. 
 
-```
+```swift
 let cheeseBurger = Burger(builder: CheeseBurgerBuilder())
 
 let hamburgerBurger = Burger(builder: HamburgerBuilder())
 ```
 
 We eliminated the boilerplateness of the code, made it easy to look at and the changes that we miss something are grethly reduced. `Builder` pattern is a simple and effective solution that allows to more elegantly create objects of value or reference types. Also you can use it in cases when a method takes too many parameters. However, in that case you may probably need to use some other design solution, since `Builder` is aimed to create objects. 
+
+## Injectable Closure
+
+Another approach is to define an `injectable closure` instead of listing all the parameters. I have seen that the other develoeprs recommend it as a way to implement the `Builder` pattern, however this approach has a couple of issues. Let's break them down one by one. 
+
+### Broken incapsulation
+By declaring the injectable closure that will be capable of initializing all the properties outside of the target object, you actually break one of the foundamental concepts of Object Oriented Paradigm - incapsulation. 
+
+Let's create an alternative `Burger` type but this time it's going to be declared as a `class` and we call it `BurgerInjectable`. 
+
+```swift
+public class BurgerInjectable {
+    
+    // MARK: - Properties
+    
+    public var name: String?
+    public var patties: Int?
+    public var bacon: Bool?
+    public var cheese: Bool?
+    public var pickles: Bool?
+    public var mustard: Bool?
+    public var tomato: Bool?
+    
+    // MARK: - Typealias
+    
+    public typealias BurgerInjectasbleClosure = (BurgerInjectable) -> ()
+    
+    // MARK: - Initializers
+    
+    public init(builder: BurgerInjectasbleClosure) {
+        builder(self)
+    }
+}
+
+```
+
+Great! We don't even need to implement `builder protocol` and provide conformances for various use-cases. Let's take a look at the usage sample:
+
+
+```swift
+let burgerInjectableClosureHam: BurgerInjectable.BurgerInjectasbleClosure = { burger in
+    
+    burger.name = "Hamburger"
+    burger.patties = 1
+    burger.bacon = false
+    burger.cheese = false
+    burger.pickles = true
+    burger.mustard = true
+    burger.tomato = false
+}
+
+let burgerInjectableHam = BurgerInjectable(builder: burgerInjectableClosureHam)
+
+```
+
+Seems shorter and pretty nice! However we just broke the one of the foundamental OOP principles by declaring the properties as `public`. We had to do that in order to be able to set new values in the `BurgerInjectableClosure`. 
+
+On the other hand, when we used builder protocol we marked all the properties as `get-only` which conforms to the incapsulation pronciple. 
+
+## Conclusion
+It's always up to you - the developer and architect to decide which approach suilts best for your particulat case and context. When making decisions related to choosing the way how the pattern is implemented just try to follow the main rules and principles of the paradigms and architectures that you use. Otherwise - you will find yourself in a situation when design wrongly implemented design pattern becomes `anti-pattern` and only gets you troubles and messy code. 
+
 
