@@ -60,7 +60,8 @@ Structural design patterns are design patterns that ease the design by identifyi
 - **Pipes and filters**: a chain of processes where the output of each process is the input of the next
 - **Opaque pointer**: a pointer to an undeclared or private type, to hide implementation details
 - **Proxy pattern**: a class functioning as an interface to another thing
-- [**Delegation pattern:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Delegation) allows object composition to achieve the same code reuse as inheritance
+- [**Delegation pattern:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
+- [**Multicast Delegate pattern**] advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
 
 ## Concurrency Design Patterns
 Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
