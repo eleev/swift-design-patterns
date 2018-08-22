@@ -7,20 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
-class Delegate {
+public class Foo {
 
     // MARK: - Delegate property
     
     weak var delegate: DelegateProtocol?
     
-    init(delegate: DelegateProtocol) {
+    // MARK: - Initializers
+    
+    public init(delegate: DelegateProtocol) {
         self.delegate = delegate
     }
     
     // MARK: - Methods
     
-    func someFunc() {
+    public func someFunc() {
         guard let delegate = delegate else {
             debugPrint(#function + " delegate protocol has not been set, the method will be aborted")
             return
@@ -28,11 +31,20 @@ class Delegate {
         delegate.methodOne()
     }
     
-    func someOtherFunc() {
+    public func someOtherFunc() {
         guard let delegate = delegate else {
             debugPrint(#function + " delegate protocol has not been set, the method will be aborted")
             return
         }
         delegate.methodTwo()
+    }
+    
+    public func getColor() {
+        // This method gets UIColor instance from a user, remove-server, color picker or anywhere else and passes it to the delegate type that need that color in order to perform its tasks
+        guard let delegate = delegate else {
+            debugPrint(#function + " delegate protocol has not been set, the method will be aborted")
+            return
+        }
+        delegate.set(color: .orange)
     }
 }

@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-protocol DelegateProtocol: class {
+public protocol DelegateProtocol: class {
     
     // MARK: - Methods
     
     func methodOne()
     func methodTwo()
+    func set(color: UIColor)
 }

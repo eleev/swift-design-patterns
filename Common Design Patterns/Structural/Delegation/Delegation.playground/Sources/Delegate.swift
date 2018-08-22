@@ -7,27 +7,28 @@
 //
 
 import Foundation
+import UIKit
 
-class Listener: DelegateProtocol {
+public class Delegate: DelegateProtocol {
     
-    // MARK: - Properties
+    // MARK: - Initializer
     
-    var delegateClass: Delegate?
-    
-    // MARK: - Initializers
-    
-    init() {
-        delegateClass = Delegate(delegate: self)
+    public init() {
+        // Empty initializer
     }
     
     // MARK: - Conformance to DelegateProtocol
     
-    func methodOne() {
+    public func methodOne() {
         print(#function + " delegated method call for methodOne")
     }
     
-    func methodTwo() {
+    public func methodTwo() {
         print(#function + " delegated method call for methoTwo")
+    }
+    
+    public func set(color: UIColor) {
+        print(#function + " delegated method call for set(color:)")
     }
     
 }
