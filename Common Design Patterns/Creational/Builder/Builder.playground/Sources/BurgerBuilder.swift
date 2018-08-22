@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol BurgerBuilder {
+public protocol BurgerBuilder {
     
     var name: String { get }
     var patties: Int { get }
