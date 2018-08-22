@@ -35,7 +35,7 @@ Creational design patterns are design patterns that deal with object creation me
 
 - **Abstract Factory pattern**: a class requests the objects it requires from a factory object instead of creating the objects directly
 - **Factory method pattern**: centralize creation of an object of a specific type choosing one of several implementations
-- [**Builder pattern**:](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Builder) separate the construction of a complex object from its representation so that the same construction process can create different representations
+- [**Builder pattern**:](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/Builder/Builder.md) separate the construction of a complex object from its representation so that the same construction process can create different representations
 - **Dependency Injection pattern**: a class accepts the objects it requires from an injector instead of creating the objects directly
 - **Lazy initialization pattern**: tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
 - **Object pool pattern**: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
