@@ -46,15 +46,20 @@ This implementation is valid in modern `Swift` development and is pretty popular
 
 ```swift
 let singleton = Singleton.instance
-singleton.counter					// 0
-singleton.increment()				// incremented using the first shared instance
-singleton.counter					// 1
+singleton.counter					
+// 0
+singleton.increment()
+// incremented using the first shared instance
+singleton.counter
+// 1
 
 let anotherSingleton = Singleton.instance
-anotherSingleton.counter			// 1
-anotherSingleton.increment()		// incremented using the second shared instance
-
-singleton.counter					// 2
+anotherSingleton.counter
+// 1
+anotherSingleton.increment()
+// incremented using the second shared instance
+singleton.counter					
+// 2
 ```
 
 
