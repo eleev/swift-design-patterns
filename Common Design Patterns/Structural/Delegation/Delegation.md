@@ -78,7 +78,7 @@ By injecting the delegate type into the `Foo` class, we connected the concrete d
 
 
 ## Other use-cases
-Delegate pattern has many applications across the `Apple Ecosystem` including `macOS`, `iOS`, `tvOS` and `watchOS`. For instance, frequently used `UITableViewDelegate` and `UICollectionViewDelegate` protocols are used to decompose and delegate functionality into separate types. You can find a lot more types in `SDKs` that delegate their some operations and even responsibilities using `Delegate` pattern. 
+Delegate pattern has many applications across the `Apple Ecosystem` including `macOS`, `iOS`, `tvOS` and `watchOS`. For instance, frequently used `UITableViewDelegate` and `UICollectionViewDelegate` protocols are used to decompose and delegate functionality into separate types. You can find a lot more types in `SDKs` that delegate their operations and even responsibilities using `Delegate` pattern. 
 
 ## Communication 
 `Delegate` pattern can be used to pass values between different parts of your application. For instance a `delegate` protocol can be used to pass color information between two `view controllers`:
