@@ -11,7 +11,7 @@ Sometimes it is hard to understnad the differnces and purposes of various types 
 ### Behavioral
 Behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
 
-#### Gang Of Four Patterns
+#### Gang of Four
 
 - **Chain of responsibility pattern:** Command objects are handled or passed on to other objects by logic-containing processing objects
 - ***Command pattern:*** Command objects encapsulate an action and its parameters
@@ -38,7 +38,7 @@ Behavioral design patterns are design patterns that identify common communicatio
 ### Creational 
 Creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
 
-#### Gang Of Four Patterns
+#### Gang of Four
 
 - **Abstract Factory pattern**: a class requests the objects it requires from a factory object instead of creating the objects directly
 - **Factory method pattern**: centralize creation of an object of a specific type choosing one of several implementations
@@ -56,7 +56,7 @@ Creational design patterns are design patterns that deal with object creation me
 ### Structural 
 Structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
 
-#### Gang of Four Patterns
+#### Gang of Four
 
 - **Adapter pattern**: 'adapts' one interface for a class into one that a client expects
 - **Bridge pattern**: decouple an abstraction from its implementation so that the two can vary independently
