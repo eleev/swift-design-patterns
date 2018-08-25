@@ -103,7 +103,7 @@ public class StructSignleton {
 
 ```
 
-This approached was quite popular back then. `Swift` didn't support `access control modifiers` until `1.2` version, so we was not able to create `private` initializer as well. However in modern `Swift` we can eliminate that boilerplate construction with nested `class` and `struct` and use more elegant way of creating singletons. 
+This approached was quite popular back then. `Swift` didn't support `access control modifiers` until `1.2` version, so we were not able to create `private` initializer as well. However in modern `Swift` we can eliminate that boilerplate construction with nested `class` and `struct` and use more elegant way of creating singletons. 
 
 ## Conclusion
 If misused, `Singleton` may become `anti-pattern` since the data may be mutated concurrently from different places of an application using the same shared instance. It will lead to unexpected results that are hard to diagnose and fix. It may be resolved by using some sort of `locking` mechanism in order to prevent the access to the `critical section` from several threads at the same time. However concurrency and multithreading are pretty advanced topics and they bring another class of possible issues, just beware of that.
