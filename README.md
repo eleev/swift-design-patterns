@@ -103,7 +103,7 @@ Design patterns that are specific to `iOS` platform.
 - **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
 
 ## Architectural Patterns
-Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way software product/application/platform is built by structuring and separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
+Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
 
 - [MVC]() - 
 - [MVP]() - 
