@@ -116,16 +116,16 @@ rise of new classes
 ## iOS Design Patterns
 Design patterns that are specific to `iOS` platform.
 
-- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers.
+- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers
 
 ## Architectural Patterns
 Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
 
-- [**MVC:**]() - 
-- [**MVP:**]() - 
-- [**MVVM:**]() - 
+- [**MVC:**]() - is an architectural pattern commonly used for developing user interfaces that divides an application into three interconnected parts. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. The `MVC` design pattern decouples these major components allowing for efficient code reuse and parallel development [[1](#references)]
+- [**MVP:**]() - is a derivation of the model–view–controller (`MVC`) architectural pattern, and is used mostly for building user interfaces. In `MVP`, the presenter assumes the functionality of the "middle-man". In `MVP`, all presentation logic is pushed to the presenter [[1](#references)]
+- [**MVVM:**]() - is a software architectural pattern that facilitates a separation of development of the graphical user interface – be it via a markup language or `GUI` code – from development of the business logic or back-end logic (the data model). The view model of `MVVM` is a value converter, meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented [[1](#references)]
 - [**MVVM-C:**]() - 
-- [**VIPER:**]() - 
+- [**VIPER:**]() - `VIPER` is an application of `Clean Architecture` to `iOS` apps. The word `VIPER` is a backronym for `View`, `Interactor`, `Presenter`, `Entity`, and `Routing`. `Clean Architecture` divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers [[8](#references)]
 - [**DAO:**]() - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
 ## Swift Patterns
@@ -151,13 +151,14 @@ The following patterns are not part of the topic about `design patterns`. Howeve
 # References
 There were used a number of reference materials such as:
 
-- [Wikipedia](https://www.wikipedia.org)
-- [swift.org](https://www.swift.org)
-- [Apple Developer Portal](https://developer.apple.com)
-- [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
-- [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_lpo_sbs_14_img_0?_encoding=UTF8&psc=1&refRID=GTMN22S3KHGP59KCCANC&dpID=515iEcDr1GL&preST=_SX258_BO1,204,203,200_QL70_&dpSrc=detail)
-- [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
-- [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
+1. [Wikipedia](https://www.wikipedia.org)
+2. [swift.org](https://www.swift.org)
+3. [Apple Developer Portal](https://developer.apple.com)
+4. [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
+5. [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_lpo_sbs_14_img_0?_encoding=UTF8&psc=1&refRID=GTMN22S3KHGP59KCCANC&dpID=515iEcDr1GL&preST=_SX258_BO1,204,203,200_QL70_&dpSrc=detail)
+6. [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
+7. [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
+8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
 
 # Author 
 [Astemir Eleev](https://github.com/jVirus)
