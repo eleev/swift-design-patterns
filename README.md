@@ -16,7 +16,9 @@ I want to keep this repo up to date, implement the latest design, architecture a
 ## Common Design Patterns
 
 ### Behavioral
-Behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+> Behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
+>
+> **Source:** [wikipedia.org](http://en.wikipedia.org/wiki/Behavioral_pattern)
 
 #### Gang of Four
 
@@ -43,7 +45,9 @@ Behavioral design patterns are design patterns that identify common communicatio
 - **Specification:** recombinable business logic in a boolean fashion
 
 ### Creational 
-Creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+> Creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
+>
+> **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Creational_pattern)
 
 #### Gang of Four
 
@@ -61,7 +65,10 @@ Creational design patterns are design patterns that deal with object creation me
 
 
 ### Structural 
-Structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
+> Structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
+>
+> **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Structural_pattern)
+
 
 #### Gang of Four
 
@@ -88,7 +95,9 @@ rise of new classes
 - [**Multicast Delegate:**]() advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
 
 ## Concurrency Design Patterns
-Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
+> Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
+>
+> **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Concurrency_pattern)
 
 - **Active Object:**
 - **Balking Pattern:**
@@ -120,11 +129,13 @@ Architectural patterns addres issues that arise in software engineering within c
 - [**DAO:**]() - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
 ## Swift Patterns
-In [`Swift`](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419), there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
-
+> In `Swift`, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
+>
 >  The first kind of pattern is used for destructuring values in simple variable, constant, and optional bindings. These include wildcard patterns, identifier patterns, and any value binding or tuple patterns containing them. You can specify a type annotation for these patterns to constrain them to match only values of a certain type.
-
+>
 >  The second kind of pattern is used for full pattern matching, where the values you’re trying to match against may not be there at runtime. These include enumeration case patterns, optional patterns, expression patterns, and type-casting patterns. You use these patterns in a case label of a switch statement, a catch clause of a do statement, or in the case condition of an if, while, guard, or for-in statement.
+>
+> **Source:** [`swift.org`](https://docs.swift.org/swift-book/ReferenceManual/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
 
 The following patterns are not part of the topic about `design patterns`. However they have some relation to the topic since they offer reusable solutions for common design scenarious. 
 
@@ -141,6 +152,8 @@ The following patterns are not part of the topic about `design patterns`. Howeve
 There were used a number of reference materials such as:
 
 - [Wikipedia](https://www.wikipedia.org)
+- [swift.org](https://www.swift.org)
+- [Apple Developer Portal](https://developer.apple.com)
 - [Design Patterns: Elements of Reusable Object-Oriented Software](https://www.amazon.com/Design-Patterns-Object-Oriented-Addison-Wesley-Professional-ebook/dp/B000SEIBB8)
 - [Clean Code: A Handbook of Agile Software Craftsmanship](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=pd_lpo_sbs_14_img_0?_encoding=UTF8&psc=1&refRID=GTMN22S3KHGP59KCCANC&dpID=515iEcDr1GL&preST=_SX258_BO1,204,203,200_QL70_&dpSrc=detail)
 - [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
