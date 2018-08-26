@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct FlightBooking: Booking {
+public struct FlightBooking: Booking {
     
     // MARK: - Methods
     
-    static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]? {
+    public static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]? {
         let flights = [Flight]()
         // Here goes the logic for fetching Flights for a given Date range
         return flights
     }
     
-    static func book(_ bookable: Bookable) {
+    public static func book(_ bookable: Bookable) {
         // Logic for booking a Flight
     }
     

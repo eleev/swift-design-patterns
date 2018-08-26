@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct RentalCar: Bookable {
+public struct RentalCar: Bookable {
     // Information about rental car
 }

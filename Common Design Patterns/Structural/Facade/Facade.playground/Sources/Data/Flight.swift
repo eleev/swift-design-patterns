@@ -1,5 +1,5 @@
 //
-//  Booking.swift
+//  Flight.swift
 //  ios-design-patterns
 //
 //  Created by Astemir Eleev on 22/04/2018.
@@ -8,7 +8,6 @@
 
 import Foundation
 
-protocol Bookable {
-    // Defines a set of requorements for Bookable item e.g. Flight, Hotel, House, Cat etc.
+public struct Flight: Bookable {
+    // Information about flights
 }
-

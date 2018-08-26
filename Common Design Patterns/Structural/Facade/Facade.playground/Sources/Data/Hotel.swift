@@ -1,5 +1,5 @@
 //
-//  Flight.swift
+//  Hotel.swift
 //  ios-design-patterns
 //
 //  Created by Astemir Eleev on 22/04/2018.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-struct Flight: Bookable {
-    // Information about flights
+public struct Hotel: Bookable {
+    // The struct contains the info related to a Hotel
 }

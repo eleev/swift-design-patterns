@@ -8,10 +8,7 @@
 
 import Foundation
 
-protocol Booking {
-    
-    // MARK: - Methods
-    
-    static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]?
-    static func book(_ bookable: Bookable)
+public protocol Bookable {
+    // Defines a set of requorements for Bookable item e.g. Flight, Hotel, House, Cat etc.
 }
+

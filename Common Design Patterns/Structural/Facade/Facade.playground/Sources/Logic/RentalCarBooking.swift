@@ -8,17 +8,17 @@
 
 import Foundation
 
-struct RentalCarBooking: Booking {
+public struct RentalCarBooking: Booking {
     
     // MARK: - Methods
     
-    static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]? {
+    public static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]? {
         let rentalCars = [RentalCar]()
         // Logic for renting cas
         return rentalCars
     }
     
-    static func book(_ bookable: Bookable) {
+    public static func book(_ bookable: Bookable) {
         // Logic to reserve a rental car
     }
     

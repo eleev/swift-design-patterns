@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TravelFacade {
+public struct TravelFacade {
     
     // MARK: - Properties
     
@@ -18,7 +18,7 @@ struct TravelFacade {
     
     // MARK: - Initializers
     
-    init(from fdate: Date, to tdate: Date) {
+    public init(from fdate: Date, to tdate: Date) {
         hotels = HotelBooking.getBookables(from: fdate, to: tdate) as? [Hotel]
         flights = FlightBooking.getBookables(from: fdate, to: tdate) as? [Flight]
         cars = RentalCarBooking.getBookables(from: fdate, to: tdate) as? [RentalCar]
@@ -26,7 +26,7 @@ struct TravelFacade {
     
     // MARK: - API methods
     
-    func book(hotel: Hotel, flight: Flight, rentalCar: RentalCar) {
+    public func book(hotel: Hotel, flight: Flight, rentalCar: RentalCar) {
         HotelBooking.book(hotel)
         FlightBooking.book(flight)
         RentalCarBooking.book(rentalCar)
