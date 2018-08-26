@@ -47,7 +47,7 @@ Creational design patterns are design patterns that deal with object creation me
 
 #### Gang of Four
 
-- **Abstract Factory:** a class requests the objects it requires from a factory object instead of creating the objects directly
+- [**Abstract Factory:**]() a class requests the objects it requires from a factory object instead of creating the objects directly
 - **Factory Method:** centralize creation of an object of a specific type choosing one of several implementations
 - [**Builder:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
 - **Prototype:** used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
