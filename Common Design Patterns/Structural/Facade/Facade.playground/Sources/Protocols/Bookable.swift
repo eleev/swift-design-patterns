@@ -9,6 +9,6 @@
 import Foundation
 
 public protocol Bookable {
-    // Defines a set of requorements for Bookable item e.g. Flight, Hotel, House, Cat etc.
+    // Defines a set of requorements for Bookable item e.g. Flight, Hotel, House, Car etc.
 }
 

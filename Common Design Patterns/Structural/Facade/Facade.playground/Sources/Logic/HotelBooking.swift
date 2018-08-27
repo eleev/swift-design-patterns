@@ -13,8 +13,17 @@ public struct HotelBooking: Booking {
     // MARK: - Methods
     
     public static func getBookables(from fdate: Date, to tdate: Date) -> [Bookable]? {
-        let hotels = [Hotel]()
-        // Logic for fetching Hotels for a given Date range
+        // The logic related to the date filtering is missing, it is declared here for demostration purposes
+        
+        var hotels = [Hotel]()
+
+        // Dummy data
+        let fiveStarsHotel = Hotel(pricePerNight: 300, stars: .five)
+        let fourStarsHotel = Hotel(pricePerNight: 200, stars: .four)
+        let fourCheapStarsHotel = Hotel(pricePerNight: 140, stars: .four)
+        let threeStarsHotel = Hotel(pricePerNight: 50, stars: .three)
+        hotels += [fiveStarsHotel, fourStarsHotel, fourCheapStarsHotel, threeStarsHotel]
+
         return hotels
     }
     

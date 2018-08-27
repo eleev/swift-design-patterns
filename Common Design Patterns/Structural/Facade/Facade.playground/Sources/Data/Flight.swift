@@ -9,5 +9,27 @@
 import Foundation
 
 public struct Flight: Bookable {
-    // Information about flights
+    
+    // Information about current flight
+    
+    public var departure: Airport
+    public var destination: Airport
+    public var duration: TimeInterval
+    public var price: Price
+}
+
+extension Flight: CustomStringConvertible {
+    public var description: String {
+        return """
+        departure: \(departure),
+        destination: \(destination),
+        duration: \(duration)h,
+        price: \(price)
+        """
+    }
+}
+
+
+public struct Airport {
+    public var name: String
 }
