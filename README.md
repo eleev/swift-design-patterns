@@ -1,4 +1,8 @@
-# swift-design-patterns
+# swift-design-patterns [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
+
+[![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
+
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
 # About 
@@ -51,7 +55,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- [**Abstract Factory:**]() a class requests the objects it requires from a factory object instead of creating the objects directly
+- [**Abstract Factory:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
 - **Factory Method:** centralize creation of an object of a specific type choosing one of several implementations
 - [**Builder:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
 - **Prototype:** used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
