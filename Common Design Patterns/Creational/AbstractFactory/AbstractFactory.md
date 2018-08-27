@@ -1,4 +1,4 @@
-# Abstract Factory Pattern
+# Abstract Factory Design Pattern
 `Abstract Factory` is a creational design pattern that is aimed to simplify creation of objects in runtime without specifying their concrete types. The pattern has some similarities with another creational pattern called `Factory Method`. Don't be confused by the common nature and similar names of the patterns - they are different and have different restrictions. 
 
 `Abstract Factory` is implemented using a type rather than a method and can be `inherited` and `extended`. In order to implement the pattern we need to define a type that will act as `abstract factory` and a `protocol` that will be used as the resulting type of the factory. Which type exactly - will be determined at runtime. 
