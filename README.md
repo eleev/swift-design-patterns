@@ -76,7 +76,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Bridge:**: decouple an abstraction from its implementation so that the two can vary independently
 - **Composite:** a tree structure of objects where every object has the same interface
 - **Decorator:** add additional functionality to a class at runtime where subclassing would result in an exponential 
-- [**Facade:**](https://github.com/jVirus/ios-design-patterns/tree/master/ios-design-patterns/Facade) create a simplified interface of an existing interface to ease usage for common tasks
+- [**Facade:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks
 - **Flyweight:** a large quantity of objects share a common properties object to save space
 - **Proxy:** a class functioning as an interface to another thing
 
