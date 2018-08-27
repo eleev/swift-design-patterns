@@ -97,6 +97,7 @@ rise of new classes
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
 - [**Delegation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
 - [**Multicast Delegate:**]() advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
+- **Coordinator:** a `Coordinator` is an object the encapsulates a lifecycle that is spread over a collection of view controllers
 
 ## Concurrency Design Patterns
 > Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
@@ -116,11 +117,6 @@ rise of new classes
 - **Scheduler:**
 - **Thread Pool**
 - **Thread-Local Storage:**
-
-## iOS Design Patterns
-Design patterns that are specific to `iOS` platform.
-
-- **Coordinator:** A Coordinator is an object the encapsulates a lifecycle that is spread over a collection of view controllers
 
 ## Architectural Patterns
 Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
