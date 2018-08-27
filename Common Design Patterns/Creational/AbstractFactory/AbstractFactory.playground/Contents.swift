@@ -135,10 +135,6 @@ protocol LandVehicle {
     var engine: [Engine] { get }
     var wheels: [Wheel] { get }
     var body: CarBody { get }
-    
-    // MARK: - Initializers
-    
-    init(engine: [Engine], wheels: [Wheel], body: CarBody)
 }
 
 class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, ShootableProtocol, CustomStringConvertible, CustomDebugStringConvertible {
@@ -149,10 +145,18 @@ class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, Shoot
     var wheels: [Wheel]
     var body: CarBody
     
-    // MARK: - LandVehicle initializer
-    
-    required init(engine: [Engine], wheels: [Wheel], body: CarBody) {
-        self.engine = engine
+    // MARK: - Initializers
+
+    init() {
+        let engine = Engine(id: "V12", horsepower: 1200)
+        var wheels = [Wheel]()
+        let numberOfWheels = 4
+        
+        for _ in 0..<numberOfWheels {
+            wheels += [Wheel(radius: 56)]
+        }
+        let body = CarBody(id: "Bugatti", color: .orange)
+        self.engine = [engine]
         self.wheels = wheels
         self.body = body
     }
@@ -171,8 +175,8 @@ class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, Shoot
     
     // MARK: - Conformance to ShootableProtocol
     
-    func shoot(missleOf type: MissleType) {
-        print("shoot missle of type: ", type)
+    func shoot(missileOf type: MissileType) {
+        print("shoot missile of type: ", type)
     }
     
 }
@@ -185,10 +189,22 @@ class SportCar: LandVehicle, MovableProtocol, RotatableProtocol, CustomStringCon
     var wheels: [Wheel]
     var body: CarBody
     
-    // MARK: - LandVehicle initializer
+    // MARK: - Initializer
     
-    required init(engine: [Engine], wheels: [Wheel], body: CarBody) {
-        self.engine = engine
+    init() {
+        let engineOne = Engine(id: "V8", horsepower: 850)
+        let engineTwo = Engine(id: "V6", horsepower: 550)
+        
+        var wheels = [Wheel]()
+        let numberOfWheels = 8
+        
+        for _ in 0..<numberOfWheels {
+            wheels += [Wheel(radius: 92)]
+        }
+        
+        let body = CarBody(id: "Titan Body", color: .cyan)
+        
+        self.engine = [engineOne, engineTwo]
         self.wheels = wheels
         self.body = body
     }
@@ -252,60 +268,61 @@ protocol RotatableProtocol {
     func turn(to direction: RotationType)
 }
 
-enum MissleType {
+enum MissileType {
     case rocket
     case bullet
     case fire
 }
 
 protocol ShootableProtocol {
-    func shoot(missleOf type: MissleType)
+    func shoot(missileOf type: MissileType)
 }
-
 
 
 struct VehicleFactory {
     
-    func produceSportCar() -> LandVehicle {
-        let engine = Engine(id: "V12", horsepower: 1200)
-        var wheels = [Wheel]()
-        let numberOfWheels = 4
-        
-        for _ in 0..<numberOfWheels {
-            wheels += [Wheel(radius: 56)]
-        }
-        let body = CarBody(id: "Bugatti", color: .orange)
-        
-        let sportCar = SportCar(engine: [engine], wheels: wheels, body: body)
-        return sportCar
+    var areThereZombies = false
+    
+    func produce() -> LandVehicle {
+        return areThereZombies ? producePostApocalypticCar() : produceSportCar()
     }
     
-    func producePostApocalypticCar() -> LandVehicle {
-        let engineOne = Engine(id: "V8", horsepower: 850)
-        let engineTwo = Engine(id: "V6", horsepower: 550)
-        
-        var wheels = [Wheel]()
-        let numberOfWheels = 8
-        
-        for _ in 0..<numberOfWheels {
-            wheels += [Wheel(radius: 92)]
-        }
-        
-        let body = CarBody(id: "Titan Body", color: .cyan)
-        
-        let postApocalyptic = PostapocalypticCar(engine: [engineOne, engineTwo], wheels: wheels, body: body)
-        return postApocalyptic
+    // MARK: - Private helpers
+    
+    private func produceSportCar() -> LandVehicle {
+        return SportCar()
+    }
+    
+    private func producePostApocalypticCar() -> LandVehicle {
+        return PostapocalypticCar()
     }
     
 }
 
 
 //: Usage
-let vehicleFacade = VehicleFactory()
+var vehicleFactory = VehicleFactory()
+let sportCar = vehicleFactory.produce()
 
-let apocalypticVehicle = vehicleFacade.producePostApocalypticCar() as? PostapocalypticCar
-print(apocalypticVehicle)
-apocalypticVehicle?.shoot(missleOf: .rocket)
+print(sportCar)
+
+//engine: [id: V12,
+//horsepower: 1200],
+//wheels: [id: 89CA2C97-E540-4864-B5A5-34A0CCE89C59,
+//radius: 56.0, id: 99AB06F6-2554-4AFD-927A-18C4B54B8119,
+//radius: 56.0, id: 52DA8B5B-CAD4-4CB2-A767-5A2771FC23FE,
+//radius: 56.0, id: B1F58094-2CC9-494C-920E-EB997D4111C6,
+//radius: 56.0],
+//body: id: Bugatti,
+//color: UIExtendedSRGBColorSpace 1 0.5 0 1
+
+print("\n")
+
+vehicleFactory.areThereZombies = true
+
+let postapocalypticCar = vehicleFactory.produce() as? PostapocalypticCar
+print(postapocalypticCar as Any)
+postapocalypticCar?.shoot(missileOf: .rocket)
 
 //engine: [id: V8,
 //horsepower: 850, id: V6,
@@ -322,17 +339,4 @@ apocalypticVehicle?.shoot(missleOf: .rocket)
 //body: id: Titan Body,
 //color: UIExtendedSRGBColorSpace 0 1 1 1
 
-print("\n")
-let sportCar = vehicleFacade.produceSportCar()
-print(sportCar)
-
-//engine: [id: V12,
-//horsepower: 1200],
-//wheels: [id: 89CA2C97-E540-4864-B5A5-34A0CCE89C59,
-//radius: 56.0, id: 99AB06F6-2554-4AFD-927A-18C4B54B8119,
-//radius: 56.0, id: 52DA8B5B-CAD4-4CB2-A767-5A2771FC23FE,
-//radius: 56.0, id: B1F58094-2CC9-494C-920E-EB997D4111C6,
-//radius: 56.0],
-//body: id: Bugatti,
-//color: UIExtendedSRGBColorSpace 1 0.5 0 1
 
