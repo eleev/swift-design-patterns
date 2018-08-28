@@ -10,3 +10,16 @@ import PlaygroundSupport
 import Foundation
 
 PlaygroundPage.current.needsIndefiniteExecution = true
+
+let networking = Networking()
+let url = URL(string: "http://www.google.com")!
+
+networking.dataTask(for: url) { response in
+    debugPrint(response as Any)
+}
+
+
+let backendProxy = BackendNetworkingProxy()
+backendProxy.requestDataUpdate { dataUpdateStatus in
+    debugPrint(dataUpdateStatus)
+}

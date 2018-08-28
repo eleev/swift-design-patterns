@@ -10,9 +10,13 @@ import Foundation
 
 public class Networking {
     
+    // MARK: - Initializers
+    
     public init() {
-        
+        // Set up of the class
     }
+    
+    // MARK: - API methods
     
     public func dataTask(for url: URL, completion: @escaping (URLResponse?) -> ()) {
         let session = URLSession.shared.dataTask(with: url) { (data, response, error) in

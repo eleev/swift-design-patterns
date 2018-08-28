@@ -30,7 +30,7 @@ public class BackendNetworkingProxy {
     
     // MARK: - Methods
     
-    func requestDataUpdate(completion: @escaping (DataUpdateStatus?)->()) {
+    public func requestDataUpdate(completion: @escaping (DataUpdateStatus?)->()) {
         
         networking.dataTask(for: url) { response in
             guard let uresponse = response as? HTTPURLResponse else {
@@ -50,8 +50,4 @@ public class BackendNetworkingProxy {
             }
         }
     }
-}
-
-enum CastingError: Error {
-    case couldNotGetResponseCode
 }
