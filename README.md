@@ -82,7 +82,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Decorator:** add additional functionality to a class at runtime where subclassing would result in an exponential 
 - [**Facade:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks
 - **Flyweight:** a large quantity of objects share a common properties object to save space
-- [**Proxy:**]() a class functioning as an interface to another thing
+- [**Proxy:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) a class functioning as an interface to another thing
 
 #### Other 
 
