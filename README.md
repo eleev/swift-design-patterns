@@ -27,7 +27,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
-- ***Command:*** command objects encapsulate an action and its parameters
+- [**Command:**]() command objects encapsulate an action and its parameters
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
 - **Iterator:** iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
