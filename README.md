@@ -3,21 +3,23 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
+**Last Update: 29/August/2018.**
+
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
-# About 
+# ✍️ About 
 There are many design patterns for various purposes and use-cases. We may not remember them all - it's absolutely normal. This repository aims to collect as many design patterns as possbile with examples implemented using the latest version of `Swift`, and serve as a reference material for eveyone who is willing to learn something new.
 
-# Disclamer
+# ☢️ Disclamer
 The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that look strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
 
 If you find that something is not clear or has an issue, please, don't judge immediately in a negative way. It's an open source and you have such an opportunity to polietly tell me about that or even create a pool request (which is the best way to contribute). The other piece of motivation is that I really want to create learning material that is `solid` and yet `easy` to understand for developers that know basics of `OOP` and `POP` paradigms (since it's `Swift` and `POP` is almost as important as `OOP` IMHO).
 
 I want to keep this repo up to date, implement the latest design, architecture and concurrency patterns. Open-source for eveyone :octocat:
 
-# List of content 
+# 📚 List of content 
 
-## Common Design Patterns
+## 🏗 Common Design Patterns
 
 ### Behavioral
 > Behavioral design patterns are design patterns that identify common communication patterns between objects and realize these patterns. By doing so, these patterns increase flexibility in carrying out this communication.
@@ -99,7 +101,7 @@ rise of new classes
 - [**Multicast Delegate:**]() advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
 - **Coordinator:** a `Coordinator` is an object the encapsulates a lifecycle that is spread over a collection of view controllers
 
-## Concurrency Design Patterns
+## 🚅 Concurrency Design Patterns
 > Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
 >
 > **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Concurrency_pattern)
@@ -118,7 +120,7 @@ rise of new classes
 - **Thread Pool**
 - **Thread-Local Storage:**
 
-## Architectural Patterns
+## 🏛 Architectural Patterns
 Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
 
 - [**MVC:**]() - is an architectural pattern commonly used for developing user interfaces that divides an application into three interconnected parts. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. The `MVC` design pattern decouples these major components allowing for efficient code reuse and parallel development [[1](#references)]
@@ -128,7 +130,7 @@ Architectural patterns addres issues that arise in software engineering within c
 - [**VIPER:**]() - `VIPER` is an application of `Clean Architecture` to `iOS` apps. The word `VIPER` is a backronym for `View`, `Interactor`, `Presenter`, `Entity`, and `Routing`. `Clean Architecture` divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers [[8](#references)]
 - [**DAO:**]() - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
-## Swift Patterns
+## 🐦 Swift Patterns
 > In `Swift`, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
 >
 >  The first kind of pattern is used for destructuring values in simple variable, constant, and optional bindings. These include wildcard patterns, identifier patterns, and any value binding or tuple patterns containing them. You can specify a type annotation for these patterns to constrain them to match only values of a certain type.
@@ -148,7 +150,7 @@ The following patterns are not part of the topic about `design patterns`. Howeve
 - **Type-Casting:** there are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels
 - **Expression:** an expression pattern represents the value of an expression. Expression patterns appear only in `switch` statement `case` labels
 
-# References
+# 📝 References
 There were used a number of reference materials such as:
 
 1. [Wikipedia](https://www.wikipedia.org)
@@ -160,8 +162,8 @@ There were used a number of reference materials such as:
 7. [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
 8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
 
-# Author 
+# 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
 
-# Licence
+# 🔖 Licence
 The project is availabe under [MIT licence](https://github.com/jVirus/ios-design-patterns/blob/master/LICENSE).
