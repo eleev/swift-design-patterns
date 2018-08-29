@@ -99,7 +99,7 @@ rise of new classes
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
 - [**Delegation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
 - [**Multicast Delegate:**]() advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
-- **Coordinator:** a `Coordinator` is an object the encapsulates a lifecycle that is spread over a collection of view controllers
+- **Coordinator:** is and object that encapsulates lifecycle that is spread over a collection of view controllers
 
 ## 🚅 Concurrency Design Patterns
 > Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
