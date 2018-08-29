@@ -157,7 +157,7 @@ There were used a number of reference materials such as:
 2. [swift.org](https://www.swift.org)
 3. [Apple Developer Portal](https://developer.apple.com)
 4. [Design Patterns: Elements of Reusable Object-Oriented Software](http://www.blackwasp.co.uk/GangOfFour.aspx)
-5. []()
+5. [SOLID](https://en.m.wikipedia.org/wiki/SOLID)
 6. [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
 7. [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
 8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
