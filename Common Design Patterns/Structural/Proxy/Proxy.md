@@ -79,8 +79,14 @@ public class BackendNetworkingProxy {
 }
 ```
 
-The presented `BackendNetrworkingProxy` class wrapps `Networking` class and adds extra logic around the `URL` and `status code` handling. 
+The presented `BackendNetrworkingProxy` class wrapps `Networking` class and adds extra logic around the `URL` and `status code` handling. It incapsulates already made functionality and creates a slightly more domain-specific interface aroud it - that is why this variation of `Proxy` is called `Umbrella Proxy`. 
 
 
 ## Conclusion 
+`Proxy` is powerful yet simple to implement structural design pattern. In `iOS` there is even a dedicated abstract class called `NSProxy`.
 
+> An abstract superclass defining an API for objects that act as stand-ins for other objects or for objects that don’t exist yet.
+> 
+> **Source:** [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsproxy)
+
+One key difference of the `NSProxy` is that it can handle `lazy initialization` of objects that are heavy. `Lazy initialization` is yet another design pattern, so instead of implementing two design patterns you can cut the corner and use `NSProxy` for suitable situations. However sometimes it's easier to create your own light-weight version. 
