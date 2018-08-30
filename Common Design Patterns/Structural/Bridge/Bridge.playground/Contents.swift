@@ -9,13 +9,18 @@
 import Foundation
 import UIKit
 
-public protocol Chargable: class {
+public protocol Chargeable: class {
+    
+    // MARK: - Properties
+    
     var device: MobilePhone { get set }
+    
+    // MARK: - Methods
     
     func charge()
 }
 
-public class Charger: Chargable {
+public class Charger: Chargeable {
     
     public var device: MobilePhone
     
@@ -88,7 +93,7 @@ public class iPhone: MobilePhone, Callable {
     
 }
 
-public class ApplePhone: MobilePhone {
+public class ApplePhone: MobilePhone, Callable {
     
     // MARK: - Conformance to MobilePhone protocol
     
@@ -145,7 +150,7 @@ charger.charge()
 
 class ChargingDockBridge {
     
-    func connect(charger: Chargable, with device: MobilePhone) {
+    func connect(charger: Chargeable, with device: MobilePhone) {
         charger.device = device
         charger.charge()
     }
