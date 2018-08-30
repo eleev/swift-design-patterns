@@ -1,0 +1,1 @@
+# Multicast Delegation Design Pattern
