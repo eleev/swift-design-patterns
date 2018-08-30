@@ -8,24 +8,24 @@
 
 import Foundation
 
-public class MulticastDelegate<T: AnyObject>: NSObject {
+public class MulticastDelegate<T> {
     
     // MARK: - Subscripts
     
     /// Convenience subscript for accessing delegate by index, returns nil if there is no object found
     public subscript(index: Int) -> T? {
         get {
-            guard index < 0, index > delegates.count - 1 else {
+            guard index > -1, index < delegates.count - 1 else {
                 return nil
             }
-            return delegates[index].value
+            return delegates[index].value as? T
         }
     }
     
     /// Searches for the delegate and returns its index
     public subscript(delegate: T) -> Int? {
         get {
-            guard let index = delegates.index(where: { $0.value === delegate }) else {
+            guard let index = delegates.index(where: { $0.value  === delegate as AnyObject }) else {
                 return nil
             }
             return index
@@ -34,18 +34,12 @@ public class MulticastDelegate<T: AnyObject>: NSObject {
     
     // MARK: - Properties
     
-    private var delegates: [Weak<T>] = []
-    
-    // MARK: - Initializers
-    
-    public override init() {
-        super.init()
-    }
+    private var delegates = [Weak]()
     
     // MARK: - Methods
     
     public func add(delegate: T) {
-        delegates += [Weak(delegate)]
+        delegates.append(Weak(delegate as AnyObject))
     }
     
     public func remove(delegate: T) {
@@ -55,28 +49,52 @@ public class MulticastDelegate<T: AnyObject>: NSObject {
         delegates.remove(at: index)
     }
     
-    public func invoke(_ completion: @escaping(T) -> ()) {
+    public func update(_ completion: @escaping(T) -> ()) {
         // Recycle the values that are nil so the completion closure is called for non nil values
         recycle()
         
         delegates.forEach { delegate in
             // Additional anti-nil check
-            if let udelegate = delegate.value {
+            if let udelegate = delegate.value as? T {
                 completion(udelegate)
             }
         }
     }
     
-    // MARK: - Private methods
+    // MARK: - Private
     
     private func recycle() {
         for (index, element) in delegates.enumerated().reversed() where element.value == nil {
             delegates.remove(at: index)
         }
     }
+    
+    private final class Weak {
+        
+        // MARK: - Properties
+        
+        weak var value: AnyObject?
+        
+        // MARK: - Initializers
+        
+        init(_ value: AnyObject) {
+            self.value = value
+        }
+    }
 }
 
-// MARK: - Extension that adds custom operators for the MulticastDelegate class
+// MARK: - Extension that adds custom operators for the MulticastDelegate class. The motivation behind this extension is to provide Swity-like API interface e.g.
+//
+// Adding new delegate:
+// model.delegates += viewControllerDelegate
+//
+// Removes the specified delegate:
+// model.delegate -= viewControllerDelegate
+//
+// Adds an update closure outside of the delegate caller side and notify all the delegates:
+// model.delegate ~> { delegate in
+//      delegate.saveModel()
+// }
 extension MulticastDelegate {
     static func +=(lhs: inout MulticastDelegate, rhs: T) {
         lhs.add(delegate: rhs)
@@ -87,27 +105,151 @@ extension MulticastDelegate {
     }
     
     static func ~>(lhs: inout MulticastDelegate, rhs: @escaping (T) -> ()) {
-        lhs.invoke(rhs)
+        lhs.update(rhs)
     }
 }
 
-public final class Weak<Value: AnyObject> {
+extension MulticastDelegate: Sequence {
     
-    // MARK: - Properties
+    public func makeIterator() -> AnyIterator<T>{
+        var iterator = delegates.makeIterator()
+
+        return AnyIterator {
+            while let next = iterator.next() {
+                if let value = next.value as? T {
+                    return value
+                }
+            }
+            return nil
+        }
+    }
+
+}
+
+
+//: Implementation of the Model and ViewController layers
+
+import UIKit
+
+
+protocol ModelDelegate: class {
+    func didUpdate(name: String)
+    func didUpdate(city: String)
+    func didSave()
+}
+
+
+class ContainerViewController: UIViewController, ModelDelegate {
     
-    weak var value: Value?
+    // MARK: - Lifecycle
     
-    // MARK: - Initializers
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
-    init(_ value: Value) {
-        self.value = value
+    // MARK: - Conformance to ModelDelegate protocol
+    
+    func didUpdate(name: String) {
+        print("ContainerViewControllers: ", #function, " value: ", name)
+    }
+    
+    func didUpdate(city: String) {
+        print("ContainerViewControllers: ", #function, " value: ", city)
+    }
+    
+    func didSave() {
+        print("ContainerViewControllers: ", #function)
+
     }
 }
 
-extension Weak: Equatable {
+class ProfileViewController: UIViewController, ModelDelegate {
     
-    public static func ==(lhs: Weak, rhs: Weak) -> Bool {
-        // Sintatic sugar for the reference comparison operator
-        return lhs.value === rhs.value
+    // MARK: - Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
+    
+    // MARK: - Conformance to ModelDelegate protocol
+    
+    func didUpdate(name: String) {
+        print("ProfileViewController: ", #function, " value: ", name)
+    }
+    
+    func didUpdate(city: String) {
+        print("ProfileViewController: ", #function, " value: ", city)
+    }
+    
+    func didSave() {
+        print("ProfileViewController: ", #function)
+    }
+}
+
+
+class ProfileModel {
+
+    var delegates = MulticastDelegate<ModelDelegate>()
+    
+    var name: String = UUID.init().uuidString {
+        didSet {
+            delegates.update { [unowned self] modelDelegate in
+                modelDelegate.didUpdate(name: self.name)
+            }
+        }
+    }
+    
+    var city: String = UUID.init().uuidString {
+        didSet {
+            delegates.update { [unowned self] modelDelegate in
+                modelDelegate.didUpdate(city: self.city)
+            }
+        }
+    }
+    
+    func completedUpdate() {
+        delegates.update { modelDelegate in
+            modelDelegate.didSave()
+        }
+    }
+    
+}
+
+//: Usage
+
+print("Hello Multicast Delegate!")
+
+
+let containerViewController = ContainerViewController()
+let profileViewController = ProfileViewController()
+
+let profileModel = ProfileModel()
+// Attach the delegates
+profileModel.delegates += containerViewController
+profileModel.delegates += profileViewController
+
+profileModel.name = "John"
+
+profileModel.delegates -= profileViewController
+
+profileModel.city = "New York"
+
+// We again attach ProfileViewController
+profileModel.delegates += profileViewController
+
+// Custom closure that is called outside of the model layer, for cases when something custom is required without the need to touch the original code-base. For instance we may implement this function in our view-model layer when using MVVM architecture
+profileModel.delegates ~> { modelDelegate in
+    modelDelegate.didSave()
+}
+
+let delegateZero = profileModel.delegates[0]
+// ContainerViewController will be returned since it was added first
+
+let profleIndexViewControllerIndex = profileModel.delegates[profileViewController]
+// ProfileViewController was added as a second delegate and its indes will be equal to 1
+
+
+// Since we conformed to the Sequence protocol we can easily iterate throught the delegates as it is a collection
+for delegate in profileModel.delegates {
+    print("Delegate: " , delegate)
 }
