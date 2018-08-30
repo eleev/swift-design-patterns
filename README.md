@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 29/August/2018.**
+**Last Update: 30/August/2018.**
 
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
@@ -106,19 +106,18 @@ rise of new classes
 >
 > **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Concurrency_pattern)
 
-- **Active Object:**
-- **Balking Pattern:**
-- **Barrier:**
-- **Double-Checked Locking:**
-- **Guarded Suspension:**
-- **Leaders/Followers:**
-- **Monitor Object:**
-- **Nuclear Reaction:**
-- **Reactor:**
-- **Read Write Lock:**
-- **Scheduler:**
-- **Thread Pool**
-- **Thread-Local Storage:**
+- **Active Object:** decouples method execution from method invocation for objects that each reside in their own thread of control
+- **Balking Pattern:** executes an action on an object when the object is in a particular state
+- **Barrier:** is a type of synchronization method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier
+- **Double-Checked Locking:** used to reduce the overhead of acquiring a lock by first testing the locking criterion (the "lock hint") without actually acquiring the lock. Only if the locking criterion check indicates that locking is required does the actual locking logic proceed.
+- **Guarded Suspension:** manages operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed
+- **Monitor Object:** is a synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true
+- **Nuclear Reaction:** is a type of computation which allows threads to either spawn new threads or converge many threads to one
+- **Reactor:** is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs
+- **Read Write Lock:** allows concurrent access for read-only operations, while write operations require exclusive access
+- **Scheduler:** is the method by which work specified by some means is assigned to resources that complete the work
+- **Thread Pool** maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program
+- **Thread-Local Storage:** is a computer programming method that uses static or global memory local to a thread
 
 ## 🏛 Architectural Patterns
 Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
