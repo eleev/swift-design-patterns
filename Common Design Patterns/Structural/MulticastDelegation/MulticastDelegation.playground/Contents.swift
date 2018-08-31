@@ -96,15 +96,15 @@ public class MulticastDelegate<T> {
 //      delegate.saveModel()
 // }
 extension MulticastDelegate {
-    static func +=(lhs: inout MulticastDelegate, rhs: T) {
+    static func +=(lhs: MulticastDelegate, rhs: T) {
         lhs.add(delegate: rhs)
     }
     
-    static func -=(lhs: inout MulticastDelegate, rhs: T) {
+    static func -=(lhs: MulticastDelegate, rhs: T) {
         lhs.remove(delegate: rhs)
     }
     
-    static func ~>(lhs: inout MulticastDelegate, rhs: @escaping (T) -> ()) {
+    static func ~>(lhs: MulticastDelegate, rhs: @escaping (T) -> ()) {
         lhs.update(rhs)
     }
 }
@@ -123,7 +123,6 @@ extension MulticastDelegate: Sequence {
             return nil
         }
     }
-
 }
 
 
@@ -189,6 +188,8 @@ class ProfileViewController: UIViewController, ModelDelegate {
 
 class ProfileModel {
 
+    // MARK: - Properties
+    
     var delegates = MulticastDelegate<ModelDelegate>()
     
     var name: String = UUID.init().uuidString {
@@ -206,6 +207,8 @@ class ProfileModel {
             }
         }
     }
+    
+    // MARK: - Methods
     
     func completedUpdate() {
         delegates.update { modelDelegate in
