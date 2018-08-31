@@ -1,6 +1,6 @@
 # Multicast Delegation Design Pattern
 
-`Multicast Delegate` is a multipupose design pattern (despite it's categorized here as structural) that futher extends the capabilites of the `Delegate` pattern. `Delegate` pattern establishes one-to-one relationship between the delegate and the delegated types. `Multicast Delegate` pattern allows for multiple delegates to be attached to a delegated type by maintaining a wekly-referenced collection of objects. 
+`Multicast Delegate` is a multipurpose design pattern (despite it's categorized  here as structural) that further extends the capabilities of the `Delegate` pattern. `Delegate` pattern establishes one-to-one relationship between the delegate and the delegated types. `Multicast Delegate` pattern allows for multiple delegates to be attached to a delegated type by maintaining a weakly-referenced collection of objects. 
 
 ## Weak Wrapper
 
@@ -9,18 +9,18 @@ The first thing that we need to do to implement the pattern, is to crete a `weak
 ```swift
 final class Weak {
 
-	// MARK: - Properites	
+	// MARK: - Properties	
 
 	weak var value: AnyObject?
 	
-	// MARK: - Initizlizers
+	// MARK: - Initializers
 	
 	init(_ value: AnyObject) {
 		self.value = value
 	}
 }
 ```
-The `Weak` class is pretty simple: it wrapps `AnyObject` type as a weak property and provices an initializer for that. 
+The `Weak` class is pretty simple: it wraps `AnyObject` type as a weak property and provides an initializer for that. 
 
 ## Multicast Delegate
 
@@ -29,7 +29,7 @@ The next step is to create the base skeleton for the `MulticastDelegate` class:
 ```swift
 class MulticastDelegate<T> {
 
-	  // MARK: - Properties
+	 // MARK: - Properties
     
     private var delegates = [Weak]()
     
@@ -73,14 +73,14 @@ First of all we create a private collection of `Weak` objects called `delegates`
 
 - `add(delegate: T)` - adds a new delegate to the collection of delegates
 - `remove(delegate: T)` - if exists, removes a delegate from the collection
-- `update(: @escaping(T) -> ())` - provides means to delegate responsilibites outside of the delegated type (the example will be shown later)
+- `update(: @escaping(T) -> ())` - provides means to delegate responsibilities outside of the delegated type (the example will be shown later)
 
-Also we have a private method called `recycle` - it's used to clean up the delegate references that were dereferenced and no logner valid. 
+Also we have a private method called `recycle` - it's used to clean up the delegate references that were dereferenced and no longer valid. 
 
 
 ## Use Case 
 
-In order to demostrate how the pattern can be used, let's create a delegate protocol (hopefully alreadt familiar, if not please take a look at the `Delegate` pattern). 
+In order to demonstrate how the pattern can be used, let's create a delegate protocol (hopefully already familiar, if not please take a look at the `Delegate` pattern). 
 
 ```swift
 protocol ModelDelegate: class {
@@ -124,7 +124,7 @@ class ProfileModel {
 }
 
 ```
-`ProfileModel` is a model class that represents a user's profile data and notifies the corresponding pieses of application about the chages. We could save the model and read in places where we need it, however in addition to data updates we have a special function that notifies about saving the data.
+`ProfileModel` is a model class that represents a user's profile data and notifies the corresponding pieces of application about the changes. We could save the model and read the data in places where we need it, however in addition to data updates we have a special function that notifies about saving the data.
 
 ```swift
 class ContainerViewController: UIViewController, ModelDelegate {
@@ -200,7 +200,7 @@ profileModel.delegates.remove(delegate: profileViewController)
 
 // And again update the model:
 profileModel.city = "New York"
-// This time the console outpus is the following:
+// This time the console outputs is the following:
 // ContainerViewControllers:  didUpdate(city:)  value:  New York
 
 // We again attach ProfileViewController
@@ -212,14 +212,14 @@ profileModel.delegates.update { modelDelegate in
 }
 ```
 
-The presented usage example shown that basically we have the same `Delegate` pattern but under the hood it establishes `one-to-many` relationship with its delegates and provides some additional capabilites such as custom closure invokation outside of the delegated type.
+The presented usage example shown that basically we have the same `Delegate` pattern but under the hood it establishes `one-to-many` relationship with its delegates and provides some additional capabilities such as custom closure invocation outside of the delegated type.
 
 ## Adding Steroids
-This section is about syntatic and `API` improvements, you may skip it if you feel yourself a bit overwhelmed and return when you are ready 😉. 
+This section is about syntactic and `API` improvements, you may skip it if you feel yourself a bit overwhelmed and return when you are ready 😉. 
 
 ### Subscrips
 
-Still here? Wonderful! You may be wondering: "What the 💩 is `self[delegate]` line?" in `ModelDelegate` class in `add(delegate:)` method. The answer is simple - we added some "syntatic steroids" to our pattern, so it can be very easily used, without the need for boilerplate code. 
+Still here? Wonderful! You may be wondering: "What the 💩 is `self[delegate]` line?" located in `ModelDelegate` class in `add(delegate:)` method. The answer is simple - we added some "syntactic steroids" to our pattern, so it can be more easily used, without the need for boilerplate code. 
 
 ```swift
 class MulticastDelegate<T> {
@@ -250,9 +250,9 @@ class MulticastDelegate<T> {
 	...
 }
 ```
-These two subscripts add syntatic convenience to our pattern: we can work with our `MulticastDelegate` as it is a collection of delegates, hiding the underlying collection of `Weak` references and providing a more safer mechanism for accessing delegates.
+These two subscripts add syntactic convenience to our pattern: we can work with our `MulticastDelegate` as it is a collection of delegates, hiding the underlying collection of `Weak` references and providing a more safer mechanism for accessing delegates. 
 
-We need that becase often it's a requirement: imagine a case where you need to attach and remove delegates depending on external factors. In such situation we need a mechanism that allows to do so very easily. 
+We need that bacase often it's a requirement: imagine a case where you need to attach and remove delegates depending on external factors. In such situation we need a mechanism that allows to do so very easily. 
 
 ```swift
 profileModel.delegates[0] // returns ContainerViewController
@@ -264,17 +264,19 @@ profileModel.delegates[containerViewController] // returns 0
 profileModel.delegates[profileViewController] // returns 1
 profileModel.delegates[segmentViewController] // returns nil
 ```
-It seems like `delegate` is a collection property, however it is not - it's a reference type for `MulticastDelegate` class. All it does is it hides the implementation and handles situations such as `index ourside of the range` and the other runtime issues yet still providing the expected functionality. 
+It seems like `delegate` is a collection property, however it is not - it's a reference type for `MulticastDelegate` class. All it does is it hides the implementation and handles situations such as `index outside of the range` and the other runtime issues yet still providing the expected functionality. 
+
+Also, the users of our `MulticastDelegate` class will never have to deal with `Weak` class - that is why in source code the `Weak` class is placed as nasted private class of `MulticastDelegate` class.
 
 ### Custom Operators
 
-In the pattern usage code snippet in the previous subsection, we have seed that we need to use the following constructions:
+In the pattern usage code snippet in the previous section, we have seen that we need to use the following constructions:
 
 ```swift
 profileModel.delegates.remove(delegate: profileViewController)
 ``` 
 
-That looks pretty ok, but we can further improve it by introducing custom operators:
+That looks pretty normal in Swift, but we can further improve it by introducing custom operators:
 
 ```swift
 extension MulticastDelegate {
@@ -293,7 +295,7 @@ extension MulticastDelegate {
 }
 ```
 
-The extension adds support for custom operators for `add`, `remove` and `update` `APIs`. The implementation is straightforward yet greathly improves the usage of the same functions, especially when you have a lot of delegate management calls:
+The extension adds support for custom operators for `add`, `remove` and `update` `APIs`. The implementation is straightforward yet greatly improves the usage of the same functions, especially when you have a lot of delegate management calls:
 
 ```swift
 profileModel.delegates -= profileViewController
@@ -333,7 +335,7 @@ extension MulticastDelegate: Sequence {
 That will allow us to iterate and process the collection of delegates for our custom needs:
 
 ```swift
-// Since we conformed to the Sequence protocol we can easily iterate throught the delegates as it is a collection
+// Since we conformed to the Sequence protocol we can easily iterate through the delegates as it is a collection
 for delegate in profileModel.delegates {
     print("Delegate: " , delegate)
 }
@@ -342,10 +344,10 @@ for delegate in profileModel.delegates {
 // Delegate:  <__lldb_expr_7.ContainerViewController: 0x7fe23f608500>
 // Delegate:  <__lldb_expr_7.ProfileViewController: 0x7fe23f504300>
 ```
-The presented "syntatic steroids" not only make the code cleaner and more easily maintained, they also make it safer extendable. 
+The output can be further improved by adding conformance to `CustomStringConvertible` protocol.
+
+The presented "syntactic steroids" not only make the code cleaner and more easily maintained, they also make it safer and extendable. 
 
 ## Conclusion
-
-
-
+The multicast delegate pattern is multipurpose design pattern that decouples responsibilities and manages complex one-to-many relationships between the delegated type and delegate classes. It's a derivative from classic `Delegate` pattern that also has multiple purposes. By adding custom operators, support for `Sequence` extension and custom subscripts we made the pattern pretty Swifty and easy to integrate to existing applications.
 
