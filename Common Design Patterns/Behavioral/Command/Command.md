@@ -1,5 +1,5 @@
 # Command Design Pattern
-`Command` is a behavioral design pattern that creates a type that can change its behavior at runtime. It's achieved through a protocol that defines an interface which is implemented by conforming types. Those types incapsulate all the information needed to perform an action or logic. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on a cocrete implementations that are assigned with *receiver* via *aggrigation*. 
+`Command` is a behavioral design pattern that creates a type that can change its behavior at runtime. It's achieved through a protocol that defines an interface which is implemented by conforming types. Those types incapsulate all the information needed to perform an action or logic. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on concrete implementations that are assigned with *receiver* via *aggrigation*. 
 
 Command pattern is implemented using several building blocks: `command` protocol, `concrete command` types, `receiver` and `caller`. Let's break each component one by one:
 
