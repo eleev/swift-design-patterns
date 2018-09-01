@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 1/September/2018.**
+**Last Update: 01/September/2018.**
 
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
@@ -160,6 +160,7 @@ There were used a number of reference materials such as:
 6. [Swift Patterns](https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
 7. [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
 8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
+9. [Code Complete. Wikipedia](https://en.wikipedia.org/wiki/Code_Complete)
 
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
