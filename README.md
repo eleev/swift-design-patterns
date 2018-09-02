@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 01/September/2018.**
+**Last Update: 02/September/2018.**
 
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
@@ -31,7 +31,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
 - [**Command:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
-- **Iterator:** iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
+- [**Iterator:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
 - **Memento:** provides the ability to restore an object to its previous state (rollback)
 - **Observer:** a.k.a. `Publish/Subscribe` or `Event Listener`. Objects register to observe an event that may be raised by another object
