@@ -2,63 +2,65 @@
 
 import UIKit
 
-protocol DoorCommandProtocol {
+protocol DoorCloseCommand {
     func close()
+}
+protocol DoorOpenCommand {
     func open()
 }
 
-struct MainDoor: DoorCommandProtocol {
-    
+struct MainDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("MainDoor -> " + #function)
     }
-    
+
     func open() {
         print("MainDoor -> " + #function)
     }
 }
 
 
-struct HallDoor: DoorCommandProtocol {
-    
+struct HallDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("HallDoor -> " + #function)
     }
-    
+
     func open() {
         print("HallDoor -> " + #function)
     }
 }
 
-struct GarageDoor: DoorCommandProtocol {
-    
+struct GarageDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("GarageDoor -> " + #function)
     }
-    
+
     func open() {
         print("GarageDoor -> " + #function)
     }
 }
 
 struct SequrityRemoteControl {
-    
+
     // MARK: - Properties
-    
-    var door: DoorCommandProtocol
-    
+
+    var door: DoorCloseCommand & DoorOpenCommand
+
     // MARK: - Initializers
-    
-    init(_ door: DoorCommandProtocol) {
+
+    init(_ door: DoorCloseCommand & DoorOpenCommand) {
         self.door = door
     }
-    
+
     // MARK: - Methods
-    
+
     func openDoor() {
         door.open()
     }
-    
+
     func closeDoor() {
         door.close()
     }
