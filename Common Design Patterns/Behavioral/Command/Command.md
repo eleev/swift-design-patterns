@@ -1,91 +1,93 @@
 # Command Design Pattern
-`Command` is a behavioral design pattern that creates a type that can change its behavior at runtime. It's achieved through a protocol that defines an interface which is implemented by conforming types. Those types incapsulate all the information needed to perform an action or logic. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on concrete implementations that are assigned to *receiver* via *aggrigation*. 
+`Command` is a behavioral design pattern that incapsulates an action and is used to define concrete command actions. Those concerete commands are used for delayed execution or adding dynamic behavior to the *invoker*. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on concrete implementations that are assigned to *invoker* via *aggregation*. 
 
-Command pattern is implemented using several building blocks: `command` protocol, `concrete command types`, `receiver` and `caller`. Let's break each component down one by one:
+Command pattern is implemented using several building blocks: `command` protocol, `concrete command types`, `invoker` and `caller`. Let's break each component down one by one:
 
 - `Command` protocol is a protocol that defines actions to be executed
 - `Concrete command types` are types that conform to the Command protocol
-- `Receiver` is a type that is connected with Command protocol via *aggregation*
+- `Invoker` is a type that is connected with Command protocol via *aggregation* - it receives commands to be executed by the *caller*
 - `Caller` is a type that acts as a source that initiates actions and possibly needs to get some resutls back
 
-If you are confused a bit by all the termonology, don't worry, we will implement each building block programmatically. We could skip all of that and dive straight into the code, but it's important to know the exact terms since it is a common practice and it will help to establish common vocabulary when working in a team. [McConnel]() has a dedicated chapter about the importance of professional terminology and ability to give real-world analogies. 
+If you are confused a bit by all the termonology, don't worry, we will implement each building block programmatically. We could skip all of that and dive straight into the code, but it's important to know the exact terms since it is a common practice and it will help to establish common vocabulary when working in a team. 
 
 ## Building Blocks
-`Command` protocol defines a common interface that is used by the `concrete command` types in order to provide concrete implementation that can then be assigned with the `receiver` and then called by `caller` type.
+`Command` protocol defines a common interface that is used by the `concrete command` types in order to provide concrete implementation that can then be assigned with the `invoker` and then called by `caller` type.
 
 ```swift
-protocol DoorCommandProtocol {
+protocol DoorCloseCommand {
     func close()
+}
+protocol DoorOpenCommand {
     func open()
 }
 ```
-`DoorCommandProtocol` is a protocol where the main interface for door management is defined. The protocol represents the `Command Protocol` building block. Then we need to define concrete door types that conform to the protocol:
+`DoorCloseCommand` and `DoorOpenCommand` are protocols that define interfaces for actions to be executed by the concrete commands. The protocols represent the `Command Protocol` building block and will be used to open and close various doors in a house. Each command (open and close) may have specific implementation for each door type. *Command* pattern helps to decompose those differences into concrete action objects and use the one that is appropriate. 
 
 ```swift
-struct MainDoor: DoorCommandProtocol {
-    
+struct MainDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("MainDoor -> " + #function)
     }
-    
+
     func open() {
         print("MainDoor -> " + #function)
     }
 }
 
 
-struct HallDoor: DoorCommandProtocol {
-    
+struct HallDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("HallDoor -> " + #function)
     }
-    
+
     func open() {
         print("HallDoor -> " + #function)
     }
 }
 
-struct GarageDoor: DoorCommandProtocol {
-    
+struct GarageDoor: DoorCloseCommand, DoorOpenCommand {
+
     func close() {
         print("GarageDoor -> " + #function)
     }
-    
+
     func open() {
         print("GarageDoor -> " + #function)
     }
 }
 ```
-We have created three protocols: `MainDoor`, `HallDoor` and `GarageDoor` which conform to the `DoorCommandProtolol`. These concrete conformances represent `concrete protocol types` building block. The types will be used to change the behavior of the `receiver` duiring the runtime. 
+We have created three structs: `MainDoor`, `HallDoor` and `GarageDoor` each of which conforms to the command protocols (DoorCloseCommang and DoorOpenCommand). These concrete conformances represent `concrete protocol types` building block. The types will be used to change the behavior of the `invoker` duiring the runtime. The *invoker* represents sequirity remote control that can communicate and send actions to all kinds of doors in a house:
 
 ```swift
 struct SequrityRemoteControl {
-    
+
     // MARK: - Properties
-    
-    var door: DoorCommandProtocol
-    
+
+    var door: DoorCloseCommand & DoorOpenCommand
+
     // MARK: - Initializers
-    
-    init(_ door: DoorCommandProtocol) {
+
+    init(_ door: DoorCloseCommand & DoorOpenCommand) {
         self.door = door
     }
-    
+
     // MARK: - Methods
-    
+
     func openDoor() {
         door.open()
     }
-    
+
     func closeDoor() {
         door.close()
     }
 }
 ```
 
-`SequirityRemoteControl` struct represents a remote control that can perform `openDoor` and `closeDoor` actions for various doors in a house. This type represents a `receiver` building block, since it basically receives messages from the `caller` and delegates the execution ot the `concrete command types`. 
+`SequirityRemoteControl` struct represents a remote control that can perform `openDoor` and `closeDoor` actions for various doors in a house. This type represents an `invoker` building block, since it basically receives messages from the `caller` and delegates the execution to the `concrete command types`. 
 
-Instead of storing each of the door in the struct (in a case when we may don't know the exact list of doors, or may be the remote control can be reconfigured for different sequirity systems) we use `dependency injection` in a form of *aggrigation* via `initializer`. That gives us an ability to change the concrete action during the runtime:
+Instead of storing each of the door in the *invoker* (in a case when we may don't know the exact list of doors, or may be the remote control can be reconfigured for different sequirity systems) we use `dependency injection` in a form of *aggregation* via `initializer`. That gives us an ability to change the concrete action during the runtime:
 
 ```swift
 let mainDoor = MainDoor()
@@ -106,6 +108,8 @@ We have created several doors and a remote control with the assigned door. Then 
 
 As you can see we can easily change the *concrete command type* and change the resulting action of the *receiver* during the runtime. 
 
-We used *aggrigation* as a form of `composition` because doors can outlive the remote control, which means that the remote control doesn't own the door that it is communicating to. This is an important distinction with an another form of `composition` called *association*. 
+We used *aggregation* as a form of `composition` because doors can outlive the remote control, which means that the remote control doesn't own the door that it is communicating to. This is an important distinction with an another form of `composition` called *association*, however it's not always the case - *aggregation* is just more suitable for this particular example.
 
 ## Conclusion
+`Command` design pattern is very useful in cases when we need one object to be able to perform various actions without the need to store all the possible actions in a single object. The pattern decomposes the actions into concrete types by using protocol conformance and the *invoker* type that holds a command object to perform concrete actions. Concrete command objects hold actions that can be executed later depending on requirements. 
+
