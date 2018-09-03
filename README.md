@@ -11,7 +11,7 @@
 There are many design patterns for various purposes and use-cases. We may not remember them all - it's absolutely normal. This repository aims to collect as many design patterns as possbile with examples implemented using the latest version of `Swift`, and serve as a reference material for eveyone who is willing to learn something new.
 
 # ☢️ Disclamer
-The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that look strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
+The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that looks strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
 
 If you find that something is not clear or has an issue, please, don't judge immediately in a negative way. It's an open source and you have such an opportunity to polietly tell me about that or even create a pool request (which is the best way to contribute). The other piece of motivation is that I really want to create learning material that is `solid` and yet `easy` to understand for developers that know basics of `OOP` and `POP` paradigms (since it's `Swift` and `POP` is almost as important as `OOP` IMHO).
 
