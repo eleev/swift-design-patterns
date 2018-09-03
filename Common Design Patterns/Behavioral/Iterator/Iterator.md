@@ -4,7 +4,7 @@
 We can implement this pattern in a couple of different ways: by creating the *iterator* and *iteratable* protocols from scratch or we can use similar protocols that already are offered by the Swift standard library. The differences between the approaches will be minimal, except you need some very sophisticated features. 
 
 ## Prerequisites
-We start off from a simple, custom model type. It will model a single book:
+We start off from a simple, custom model type. It will represent a single book:
 
 ```swift
 struct Book {
@@ -24,10 +24,10 @@ struct Books {
 ```
 The book storage is described by two properties: *category* represented by `String` type and `array` of *books*. Swift provides a default designated initializers for both of the struct types.
 
-We can iterate through the books by accessing the `books` property of the `Books` type. However if we mark `books` property as *private*, the access will be restricted and we will not able to iterate through the `books` array. This is an example where we need to adopt `Iterator` pattern to have such a possibility.
+We can iterate through the books by accessing the `books` property of the `Books` type. However if we mark `books` property as *private*, the access will be restricted and we will not be able to iterate through the `books` array. This is the example where we need to adopt `Iterator` pattern to have such a possibility.
 
 ## Iterator Protocol
-Swift already has a protocol called `IteratorProtocol` that is responsible supplying the values of a sequence one at a time. In order to create a custom iterator that fits our needs, we need to create a type that conforms to the `IteratorProtocol`:
+Swift already has a protocol called `IteratorProtocol` that is responsible for supplying the values of a sequence one at a time. In order to create a custom iterator that fits our needs, we need to create a type that conforms to the `IteratorProtocol`:
 
 ```swift
 struct BooksIterator: IteratorProtocol {
@@ -67,7 +67,7 @@ extension Books: Sequence {
 }
 ```
 
-In order to conform to the `Sequence` protocol we need to implement a single method called `makeIterator` and return an type that conforms to the `IteratorPrtocol`. In our case we siply created an extension for `Books` type and returned the `BooksIterator` type that describes the way books can be iterated. 
+In order to conform to the `Sequence` protocol we need to implement a single method called `makeIterator` and return type that conforms to the `IteratorPrtocol`. In our case we simply created an extension for `Books` type and returned the `BooksIterator` type that describes the way books can be iterated. 
 
 ```swift
 let gameOfOwls = Book(author: "King", name: "Game of Owls")
@@ -85,7 +85,7 @@ In order to check if everything works as planned, we have created a couple of bo
 Book(author: "King", name: "Game of Owls")
 Book(author: "Martin", name: "Candy Factory and Crazy Cat")
 ```
-However, we can use even more simplified approach for this particular case, where we don't need to create a separate type that conforms to `IteratorProtocol`. 
+However, we can use even more simplified approach for this particular case, where we don't need to create (sort of) a separate type that conforms to `IteratorProtocol`. 
 
 ## Simplified Iterator
 Since we use an array to store our books, we can simply add a conformance to `Sequence` type and wrap our iteration logic into `AnyIterator` type:
@@ -105,9 +105,11 @@ extension Books: Sequence {
     }
 }
 ```
-When you use a standard collection we don't always need to create a custom type for `IteratorProtocol`. The thing is that array already conforms to `MutableCollection` protocol. `MutableCollection` is a derivative of `Collection` and `Collection` is a derivative of `Sequence` protocol. That means we already have conformance to `Sequence` protocol for our arrays, and we can make a method call for `makeIterator` method and get the "default" iterator which can then be used to get the next element in a sequence. Then we simply wrapped the iteration logic into `AnyIterator` of type `Book` and returned it. `AnyIterator` is simply a type-erased iterator for current sequence. 
+When we use a standard collection, we don't always need to create a custom type for `IteratorProtocol`. The thing is that array type already conforms to `MutableCollection` protocol. `MutableCollection` is a derivative of `Collection` and `Collection` is a derivative of `Sequence` protocol. 
+
+That means we already have conformance to `Sequence` protocol for our array, and we can make a method call for `makeIterator` method and get the "default" iterator which can then be used to get the next element in a sequence. Then we simply wrapped the iteration logic into `AnyIterator` of type `Book` and returned it. `AnyIterator` is simply a type-erased iterator for current sequence. 
 
 Please note that it may not always be the case: we may have a [Linked List](https://github.com/jVirus/swift-algorithms-data-structs/blob/master/Data%20Structures.playground/Pages/Linked%20List.xcplaygroundpage/Contents.swift), or we may want to add iteration logic to our [Binary Search Tree](https://github.com/jVirus/swift-algorithms-data-structs/blob/master/Data%20Structures.playground/Pages/BinarySearchTree.xcplaygroundpage/Contents.swift) data structures.
 
 ## Conclusion
-When you have a type that needs to be accessed and processed in a loop, use `Iterator` pattern. It hides the type's underlying representation and creates logic for accessing and traversing elements. The implementation in Swift is pretty straightforward, all you need to understand is how to use a couple of building blocks such as `IteratorProtocol` and `Sequence` type. For more advanced usages take a look at `Collection` protocol that also adds index subscripting capability. 
+When you have a type that needs to be accessed and processed in a loop, use `Iterator` pattern. It hides the type's underlying representation and creates logic for accessing and traversing elements. The implementation in Swift is pretty straightforward, all you need to understand is how to use a couple of building blocks such as `IteratorProtocol` and `Sequence` protocols. For more advanced usages take a look at `Collection` protocol, that adds index subscripting capability and futher extends iteration capabilites.
