@@ -6,6 +6,7 @@ struct Book {
 }
 
 struct Books {
+    var category: String
     var books: [Book]
 }
 
@@ -13,8 +14,8 @@ struct BooksIterator: IteratorProtocol {
 
     // MARK: - Properties
     
-    private var current = 0
     private let books: [Book]
+    private var current = 0
 
     // MARK: - Initializers
     
@@ -32,6 +33,7 @@ struct BooksIterator: IteratorProtocol {
 
 
 extension Books: Sequence {
+
     func makeIterator() -> AnyIterator<Book> {
         var iterator = books.makeIterator()
 
@@ -49,7 +51,10 @@ extension Books: Sequence {
     
 }
 
-let books = Books(books: [Book(author: "King", name: "Game of Owls"), Book(author: "Martin", name: "Candy Factory and Crazy Cat")])
+let gameOfOwls = Book(author: "King", name: "Game of Owls")
+let candyFactory = Book(author: "Martin", name: "Candy Factory and Crazy Cat")
+
+let books = Books(category: "Favorite Books", books: [gameOfOwls, candyFactory])
 
 books.forEach { book in
     print(book)
