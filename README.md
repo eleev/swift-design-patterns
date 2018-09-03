@@ -17,7 +17,7 @@ If you find that something is not clear or has an issue, please, don't judge imm
 
 I want to keep this repo up to date, implement the latest design, architecture and concurrency patterns. Open-source for eveyone :octocat:
 
-# 📚 List of content 
+# 📚 List of Contents
 
 ## 🏗 Common Design Patterns
 
