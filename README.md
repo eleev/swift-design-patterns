@@ -94,7 +94,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Tombstone:** an intermediate "lookup" object contains the real location of an object.
 rise of new classes
 - **Extensibility:** a.k.a. `Framework` - hide complex code behind a simple interface
-- **Marker:** an empty interface to associate metadata with a class.
+- [**Marker:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class.
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
 - [**Delegation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
