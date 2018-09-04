@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 03/September/2018.**
+**Last Update: 04/September/2018.**
 
 🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
 
@@ -66,7 +66,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Other 
 
 - **Dependency Injection:** a class accepts the objects it requires from an injector instead of creating the objects directly
-- **Lazy Initialization:**: tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
+- [**Lazy Initialization:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
 - **Object Pool**: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
 
 
