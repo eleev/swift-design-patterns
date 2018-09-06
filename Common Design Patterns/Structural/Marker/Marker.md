@@ -9,8 +9,8 @@ In Swift the pattern is implemented using `protocols`. We simply crete an *empty
 
 ## Issues
 
-The main issue with `Marker` pattern is that it's implemented using protocols, that defines contract to be conformed or implemented. Then all the types that inherit from the marked type also has that metadata associated with them. Basically the marker conformance cannot be undone for the child types. 
+The main issue with `Marker` pattern is that it's implemented using protocols, that defines contract to be conformed or implemented. Then all the types that inherit from the marked type also have that metadata associated with them. Basically the marker conformance cannot be undone for the child types which may lead to unexpected run-time issues, that are hard to debug.
 
-The described issue can be eliminated with *custom, user-defined attribues* which are not yet supported by Swift - only pre-defined *attribues* can used. 
+The described issue can be eliminated with *custom, user-defined attribues* which are not yet supported by Swift - only pre-defined *attribues* can be used. 
 
 ## Conclusion
