@@ -2,10 +2,10 @@
 import SpriteKit
 
 protocol Interactable {  /* empty */ }
-protocol Destructable { /* empty */ }
+protocol Destructible { /* empty */ }
 protocol PositionUpdatable { /* empty */ }
 
-class BunnyEnemy: SKSpriteNode, Interactable, Destructable, PositionUpdatable {
+class BunnyEnemy: SKSpriteNode, Interactable, Destructible {
     
     // MARK: - Properties
     
@@ -24,7 +24,7 @@ class BunnyEnemy: SKSpriteNode, Interactable, Destructable, PositionUpdatable {
     }
 }
 
-class Player: SKSpriteNode, PositionUpdatable {
+class Player: SKSpriteNode, Destructible, PositionUpdatable {
     
     // MARK: - Initializers
     
@@ -41,13 +41,19 @@ class Player: SKSpriteNode, PositionUpdatable {
 
 struct InteractionSystem {
     
+    // MARK: - Properties
+    
     typealias InteractableSprite = SKSpriteNode & Interactable
     
     private(set) var interactables: [InteractableSprite]
     
+    // MARK: - Initializers
+    
     init() {
         interactables = []
     }
+    
+    // MARK: - Methods
     
     mutating func add(interactable: InteractableSprite) {
         interactables += [interactable]
@@ -62,12 +68,16 @@ struct InteractionSystem {
 
 struct DestructionSystem {
     
-    typealias DestructableSprite = SKSpriteNode & Destructable
+    // MARK: - Properties
     
-    private(set) var destructables: [DestructableSprite]
+    typealias DestructibleSprite = SKSpriteNode & Destructible
+    
+    private(set) var destructibles: [DestructibleSprite]
+    
+    // MARK: - Initializers
     
     init() {
-        destructables = []
+        destructibles = []
     }
     
     private lazy var animationSequence: SKAction = {
@@ -77,28 +87,36 @@ struct DestructionSystem {
         return sequence
     }()
     
-    mutating func add(destructable: DestructableSprite) {
-        destructables += [destructable]
+    // MARK: - Methods
+    
+    mutating func add(destructible: DestructibleSprite) {
+        destructibles += [destructible]
     }
     
     mutating func destroy() {
-        for destructable in destructables {
-            destructable.run(animationSequence)
+        for destructible in destructibles {
+            destructible.run(animationSequence)
         }
     }
 }
 
 struct PositionUpdatableSystem {
     
+    // MARK: - Properties
+    
     typealias PositionUpdatableSprite = SKSpriteNode & PositionUpdatable
     
     private(set) var updatables: [PositionUpdatableSprite]
     var inputSource: InputSource
     
+    // MARK: - Initializers
+    
     init(inputSource: InputSource) {
         self.inputSource = inputSource
         updatables = []
     }
+    
+    // MARK: - Methods
     
     mutating func add(updatable: PositionUpdatableSprite) {
         updatables += [updatable]
@@ -168,9 +186,15 @@ class Scene: SKScene {
         // ...
         // At some point, enemies are added to the Destruction System, this piece of code simulates that:
         if currentTime == 3840578 {
-            destructionSystem.add(destructable: bunny)
-            destructionSystem.add(destructable: bunnyFat)
+            destructionSystem.add(destructible: bunny)
+            destructionSystem.add(destructible: bunnyFat)
         }
+        
+        // Later on, a bunny killed our player, so we add the player to the Destruction System to be destroyed:
+        destructionSystem.add(destructible: player)
+        
+        // At the end of the update loop we call the destroy method to delegate the destruction to the corresponding system
+        destructionSystem.destroy()
     }
     
     // MARK: - Touch handling
