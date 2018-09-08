@@ -229,7 +229,7 @@ class MulticastDelegate<T> {
     /// Convenience subscript for accessing delegate by index, returns nil if there is no object found
     public subscript(index: Int) -> T? {
         get {
-            guard index > -1, index < delegates.count - 1 else {
+            guard index > -1, index < delegates.count else {
                 return nil
             }
             return delegates[index].value as? T
