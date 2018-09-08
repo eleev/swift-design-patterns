@@ -43,7 +43,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Other
 
 - **Externalize the Stack:** turn a recursive function into an iterative one that uses a stack
-- **Null Object:** designed to act as a default value of an object
+- [**Null Object:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) designed to act as a default value of an object
 - **Weak Reference:** de-couple an observer from an observable
 - **Protocol Stack:** communications are handled by multiple layers, which form an encapsulation hierarchy
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
