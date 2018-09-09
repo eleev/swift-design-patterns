@@ -34,7 +34,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - [**Iterator:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
 - **Memento:** provides the ability to restore an object to its previous state (rollback)
-- **Observer:** a.k.a. `Publish/Subscribe` or `Event Listener`. Objects register to observe an event that may be raised by another object
+- **Observer:** a.k.a. `Event Listener`. Objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns, in some implementations even with classic `Delegation` pattern
 - **State:** a clean way for an object to partially change its type at runtime
 - **Strategy:** algorithms can be selected on the fly, using composition
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
@@ -49,6 +49,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
 - **Single-Serving Visitor:** optimise the implementation of a visitor that is allocated, used only once, and then deleted
 - **Specification:** recombinable business logic in a boolean fashion
+- **Publish/Subscribe:** messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead categorize published messages into classes without knowledge of which subscribers, if any, there may be. The pattern has similarities with `Observer`, `Event Listener` and `Multicast Delegation`, however it has its differences and weaknesses as well
 
 ### Creational 
 > Creational design patterns are design patterns that deal with object creation mechanisms, trying to create objects in a manner suitable to the situation. The basic form of object creation could result in design problems or in added complexity to the design. Creational design patterns solve this problem by somehow controlling this object creation.
