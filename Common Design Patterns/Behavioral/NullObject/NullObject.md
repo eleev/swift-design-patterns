@@ -39,7 +39,7 @@ class Basket {
     }
 }
 ```
-`Basket` is a *class* that holds an array of `Product` instances, has a single method called `add(product:)` and a custom *subscript* for accessing contents of itself.
+`Basket` is a *class* that holds an array of `Product` instances, has a single method called `add(product:)` and a custom *subscript* for safeley accessing contents of itself.
 
 ```swift
 class MarketViewController: UIViewController {
