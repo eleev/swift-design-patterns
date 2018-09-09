@@ -2,7 +2,7 @@
 
 `Null Object` is a behavioral design pattern that is aimed to solve a problem, when `nil` values need to be handled with optional binding using `if let` or `guard` statements.  
 
-Optionals in Swift represent either one of the two: value or its absence. However in cases when we need something else but not nil, we have to manually check and handle values whether they are optionals or not. In order to solve nil values we can throw an error, manually unwrap objects or use *Null Object*. 
+In a nutshell, optionals in Swift represent either one of the two: value or its absence. However in cases when we need something else but not nil, we have to manually check and handle values whether they are optionals or not. In order to solve nil values we can throw an error, manually unwrap objects or use *Null Object*. 
 
 `Null Object` pattern offers a solution for such cases by eliminating optionals and providing special versions of objects.
 
@@ -131,7 +131,7 @@ struct NullObjectProduct: Product {
     init() { }
 }
 ```
-We will use this *struct* instead of optional product. Note that `Basket` class is not touched, it remained the same. All we need to do is to change the data source setup code, in our view controller:
+We will use this *struct* instead of optional product in *subscript* implementation. Note that `Basket` class is not touched, it remained the same. All we need to do is to change the data source setup code, in our view controller and get rid of *nil* handling code:
 
 ```swift
 class MarketViewController: UIViewController {
@@ -160,9 +160,10 @@ class MarketViewController: UIViewController {
     }
 }
 ```
-We no longer need to use optional unwrapping to test against nil values. Instead if we access basket outside of the accessible range we get a `Null Object` that can be successfully used in further data related operations. That made our code more cleaner, easy to read and potentially save us from implementing optional-related handling code.
+We no longer need to use optional unwrapping to test against *nil* values. Instead if we access basket outside of the accessible range we get a `Null Object` that can be successfully used in further data related operations. That made our code more cleaner, easy to read and potentially save us from implementing optional-related handling code.
 
 ## Issues
 The pattern is not a replacement for Swift's optionals or error handling system, and should not be used in every case where optionals need to be handled. The pattern may become a cause of issues, since each of the cases that pattern handles, needs to be separately implemented and maintained.
 
 ## Conclusion 
+The pattern is a way to go in cases when an intermediate state of an object can be represented by a special-case type called *Null Object* . Intermediate state means that we may need something else in addition to *nil* or fully constructed object. For example you may need to have a `GuestUser` type in addition to regular `User` type, in order to handle the case when a new user just wants to take a look at your application, without the need to have a registered account. *Null Object* pattern may be very helpful in such cases.
