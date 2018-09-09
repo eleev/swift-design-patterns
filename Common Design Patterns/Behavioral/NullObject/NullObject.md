@@ -1,10 +1,10 @@
 # Null Object Design Pattern
 
-`Null Object` is a behavioral design pattern that is aimed to solve a problem, when `null` or `nil` values need to be handled with optional binding using `if let` or `guard` statements.  
+`Null Object` is a behavioral design pattern that is aimed to solve a problem, when `nil` values need to be handled with optional binding using `if let` or `guard` statements.  
 
 Optionals in Swift represent either one of the two: value or its absence. However in cases when we need something else but not nil, we have to manually check and handle values whether they are optionals or not. In order to solve nil values we can throw an error, manually unwrap objects or use *Null Object*. 
 
-`Null Object` pattern offers a solution for such cases by eliminating optionals and providing special versions of the same objects.
+`Null Object` pattern offers a solution for such cases by eliminating optionals and providing special versions of objects.
 
 ## Context
 We are going to take a look at an example that does not use *Null Object* pattern and then make an improvement by adding one.
