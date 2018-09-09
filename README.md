@@ -29,9 +29,9 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
-- [**Command:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters
+- [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
-- [**Iterator:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
+- [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
 - **Memento:** provides the ability to restore an object to its previous state (rollback)
 - **Observer:** a.k.a. `Event Listener`. Objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns, in some implementations even with classic `Delegation` pattern
@@ -43,7 +43,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Other
 
 - **Externalize the Stack:** turn a recursive function into an iterative one that uses a stack
-- [**Null Object:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) designed to act as a default value of an object
+- [**Null Object:**](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) designed to act as a default value of an object
 - **Weak Reference:** de-couple an observer from an observable
 - **Protocol Stack:** communications are handled by multiple layers, which form an encapsulation hierarchy
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
@@ -58,16 +58,16 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- [**Abstract Factory:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
+- [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
 - **Factory Method:** centralize creation of an object of a specific type choosing one of several implementations
-- [**Builder:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
+- [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
 - **Prototype:** used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
-- [**Singleton:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object
+- [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object
 
 #### Other 
 
 - **Dependency Injection:** a class accepts the objects it requires from an injector instead of creating the objects directly
-- [**Lazy Initialization:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
+- [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
 - **Object Pool**: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
 
 
@@ -80,12 +80,12 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - **Adapter:** 'adapts' one interface for a class into one that a client expects
-- [**Bridge:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently
+- [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently
 - **Composite:** a tree structure of objects where every object has the same interface
 - **Decorator:** add additional functionality to a class at runtime where subclassing would result in an exponential 
-- [**Facade:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks
+- [**Facade:**](/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks
 - **Flyweight:** a large quantity of objects share a common properties object to save space
-- [**Proxy:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) a class functioning as an interface to another thing
+- [**Proxy:**](/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) a class functioning as an interface to another thing
 
 #### Other 
 
@@ -95,12 +95,12 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Tombstone:** an intermediate "lookup" object contains the real location of an object.
 rise of new classes
 - **Extensibility:** a.k.a. `Framework` - hide complex code behind a simple interface
-- [**Marker:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class.
+- [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class.
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
-- [**Delegation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
-- [**Multicast Delegatation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
-- **Coordinator:** is and object that encapsulates lifecycle that is spread over a collection of view controllers
+- [**Delegation:**](/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
+- [**Multicast Delegatation:**](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
+- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is and object that encapsulates lifecycle that is spread over a collection of view controllers
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
 ## 🚅 Concurrency Design Patterns
