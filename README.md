@@ -100,6 +100,7 @@ rise of new classes
 - [**Delegation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
 - [**Multicast Delegatation:**](https://github.com/jVirus/swift-design-patterns/blob/master/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
 - **Coordinator:** is and object that encapsulates lifecycle that is spread over a collection of view controllers
+- **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
 ## 🚅 Concurrency Design Patterns
 > Concurrency patterns are those types of design patterns that deal with the multi-threaded programming paradigm.
