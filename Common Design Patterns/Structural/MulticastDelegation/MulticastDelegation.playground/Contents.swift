@@ -49,6 +49,12 @@ public class MulticastDelegate<T> {
         delegates.remove(at: index)
     }
     
+    func dispose(delegate: T) {
+        if let index = self[delegate] {
+            delegates[index].value = nil
+        }
+    }
+    
     public func update(_ completion: @escaping(T) -> ()) {
         // Recycle the values that are nil so the completion closure is called for non nil values
         recycle()
@@ -100,12 +106,24 @@ extension MulticastDelegate {
         lhs.add(delegate: rhs)
     }
     
+    static func +=(lhs: MulticastDelegate, rhs: [T]) {
+        rhs.forEach { lhs.add(delegate: $0) }
+    }
+    
     static func -=(lhs: MulticastDelegate, rhs: T) {
         lhs.remove(delegate: rhs)
     }
     
+    static func -=(lhs: MulticastDelegate, rhs: [T]) {
+        rhs.forEach { lhs.remove(delegate: $0) }
+    }
+    
     static func ~>(lhs: MulticastDelegate, rhs: @escaping (T) -> ()) {
         lhs.update(rhs)
+    }
+    
+    static func ~>(lhs: MulticastDelegate, rhs: [(T) -> ()]) {
+        rhs.forEach { lhs.update($0) }
     }
 }
 
@@ -224,21 +242,21 @@ print("Hello Multicast Delegate!")
 
 
 let containerViewController = ContainerViewController()
-let profileViewController = ProfileViewController()
+var profileViewController: ProfileViewController? = ProfileViewController()
 
 let profileModel = ProfileModel()
 // Attach the delegates
 profileModel.delegates += containerViewController
-profileModel.delegates += profileViewController
+profileModel.delegates += profileViewController!
 
 profileModel.name = "John"
 
-profileModel.delegates -= profileViewController
+profileModel.delegates -= profileViewController!
 
 profileModel.city = "New York"
 
 // We again attach ProfileViewController
-profileModel.delegates += profileViewController
+profileModel.delegates += profileViewController!
 
 // Custom closure that is called outside of the model layer, for cases when something custom is required without the need to touch the original code-base. For instance we may implement this function in our view-model layer when using MVVM architecture
 profileModel.delegates ~> { modelDelegate in
@@ -248,9 +266,11 @@ profileModel.delegates ~> { modelDelegate in
 let delegateZero = profileModel.delegates[0]
 // ContainerViewController will be returned since it was added first
 
-let profleIndexViewControllerIndex = profileModel.delegates[profileViewController]
+let profleIndexViewControllerIndex = profileModel.delegates[profileViewController!]
 // ProfileViewController was added as a second delegate and its indes will be equal to 1
 
+profileViewController = nil
+print("Profile View Controller is : ", profileViewController as Any)
 
 // Since we conformed to the Sequence protocol we can easily iterate throught the delegates as it is a collection
 for delegate in profileModel.delegates {
