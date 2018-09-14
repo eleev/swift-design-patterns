@@ -175,7 +175,61 @@ The first subscript returns an *Observer* for the specified index or nil, if the
 
 The next subscript is used to search an *Observer* in the collection of observers, by providing the reference that we are interested in. As a result the subscript will return the index of the *Observer*.
 
-The next step is to implement custom operators
+The next step is to implement custom operators.
+
+```swift
+// Removal of Observer
+infix operator --=
+
+// Disposal of Observer
+infix operator -=
+
+extension Subject {
+    static func +=(lhs: Subject, rhs: Observer) {
+        lhs.add(observer: rhs)
+    }
+    
+    static func +=(lhs: Subject, rhs: [Observer]) {
+        rhs.forEach { lhs.add(observer: $0) }
+    }
+    
+    static func --=(lhs: Subject, rhs: Observer) {
+        lhs.remove(observer: rhs)
+    }
+    
+    static func --=(lhs: Subject, rhs: [Observer]) {
+        rhs.forEach { lhs.remove(observer: $0) }
+    }
+    
+    static func -=(lhs: Subject, rhs: Observer) {
+        lhs.dispose(observer: rhs)
+    }
+    
+    static func -=(lhs: Subject, rhs: [Observer]) {
+        rhs.forEach { lhs.dispose(observer: $0) }
+    }
+    
+    static func ~>(lhs: Subject, rhs: Notification) {
+        lhs.send(notification: rhs)
+    }
+    
+    static func ~>(lhs: Subject, rhs: [Notification]) {
+        rhs.forEach { lhs.send(notification: $0) }
+    }
+}
+```
+Basically we have defined the following operators for the `APIs` of `Subject` class:
+
+- `+=` adds an *Observer* to the *Subject*
+- `+=` alternative method - adds an array of *Observer* to the *Subject*
+- `--=` removes an *Observer* from the *Subject*
+- `--=`alternative operator - removes an array of *Observer* from the *Subject*
+- `-=` disposes an `Observer` from the `Subject`
+- `-=` alternative operator - disposes an array of `Observer` from the `Subject`
+- `~>` sends the specified `Notification`
+- `~>` alternative operator - sends the specified array of `Notification`
+
+There are quite a few operators, which may seem a bit heavy to understand immediately. However, there is nothing complicated, these are just syntatic sugar blocks that make the code more easy to write and read. We will see that in the next section.
 
 ## Usage
 
