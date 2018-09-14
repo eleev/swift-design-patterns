@@ -130,7 +130,6 @@ extension Subject {
         rhs.forEach { lhs.remove(observer: $0) }
     }
     
-    
     static func -=(lhs: Subject, rhs: Observer) {
         lhs.dispose(observer: rhs)
     }
@@ -146,7 +145,81 @@ extension Subject {
     static func ~>(lhs: Subject, rhs: [Notification]) {
         rhs.forEach { lhs.send(notification: $0) }
     }
+
 }
+
+//: Usage:
+
+class ObserverOne: Observer {
+    
+    func notify(with notification: Notification) {
+        print("Observer One: " , notification)
+    }
+    
+}
+
+class ObserverTwo: Observer {
+    
+    func notify(with notification: Notification) {
+        print("Observer Two: " , notification)
+    }
+    
+}
+
+class ObserverThree: Observer {
+    
+    func notify(with notification: Notification) {
+        print("Observer Three: " , notification)
+    }
+    
+}
+
+final class EmailNotification: Notification {
+    
+    // MARK: - Conformance to Notification protocol
+    
+    var data: Any?
+    
+    // MARK: - Initializers
+    
+    init(message: String) {
+        data = message
+    }
+}
+
+extension EmailNotification: CustomStringConvertible {
+    var description: String {
+        return "data: \(data as Any)"
+    }
+}
+
+let observerOne = ObserverOne()
+var observerTwo: ObserverTwo? = ObserverTwo()
+let observerThree = ObserverThree()
+
+let subject = Subject()
+subject += [observerOne, observerTwo!, observerThree]
+
+
+subject.send(notification: EmailNotification(message: "Hello Observers, this messag was sent from the Subscriber!"))
+
+let notificationOne = EmailNotification(message: "Message #1")
+let notificationTwo = EmailNotification(message: "Message #2")
+let notificationThree = EmailNotification(message: "Message #3")
+
+subject ~> [notificationOne, notificationTwo, notificationThree]
+
+subject --= observerThree
+
+subject ~> notificationOne
+
+observerTwo = nil
+print("Observer Two was set to nil: ", observerTwo as Any)
+
+subject ~> [notificationOne, notificationTwo, notificationThree]
+
+
+//: Experimental code:
 
 //public final class Disposable {
 //
@@ -227,72 +300,3 @@ extension Subject {
 //        action(&_value)
 //    }
 //}
-
-class ObserverOne: Observer {
-    
-    func notify(with notification: Notification) {
-        print("Observer One: " , notification)
-    }
-    
-}
-
-class ObserverTwo: Observer {
-    
-    func notify(with notification: Notification) {
-        print("Observer Two: " , notification)
-    }
-    
-}
-
-class ObserverThree: Observer {
-    
-    func notify(with notification: Notification) {
-        print("Observer Three: " , notification)
-    }
-    
-}
-
-final class EmailNotification: Notification {
-    
-    // MARK: - Conformance to Notification protocol
-    
-    var data: Any?
-    
-    // MARK: - Initializers
-    
-    init(message: String) {
-        data = message
-    }
-}
-
-extension EmailNotification: CustomStringConvertible {
-    var description: String {
-        return "data: \(data as Any)"
-    }
-}
-
-let observerOne = ObserverOne()
-var observerTwo: ObserverTwo? = ObserverTwo()
-let observerThree = ObserverThree()
-
-let subject = Subject()
-subject += [observerOne, observerTwo!, observerThree]
-
-
-subject.send(notification: EmailNotification(message: "Hello Observers, this messag was sent from the Subscriber!"))
-
-let notificationOne = EmailNotification(message: "Message #1")
-let notificationTwo = EmailNotification(message: "Message #2")
-let notificationThree = EmailNotification(message: "Message #3")
-
-subject ~> [notificationOne, notificationTwo, notificationThree]
-
-subject --= observerThree
-
-subject ~> notificationOne
-
-observerTwo = nil
-print("Observer Two was set to nil: ", observerTwo as Any)
-
-subject ~> [notificationOne, notificationTwo, notificationThree]
-
