@@ -5,9 +5,22 @@
 
 The pattern has some similarities with `Multicast Delegate` and `Event Listener`, however *Observer* is different pattern and has its own applications.
 
-## Context
-
 ## Observers
+In order to implement the pattern, we start off from defining an `Observer` protocol. The protocol will be used for each type that requires to receive notifications from the emitter:
+
+```swift
+protocol Observer: class {
+    func notify(with notification: Notification)
+}
+```
+The protocol defines a single method called `notify(with notification:)`. This method will be called by the `Subject` (a.k.a. emitter). The parameter of type `Notification` is represented as a protocol:
+
+```swift
+protocol Notification: class {
+    var data: Any? { get }
+}
+```
+`Notification` protocol defines the base interface for all kinds of notifications that are sent by the *Subject* to all the *Observera*. The protocol contains a signle property that represents any data. We will implement the concrete notification type for type-safety a bit later. 
 
 ## Subject
 
