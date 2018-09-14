@@ -90,9 +90,9 @@ class Subject {
     ///
     /// - Parameter observer: is an Observer to be disposed
     func dispose(observer: Observer) {
-        queue.async(flags: .barrier) { [weak self] in
-            if let index = self?[observer] {
-                self?.observers[index].value = nil
+        queue.sync(flags: .barrier) {
+            if let index = self[observer] {
+                observers[index].value = nil
             }
         }
     }
