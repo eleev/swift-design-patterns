@@ -36,7 +36,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Memento:** provides the ability to restore an object to its previous state (rollback)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns
 - **State:** a clean way for an object to partially change its type at runtime
-- **Strategy:** algorithms can be selected on the fly, using composition
+- [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
 - **Visitor:** a way to separate an algorithm from an object
 
