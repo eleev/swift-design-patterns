@@ -298,19 +298,29 @@ Observer One:  data: Optional("Hello Observers, this messag was sent from the Su
 Observer Two:  data: Optional("Hello Observers, this messag was sent from the Subject!")
 Observer Three:  data: Optional("Hello Observers, this messag was sent from the Subject!")
 ```
-Next we may remove one of the *observers* and again send the notification:
+Next we removed one of the *observers* and again send the notification:
 
 ```swift
 subject --= observerThree
 subject ~> [notificationOne, notificationTwo, notificationThree]
 ```
 
-We removed the third observer and sent several notification to the remaining observers. 
+After removing the third observer we sent several notification to the remaining observers and got the following output:
 
-In this example we used `Subject` as a standalone class, which may not always be the best scenario. Sometimes a `Subject` or a several of them should be included as a part of another class that emitts some notifications. Then the *observers* need to be added through the pattern known as `Dependency Injection`. That gives many advantagies such as: 
+```swift
+Observer One:  data: Optional("Message #1")
+Observer One:  data: Optional("Message #2")
+Observer One:  data: Optional("Message #3")
+Observer Two:  data: Optional("Message #1")
+Observer Two:  data: Optional("Message #2")
+Observer Two:  data: Optional("Message #3")
+```
 
-- We have isolated code that handles all the things related to observer's management and notification handling. Which allows us to reuse the same `Subject` in multiple places, extend and refactor it without breaking any code.
+In this example we used `Subject` as a standalone class, which may not always be the best case. Sometimes a `Subject` or several *subjects* should be included as a part of another class that emitts some notifications. Then the *observers* need to be added through the pattern known as `Dependency Injection`. That gives many advantagies such as: 
+
+- Isolated code that handles all the things related to observer's management and notification handling. Which allows us to reuse the same `Subject` in multiple places, extend and refactor it without breaking dependent any code.
 - The code-base stays minimal in places that need to post notifications, since it's handled by a separate class.
-
+- Overall we achieve more loosely couples relationsships between the layer that needs to be notified and the layer that emits the notifications.
 
 ## Conclusion
+`Observer` is a widely used design pattern that changes the behaviour of a type that emits data in a form of notifications, and the dependent types that listen for those notifications. Instead of holding references of the listeners, *observer* pattern decomposes such relationship into two distinct layers called `Observer` and `Subject` layers. That makes must easier to manage the notifications' handling, extending the capabilities of *observer* layer and makes our code easier to reuse and test.
