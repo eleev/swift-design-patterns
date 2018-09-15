@@ -165,6 +165,19 @@ There were used a number of reference materials such as:
 8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
 9. [Code Complete. Wikipedia](https://en.wikipedia.org/wiki/Code_Complete)
 
+# 🙋‍♀️🙋‍♂️ Contributing
+You are very welcome to contribute to this project! There are a few rules that need to be followed:
+
+- If you want to implement an example code for an existing `Design Pattern` then you need to wrap it up in `.playground` file. That makes code compilation is a matter of launching a file and not worrying about managing a gigantic `Xcode` project.
+- If you want to write about a `Design Pattern` that is in the list, but has not been implemented yet, then you need to follow the following style guide:
+  - Write the description of a design pattern
+  - Split the example code into subsections
+  - Write explanation for each snippet of code
+  - Don't make your example complicated and too many details
+  - Write conclusion where you highlight the pattern 
+- If you want to write about a `Design Pattern` that is not in the list, then please use the aforementioned rules + write a short description and specify the category of a pattern.  
+- If you find that some important detail is missing in an existing `Design Pattern` then, please politely write it down. The more details and arguments you use, the more easier it will be to address the issues.
+
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
 
