@@ -73,7 +73,7 @@ class Subject {
         }
     }
     
-    /// Sends notification to all the Observers. The method is executed syncronously.
+    /// Sends notification to all the Observers. The method is executed synchronously.
     ///
     /// - Parameter notification: is a type that conforms to Notification protocol
     func send(notification: Notification) {
@@ -201,7 +201,8 @@ let subject = Subject()
 subject += [observerOne, observerTwo!, observerThree]
 
 
-subject.send(notification: EmailNotification(message: "Hello Observers, this messag was sent from the Subscriber!"))
+subject ~> EmailNotification(message: "Hello Observers, this messag was sent from the Subject instance!")
+subject.send(notification: EmailNotification(message: "Hello Observers, this messag was sent from the Subject instance!"))
 
 let notificationOne = EmailNotification(message: "Message #1")
 let notificationTwo = EmailNotification(message: "Message #2")
