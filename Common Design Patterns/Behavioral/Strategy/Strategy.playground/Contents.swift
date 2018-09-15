@@ -97,9 +97,7 @@ extension Array where Element: Comparable {
             
             Array.quickSort(array: &array, lowest: lowest, highest: pivot)
             Array.quickSort(array: &array, lowest: pivot + 1, highest: highest)
-        } else {
-            debugPrint(#function + " lowest param is bigger than highest: ", lowest, highest)
-        }
+        } 
     }
     
     private static func partitionHoare(array: inout [Element], lowest: Int, highest: Int) -> Int {
