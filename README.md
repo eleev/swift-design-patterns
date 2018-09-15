@@ -5,10 +5,10 @@
 
 **Last Update: 15/September/2018.**
 
-🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`. 
+![](logo-swift_design_patterns.jpg)
 
 # ✍️ About 
-There are many design patterns for various purposes and use-cases. We may not remember them all - it's absolutely normal. This repository aims to collect as many design patterns as possbile with examples implemented using the latest version of `Swift`, and serve as a reference material for eveyone who is willing to learn something new.
+🚀 The ultimate collection of various `Design Patterns` implemented using the latest verion of `Swift Programming Language`.  This repository aims to collect as many design patterns as possbile with examples implemented using the latest version of `Swift`, and serve as a reference material for eveyone who is willing to learn something new.
 
 # ☢️ Disclamer
 The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that looks strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
