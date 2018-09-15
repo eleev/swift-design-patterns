@@ -1,0 +1,3 @@
+# Strategy Design Pattern
+
+## Conclusion
