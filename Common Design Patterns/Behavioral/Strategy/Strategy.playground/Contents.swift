@@ -122,11 +122,17 @@ extension Array where Element: Comparable {
 
 struct Sorter {
 
+    // MARK: - Properties
+    
     var strategy: SortingStrategy
+    
+    // MARK: - Initializers
     
     init(strategy: SortingStrategy) {
         self.strategy = strategy
     }
+    
+    // MARK: - Methods
     
     func sort<T: Comparable>(items: [T]) -> [T] {
         return strategy.sort(items: items)
