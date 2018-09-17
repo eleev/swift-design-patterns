@@ -145,9 +145,14 @@ class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, Shoot
     var wheels: [Wheel]
     var body: CarBody
     
+    // MARK: - Conformance to ShootableProtocol
+    
+    var missileType: MissileType
+    
     // MARK: - Initializers
 
-    init() {
+    init(missileType: MissileType) {
+        
         let engine = Engine(id: "V12", horsepower: 1200)
         var wheels = [Wheel]()
         let numberOfWheels = 4
@@ -156,6 +161,58 @@ class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, Shoot
             wheels += [Wheel(radius: 56)]
         }
         let body = CarBody(id: "Bugatti", color: .orange)
+        self.engine = [engine]
+        self.wheels = wheels
+        self.body = body
+        
+        self.missileType = missileType
+    }
+    
+    // MARK: - Conformance to MovableProtocol
+    
+    func move(to direction: MovementType) {
+        print("moved:", direction)
+    }
+    
+    // MARK: - Conformance to RotatableProtocol
+    
+    func turn(to direction: RotationType) {
+        print("turned to the:", direction)
+    }
+    
+    // MARK: - Conformance to ShootableProtocol
+    
+    func shoot() {
+        print("shoot missile of type: ", missileType)
+    }
+    
+}
+
+class SteampunkTruck: LandVehicle, MovableProtocol, RotatableProtocol, ShootableProtocol, CustomStringConvertible, CustomDebugStringConvertible {
+    
+    // MARK: - LandVehicle properties
+    
+    var engine: [Engine]
+    var wheels: [Wheel]
+    var body: CarBody
+    
+    // MARK: - Conformance to ShootableProtocol
+    
+    var missileType: MissileType
+    
+    // MARK: - Initializers
+    
+    init(missileType: MissileType) {
+        self.missileType = missileType
+        
+        let engine = Engine(id: "V8", horsepower: 1200)
+        var wheels = [Wheel]()
+        let numberOfWheels = 6
+        
+        for _ in 0..<numberOfWheels {
+            wheels += [Wheel(radius: 72)]
+        }
+        let body = CarBody(id: "Truck", color: .orange)
         self.engine = [engine]
         self.wheels = wheels
         self.body = body
@@ -175,13 +232,12 @@ class PostapocalypticCar: LandVehicle, MovableProtocol, RotatableProtocol, Shoot
     
     // MARK: - Conformance to ShootableProtocol
     
-    func shoot(missileOf type: MissileType) {
-        print("shoot missile of type: ", type)
+    func shoot() {
+        print("shoot missile of type: ", missileType)
     }
-    
 }
 
-class SportCar: LandVehicle, MovableProtocol, RotatableProtocol, CustomStringConvertible, CustomDebugStringConvertible {
+class SportCar: LandVehicle, MovableProtocol, RotatableProtocol, TurboAcceleratable, CustomStringConvertible, CustomDebugStringConvertible {
     
     // MARK: - LandVehicle properties
     
@@ -221,6 +277,12 @@ class SportCar: LandVehicle, MovableProtocol, RotatableProtocol, CustomStringCon
         print("turned to the:", direction)
     }
     
+    // MARK: - Conformance to TurboAcceleratable protocol
+    
+    func accelerate() {
+        print("accelerated!")
+    }
+    
 }
 
 extension LandVehicle where Self : CustomStringConvertible & CustomDebugStringConvertible {
@@ -247,6 +309,9 @@ extension LandVehicle where Self : CustomStringConvertible & CustomDebugStringCo
     
 }
 
+protocol TurboAcceleratable {
+    func accelerate()
+}
 
 enum MovementType {
     case forward
@@ -275,68 +340,62 @@ enum MissileType {
 }
 
 protocol ShootableProtocol {
-    func shoot(missileOf type: MissileType)
+    
+    // MARK: - Properties
+    
+    var missileType: MissileType { get }
+    
+    // MARK: - Methods
+    
+    func shoot()
+}
+
+class ShootableVehicleFactory {
+    
+    func produce(with missileType: MissileType) -> LandVehicle {
+        return missileType == .fire ? SteampunkTruck(missileType: .fire) : PostapocalypticCar(missileType: missileType)
+    }
+}
+
+class RegularVehicleFactory {
+    
+    func produce() -> LandVehicle {
+        return SportCar()
+    }
 }
 
 
 struct VehicleFactory {
+
+    // MARK: - Private properties
     
-    var areThereZombies = false
+    private let shootableVehicleFactory = ShootableVehicleFactory()
+    private let regularVehicleFactory = RegularVehicleFactory()
     
-    func produce() -> LandVehicle {
-        return areThereZombies ? producePostApocalypticCar() : produceSportCar()
+    // MARK: - Factory
+    
+    func produce(areThereZombies: Bool, hasWeapSystem: Bool) -> LandVehicle {
+        
+        switch (zombies: areThereZombies, weaponSystem: hasWeapSystem) {
+        case (true, true):
+            return shootableVehicleFactory.produce(with: .rocket)
+        case (false, true):
+            return shootableVehicleFactory.produce(with: .fire)
+        default:
+            return regularVehicleFactory.produce()
+        }
     }
-    
-    // MARK: - Private helpers
-    
-    private func produceSportCar() -> LandVehicle {
-        return SportCar()
-    }
-    
-    private func producePostApocalypticCar() -> LandVehicle {
-        return PostapocalypticCar()
-    }
-    
 }
 
 
 //: Usage
-var vehicleFactory = VehicleFactory()
-let sportCar = vehicleFactory.produce()
 
+let vehicleFactory = VehicleFactory()
+let steampunkTruck = vehicleFactory.produce(areThereZombies: false, hasWeapSystem: true) as? SteampunkTruck
+steampunkTruck?.shoot()
+
+print(steampunkTruck)
+
+let sportCar = vehicleFactory.produce(areThereZombies: true, hasWeapSystem: false) as? SportCar
+sportCar?.accelerate()
 print(sportCar)
-
-//engine: [id: V12,
-//horsepower: 1200],
-//wheels: [id: 89CA2C97-E540-4864-B5A5-34A0CCE89C59,
-//radius: 56.0, id: 99AB06F6-2554-4AFD-927A-18C4B54B8119,
-//radius: 56.0, id: 52DA8B5B-CAD4-4CB2-A767-5A2771FC23FE,
-//radius: 56.0, id: B1F58094-2CC9-494C-920E-EB997D4111C6,
-//radius: 56.0],
-//body: id: Bugatti,
-//color: UIExtendedSRGBColorSpace 1 0.5 0 1
-
-print("\n")
-
-vehicleFactory.areThereZombies = true
-
-let postapocalypticCar = vehicleFactory.produce() as? PostapocalypticCar
-print(postapocalypticCar as Any)
-postapocalypticCar?.shoot(missileOf: .rocket)
-
-//engine: [id: V8,
-//horsepower: 850, id: V6,
-//horsepower: 550],
-//wheels: [id: 9A2FE063-A62E-45EA-914B-AA06D52B118C,
-//radius: 92.0, id: C7286782-9DD4-404E-B4F7-6F2DA08172CD,
-//radius: 92.0, id: FA20326B-7910-4BE7-A620-624EF6C31435,
-//radius: 92.0, id: 7DA56464-EDEF-4FA2-9CE5-75383A91D85F,
-//radius: 92.0, id: A6F9E12C-E4FE-4309-8069-3FEF8088BFD2,
-//radius: 92.0, id: 7826EC39-787C-4737-BD7A-B5C67DC5362D,
-//radius: 92.0, id: 4A4A6CBF-2190-4D85-A987-C7ABF09250D9,
-//radius: 92.0, id: BC771330-66D4-4622-BE95-8AF38DE04543,
-//radius: 92.0],
-//body: id: Titan Body,
-//color: UIExtendedSRGBColorSpace 0 1 1 1
-
-
