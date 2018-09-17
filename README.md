@@ -118,7 +118,7 @@ rise of new classes
 - **Monitor Object:** is a synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true
 - **Nuclear Reaction:** is a type of computation which allows threads to either spawn new threads or converge many threads to one
 - **Reactor:** is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs
-- **Read Write Lock:** allows concurrent access for read-only operations, while write operations require exclusive access
+- [**Read Write Lock:**](/Concurrency%20Design%20Patterns/ReadWriteLock/ReadWriteLock.md) allows concurrent access for read-only operations, while write operations require exclusive access
 - **Scheduler:** is the method by which work specified by some means is assigned to resources that complete the work
 - **Thread Pool:** maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program
 - **Thread-Local Storage:** is a computer programming method that uses static or global memory local to a thread
