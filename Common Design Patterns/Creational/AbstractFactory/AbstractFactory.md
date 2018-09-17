@@ -1,7 +1,7 @@
 # Abstract Factory Design Pattern
-`Abstract Factory` is a creational design pattern that is aimed to simplify creation of objects in runtime without specifying their concrete types. The pattern has some similarities with another creational pattern called `Factory Method`. Don't be confused by the common nature and similar names of the patterns - they are different and have different restrictions. 
+`Abstract Factory` is a creational design pattern that is aimed to simplify creation of objects at run-time without specifying their concrete types. The pattern has some similarities with another creational pattern called `Factory Method`. Don't be confused by the common nature and similar names of the patterns - they are different and have different restrictions. 
 
-`Abstract Factory` is implemented using a type rather than a method and can be `inherited` and `extended`. In order to implement the pattern we need to define a type that will act as `abstract factory` and a `protocol` that will be used as the resulting type of the factory. Which type exactly - will be determined at runtime. 
+`Abstract Factory` is implemented using a type rather than a method and can be `inherited` and `extended`. In order to implement the pattern we need to define a type that will act as an `abstract factory` and a `protocol` that will be used as the resulting type of the factory. Which type exactly - will be determined at runtime. 
 
 Our example will be built around the following task: we need to create a land vehicle based on whether there are zombies walking on the Earth or not. If zombie apocalypse happened - then we need a post-apocalyptic car that can shoot rockets or flame. Otherwise, if zombie apocalypse hasn't happened yet 😅, then our factory will produce a very powerful sport car. 
 
@@ -176,4 +176,4 @@ The usage of the factory is pretty straightforward:
 - Then we again change the state of the factory to produce sport car 🚗
 
 ## Conclusion
-`Abstract Factory` is a great and very easy to use creational pattern! It provides means for creating objects based on external parameters, configure them differently, and provide specific type capabilities based on runtime requirements. Since the implementation is built around concrete type, we can use `type extension` and `inheritance` in order to create families of factories or domain specific factories.
+`Abstract Factory` is a great and very easy to implement creational pattern! It provides means for creating objects based on external parameters, configure them differently and provide specific type capabilities based on run-time requirements. Since, the implementation is built around concrete type, we can use `type extension` and `inheritance` in order to create families of factories or domain specific factories. Use this pattern when you have related types and you don't want to expose the way they are constructed and when you have run-time factors that affect the type that needs to be selected.
