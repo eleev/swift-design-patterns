@@ -69,8 +69,9 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 - **Dependency Injection:** a class accepts the objects it requires from an injector instead of creating the objects directly
 - [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
-- **Object Pool**: avoid expensive acquisition and release of resources by recycling objects that are no longer in use
-
+- **Object Pool:** avoid expensive acquisition and release of resources by recycling objects that are no longer in use
+- **Simple Factory:** NO DESCRIPTION YET 
+- **Static Factory:** used for instantiation of dependent types. Replaces constructors/initializers for object creation that provides additional capabilities such as caching and/or throw an error
 
 ### Structural 
 > Structural design patterns are design patterns that ease the design by identifying a simple way to realize relationships between entities.
