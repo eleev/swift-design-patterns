@@ -62,7 +62,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
 - [**Factory Method:**](/Creational/FactoryMethod/FactoryMethod.md) centralize creation of an object of a specific type choosing one of several implementations
 - [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
-- **Prototype:** used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
+- [**Prototype:**](/Common%20Design%20Patterns/Creational/Prototype/Prototype.md) used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
 - [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object
 
 #### Other 
@@ -120,7 +120,7 @@ rise of new classes
 - **Reactor:** is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs
 - **Read Write Lock:** allows concurrent access for read-only operations, while write operations require exclusive access
 - **Scheduler:** is the method by which work specified by some means is assigned to resources that complete the work
-- **Thread Pool** maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program
+- **Thread Pool:** maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program
 - **Thread-Local Storage:** is a computer programming method that uses static or global memory local to a thread
 
 ## 🏛 Architectural Patterns
