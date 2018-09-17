@@ -60,7 +60,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
-- **Factory Method:** centralize creation of an object of a specific type choosing one of several implementations
+- [**Factory Method:**](/Creational/FactoryMethod/FactoryMethod.md) centralize creation of an object of a specific type choosing one of several implementations
 - [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
 - **Prototype:** used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
 - [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object
