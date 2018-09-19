@@ -22,6 +22,8 @@ The `ObjectPoolItem` protocol provides two mechanisms for the conforming types. 
 
 The other mechanism is the `reset` method. That method is used to reset the state of the conforming type. Storing clones for object pool items inside the `ObjectPool` in order be able to reset them is inefficient. That is why we need to provide a way to reset them somehow else. Since an object may have private or read-only properties that cannot be reset outside of the type itself, we need to delegate resetting to each conforming type. However, `ObjectPool` calls this method when needed. 
 
+p.s. `Memento` pattern can be used to restore the state of the objects without the need to declare this protocol add conformance to each supported type. However, it's not the unlimate solution and has its own drawbacks. That is why, for the sake of correctness and simplicity, it was decided to use a custom yet simple approach such as `ObjectPoolItem` protocol.
+
 ## Object Pool
 Our `ObjectPool` will be capable of storing any object that conforms to the presented `ObjectPoolItem` protocol. Let's declare that:
 
