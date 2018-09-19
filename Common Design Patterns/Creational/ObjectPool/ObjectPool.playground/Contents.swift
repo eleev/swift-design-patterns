@@ -47,17 +47,14 @@ class ObjectPool<T: ObjectPoolItem> {
     
     var state: PoolState {
         var state: PoolState = .undefined
+        let currentSize = objects.count
         
-        queue.sync(flags: .barrier) {
-            let currentSize = objects.count
-            
-            if objects.isEmpty {
-                state = .drained
-            } else if currentSize == size {
-                state = .full(size: size)
-            } else if currentSize < size, !objects.isEmpty {
-                state = .deflated(size: currentSize)
-            }
+        if objects.isEmpty {
+            state = .drained
+        } else if currentSize == size {
+            state = .full(size: size)
+        } else if currentSize < size, !objects.isEmpty {
+            state = .deflated(size: currentSize)
         }
         return state
     }
