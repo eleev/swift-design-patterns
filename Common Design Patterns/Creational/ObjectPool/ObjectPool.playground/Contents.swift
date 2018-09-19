@@ -23,8 +23,8 @@ class ObjectPool<T: ObjectPoolItem> {
     /// - undefined: Intermediate state, rarely occurs when many threads modify the pool at the same time
     enum PoolState {
         case drained
-        case deflated(count: Int)
-        case full(count: Int)
+        case deflated(size: Int)
+        case full(size: Int)
         case undefined
     }
     
@@ -43,24 +43,20 @@ class ObjectPool<T: ObjectPoolItem> {
     private var semaphore: DispatchSemaphore
     private var queue = DispatchQueue(label: "objectPool.concurrentQueue", attributes: .concurrent)
     
-    private var count: Int = 0
-    
-    var isDrained: Bool {
-        return objects.isEmpty
-    }
+    private var size: Int = 0
     
     var state: PoolState {
         var state: PoolState = .undefined
         
         queue.sync(flags: .barrier) {
-            let currentCount = objects.count
+            let currentSize = objects.count
             
             if objects.isEmpty {
                 state = .drained
-            } else if currentCount == count {
-                state = .full(count: count)
-            } else if currentCount < count, !objects.isEmpty {
-                state = .deflated(count: currentCount)
+            } else if currentSize == size {
+                state = .full(size: size)
+            } else if currentSize < size, !objects.isEmpty {
+                state = .deflated(size: currentSize)
             }
         }
         return state
@@ -73,7 +69,7 @@ class ObjectPool<T: ObjectPoolItem> {
         semaphore = DispatchSemaphore(value: objects.count)
         
         self.objects += objects
-        count = objects.count
+        size = objects.count
     }
     
     convenience init(objects: T...) {
@@ -86,7 +82,7 @@ class ObjectPool<T: ObjectPoolItem> {
         }
     }
     
-    // MARK: - Mehtods
+    // MARK: - Methods
     
     func enqueue(object: T, shouldResetState: Bool = true, completion: ((ItemState)->())? = nil) {
         queue.async {
