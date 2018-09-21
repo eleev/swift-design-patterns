@@ -67,7 +67,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Other 
 
-- **Dependency Injection:** a class accepts the objects it requires from an injector instead of creating the objects directly
+- [**Dependency Injection:**](/Creational/DependencyInjection/DependencyInjection.md) a class accepts the objects it requires from an injector instead of creating the objects directly
 - [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
 - [**Object Pool:**](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.md) avoid expensive acquisition and release of resources by recycling objects that are no longer in use
 - **Simple Factory:** NO DESCRIPTION YET 
