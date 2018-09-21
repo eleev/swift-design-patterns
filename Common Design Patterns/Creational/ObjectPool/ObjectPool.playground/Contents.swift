@@ -17,12 +17,14 @@ class ObjectPool<T: ObjectPoolItem> {
     
     /// Determines the condition of the pool
     ///
-    /// - drained: Empty state, meaning that there is nothing to dequeue from the pool
+    /// - drained: Empty state, meaning that there is nothing to dequeue from the pool.
     /// - deflated: Consumed state, meaning that some items were dequeued from the pool
     /// - full: Filled state, meaning that the full capacity of the pool is used
     /// - undefined: Intermediate state, rarely occurs when many threads modify the pool at the same time
+    ///
+    /// - size represents current number of elements that can stored in the pool
     enum PoolState {
-        case drained
+        case drained(size: Int)
         case deflated(size: Int)
         case full(size: Int)
         case undefined
@@ -82,10 +84,10 @@ class ObjectPool<T: ObjectPoolItem> {
     // MARK: - Methods
     
     func enqueue(object: T, shouldResetState: Bool = true, completion: ((ItemState)->())? = nil) {
-        queue.async {
+        queue.sync(flags: .barrier) {
             var itemState: ItemState = .rejected
             
-            if object.canReuse {
+            if object.canReuse, objects.count < size {
                 if shouldResetState {
                     // Reset the object state before returning it to the pool, so there will not be ambiguity when reusing familiar object but getting a different  behavior  because some other resource changed the object's state before
                     object.reset()
@@ -110,6 +112,39 @@ class ObjectPool<T: ObjectPoolItem> {
         }
         return result
     }
+    
+    func dequeueAll() -> [T] {
+        var result = [T]()
+        
+        if semaphore.wait(timeout: .distantFuture) == .success {
+            queue.sync(flags: .barrier) {
+                result = Array(objects)
+                // Remove all, but keep capacity
+                objects.removeAll(keepingCapacity: true)
+            }
+        }
+        return result
+    }
+    
+    /// Removes all the items from the pool but preserves the pool's size
+    func eraseAll() {
+        if semaphore.wait(timeout: .distantFuture) == .success {
+            queue.sync(flags: .barrier) {
+                // Remove all, but keep capacity
+                objects.removeAll(keepingCapacity: true)
+            }
+        }
+    }
+
+    /// TODO: The following method needs to be tested, otherwise there might be some issues
+    
+    /// Reserves space for the specified number of elements
+//    func reserveSize(by number: Int) {
+//        queue.sync(flags: .barrier) {
+//            objects.reserveCapacity(objects.capacity + number)
+//            size += number
+//        }
+//    }
 }
 
 class Resource: ObjectPoolItem, CustomStringConvertible {
@@ -148,7 +183,7 @@ let resourceOne = Resource(value: 1)
 let resourceTwo = Resource(value: 2)
 let resourceThree = Resource(value: 3)
 
-let objectPool = ObjectPool<Resource>(objects: resourceOne, resourceTwo, resourceThree)
+let objectPool = ObjectPool<Resource>(objects: resourceOne, resourceTwo, resourceThree, resourceOne, resourceTwo, resourceThree, resourceOne, resourceTwo, resourceThree)
 print("pool state: ", objectPool.state as Any)
 
 print("Object Pool has been created")
@@ -173,7 +208,7 @@ print("\n")
 DispatchQueue.global(qos: .default).async {
     for _ in 0..<5 {
         let poolObject = objectPool.dequeue()
-        
+
         print("iterator #1, pool object: ", poolObject as Any)
         print("iterator #1, pool state: ", objectPool.state)
         print("\n")
@@ -183,10 +218,53 @@ DispatchQueue.global(qos: .default).async {
 DispatchQueue.global(qos: .default).async {
     for _ in 0..<5 {
         let poolObject = objectPool.dequeue()
-        
+
         print("iterator #2, pool object: ", poolObject as Any)
         print("iterator #2, pool state: ", objectPool.state)
         print("\n")
     }
 }
 
+
+
+/// The following test is designed to determine the correctness of the ObjectPool pattern by running parallel enqeueuing and checking state of the pool. Then signalling to a closure to check the final result
+func concurrectWriteTest() {
+    objectPool.dequeueAll()
+    
+    for object in objects {
+        print("Object: ", object)
+    }
+    
+    print("About to start parallel enqueuing process. Current object pool state is : ", objectPool.state)
+    
+    let group = DispatchGroup.init()
+    
+    group.enter()
+    DispatchQueue.global(qos: .default).async {
+        for _ in 0..<5 {
+            objectPool.enqueue(object: resourceOne)
+            print("Queue #1, ", objectPool.state)
+            print("\n")
+        }
+        group.leave()
+    }
+    
+    group.enter()
+    DispatchQueue.global(qos: .default).async {
+        for _ in 0..<5 {
+            objectPool.enqueue(object: resourceOne)
+            print("Queue #2, ", objectPool.state)
+            print("\n")
+        }
+        group.leave()
+    }
+    
+    group.notify(queue: DispatchQueue.main) {
+        print("All queues have completed their execution. The final state of the ObjectPool is : ", objectPool.state)
+        let objects = objectPool.dequeueAll()
+    
+        for object in objects {
+            print("Object: ", object)
+        }
+    }
+}

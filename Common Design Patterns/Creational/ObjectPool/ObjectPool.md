@@ -41,8 +41,10 @@ Next, we define enums that describe the possible states of the pool and the stor
     /// - deflated: Consumed state, meaning that some items were dequeued from the pool
     /// - full: Filled state, meaning that the full capacity of the pool is used
     /// - undefined: Intermediate state, rarely occurs when many threads modify the pool at the same time
-    enum PoolState {
-        case drained
+	///
+    /// - size represents current number of elements that can stored in the pool
+ 	enum PoolState {
+        case drained(size: Int)
         case deflated(size: Int)
         case full(size: Int)
         case undefined
@@ -114,11 +116,11 @@ We have implemented a designated initializer, a convenience initializer and a de
 ```swift
 	// MARK: - Methods
     
-    func enqueue(object: T, shouldResetState: Bool = true, completion: ((ItemState)->())? = nil) {
-        queue.async {
+   	func enqueue(object: T, shouldResetState: Bool = true, completion: ((ItemState)->())? = nil) {
+        queue.sync(flags: .barrier) {
             var itemState: ItemState = .rejected
             
-            if object.canReuse {
+            if object.canReuse, objects.count < size {
                 if shouldResetState {
                     // Reset the object state before returning it to the pool, so there will not be ambiguity when reusing familiar object but getting a different  behavior  because some other resource changed the object's state before
                     object.reset()
@@ -131,7 +133,7 @@ We have implemented a designated initializer, a convenience initializer and a de
             }
             completion?(itemState)
         }
-    }
+    }    
     
     func dequeue() -> T? {
         var result: T?
@@ -143,9 +145,33 @@ We have implemented a designated initializer, a convenience initializer and a de
         }
         return result
     }
+    
+    func dequeueAll() -> [T] {
+        var result = [T]()
+        
+        if semaphore.wait(timeout: .distantFuture) == .success {
+            queue.sync(flags: .barrier) {
+                result = Array(objects)
+                // Remove all, but keep capacity
+                objects.removeAll(keepingCapacity: true)
+            }
+        }
+        return result
+    }
+    
+    /// Removes all the items from the pool but preserves the pool's size
+    func eraseAll() {
+        if semaphore.wait(timeout: .distantFuture) == .success {
+            queue.sync(flags: .barrier) {
+                // Remove all, but keep capacity
+                objects.removeAll(keepingCapacity: true)
+            }
+        }
+    }
 }
 ```
-The final part of the implementation of the pattern is the methods section. We have implemented two methods: `enqueue(object: , shouldResetState: Bool, completion:)` that is responsible for returning an item to the *ObjectPool*, by default resetting its state and calling the completion closure that returns an item state enum. The final method is `dequeue() -> T?` that pools an item from the *ObjectPool* and returns it.
+The final part of the implementation of the pattern is the methods section. We have implemented two main methods: `enqueue(object: , shouldResetState: Bool, completion:)` that is responsible for returning an item to the *ObjectPool*, by default resetting its state and calling the completion closure that returns an item state enum. The final method is `dequeue() -> T?` that pools an item from the *ObjectPool* and returns it. Finally there are the last two methods called `dequeueAll -> [T]` and `eraseAll` that are pretty much self-explanatory and were designed for practical convenience.
+
 
 ### About Concurrency
 
