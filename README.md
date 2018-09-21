@@ -153,6 +153,25 @@ The following patterns are not part of the topic about `design patterns`. Howeve
 - **Type-Casting:** there are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels
 - **Expression:** an expression pattern represents the value of an expression. Expression patterns appear only in `switch` statement `case` labels
 
+
+# Software Design Principles
+**☢️ NOTE** This section needs to be moved to separate repository
+
+- **IoS:** `Inversion of Control`
+- **S.O.L.I.D:**
+- **G.R.A.S.P:**
+- **KISS:**
+- **YAGNI:**
+- **DRY:**
+- **Release Reuse Equivalency:**
+- **Common Closure:**
+- **Common Reuse:**
+- **Acyclic Dependencies:**
+- **Stable Dependencies:**
+- **Stable Abstraction:**
+- **LoD:** `Law of Demeter` or `Principle of Least Knowledge`
+- **Reusability:**
+
 # 📝 References
 There were used a number of reference materials such as:
 
