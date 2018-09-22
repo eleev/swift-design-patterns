@@ -12,6 +12,12 @@ Concurrently, two or more developers can implement types that implement this pat
 The pattern is simple yet powerful. However, it has its own disadvantages, which will be overviewed in a dedicated section later on.
 
 ## Initializer Injection
+`Initializer` injection is a type of *DI* that passes a dependency into the initializer and captures it for the later use. 
+
+> **Note:**
+>
+> Please not note that common term for this type of injection is `Constructor Injection`. I used `Initializer` since `Swift` does not have *contructors*, only *initializers*. That was done for the sake of adoptation of the pattern and to avoid confusion with the term (*constructor*) that does not have practical application in `Swift`.
+
 
 ## Property Injection
 
@@ -21,6 +27,11 @@ The pattern is simple yet powerful. However, it has its own disadvantages, which
 
 ## Storyboards & View Controllers
 
+## Testability
+
 ## Disadvantages
 
 ## Conclusion
+
+
+  
