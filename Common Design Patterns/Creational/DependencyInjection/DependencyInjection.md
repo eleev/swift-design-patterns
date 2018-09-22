@@ -11,5 +11,16 @@ Concurrently, two or more developers can implement types that implement this pat
 
 The pattern is simple yet powerful. However, it has its own disadvantages, which will be overviewed in a dedicated section later on.
 
+## Initializer Injection
+
+## Property Injection
+
+## Method Injection
+
+## Protocol Injection
+
+## Storyboards & View Controllers
+
+## Disadvantages
 
 ## Conclusion
