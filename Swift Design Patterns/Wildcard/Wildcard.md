@@ -12,7 +12,7 @@ We may use this pattern to silence the warning raised by *Xcode*, in cases when 
 
 ```swift
 for _ in 0...10 {
-	function()
+    function()
 }
 ```
 
