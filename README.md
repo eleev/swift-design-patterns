@@ -33,7 +33,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
 - [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
-- **Memento:** provides the ability to restore an object to its previous state (rollback)
+- [**Memento:**]() provides the ability to restore an object to its previous state (rollback)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns
 - **State:** a clean way for an object to partially change its type at runtime
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition
@@ -81,7 +81,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- **Adapter:** 'adapts' one interface for a class into one that a client expects
+- [**Adapter:**]() 'adapts' one interface for a class into one that a client expects
 - [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently
 - **Composite:** a tree structure of objects where every object has the same interface
 - **Decorator:** allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
