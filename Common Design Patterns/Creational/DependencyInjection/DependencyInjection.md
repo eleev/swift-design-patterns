@@ -176,10 +176,10 @@ The first thing that we have done is we slightly changed the implementation of `
 That is why you need to very careful with *property injection* and think twice before implementing them. However, I'm not saying that are pure evil, in some cases they may be pretty suitable, for instance when there is additional logic that prevents from resetting the dependency based on business-related logic. 
 
 ## Method Injection
+Method Injection is an another type of *Dependency Injection* that is aimed to inject a dependency using methods. It either can be a local method dependency or a type dependency that is injected through method. Method injection is useful in cases when a method uses an external dependency and we need to decouple it from the caller. The other benefit is that your method can have a differnet dependency each call - that may add some dynamism in terms of execution logic, but it also may be a source of issues. The method calling complexity is increased as well, just be careful. 
+
 
-## Protocol Injection
-
-## Storyboards & View Controllers
+## Storyboards & View Controllers
 
 ## Testability
 
