@@ -147,7 +147,7 @@ class DataStorage {
     // We have changed the accessor modifier from *private* to *internal* and made it variable instead of constant, so we will be able to change the dependency later on
     var dataBase: Persistence
     
-    // MARK: - Initailizers
+    // MARK: - Initializers
     
     init(dataBase: Persistence) {
         self.dataBase = dataBase
@@ -176,15 +176,29 @@ The first thing that we have done is we slightly changed the implementation of `
 That is why you need to very careful with *property injection* and think twice before implementing them. However, I'm not saying that are pure evil, in some cases they may be pretty suitable, for instance when there is additional logic that prevents from resetting the dependency based on business-related logic. 
 
 ## Method Injection
-Method Injection is an another type of *Dependency Injection* that is aimed to inject a dependency using methods. It either can be a local method dependency or a type dependency that is injected through method. Method injection is useful in cases when a method uses an external dependency and we need to decouple it from the caller. The other benefit is that your method can have a differnet dependency each call - that may add some dynamism in terms of execution logic, but it also may be a source of issues. The method calling complexity is increased as well, just be careful. 
+Method Injection is an another type of *Dependency Injection* that is aimed to inject a dependency using methods. It either can be a local method dependency or a type dependency that is injected through method. Method injection is useful in cases when a method uses an external dependency and we need to decouple it from the caller. The other benefit is that your method can have a different dependency each call - that may add some dynamism in terms of execution logic, but it also may be a source of issues. The method calling complexity is increased as well, just be careful. 
+
+## Ambient Context
+There yet another type of `DI` called `Ambient Context`. It will not be described here, it was included so will be able to reference it and make own research. Maybe later on I will create a good illustration of this type of `DI` and include it here.
 
-## Storyboards & View Controllers
+## Storyboards & View Controllers
 
-## Testability
+
+
+<!--## Testability
+This subsection may be implemented later on. -->
 
 ## Disadvantages
+`Dependency Injection` pattern has its own disadvantages as well. Even though it seems good to decouple the implementation of a behavior from its interface, it can make difficult to read code because  the behavior and construction parts are separated. The number of files grows, which may increase the overall complexity from a perspective of a new developer or even existing developer who wants to reference those files.
+
+Another issue is that not every `IDE` can reference and trace the *dependencies* when refactoring. Also, in some cases the details related to the construction of a type may not be separated from its behavior - it may be a root of security issues or simply may not be easily managed outside of the target type. Decoupled dependencies may also require an 3rd party framework for dependency management, which may not suit your requirements. 
+
+Also, in some cases dependencies may not be `volatile`, which means they don't need to be injected. Those types of dependencies are called `stable` and should not be exposed for injection.
+
+The last thing that I want to mention is that don't create dependency injections between modules. That will make *DI* act as anti-pattern, since by trying to make code loosely coupled, you will actually make it tightly coupled with an another module. 
+
+All the above leads to a simple conclusion: be mindful and don't hurry to apply *Dependency Injection* pattern.
+
 
 ## Conclusion
 
-
-  
