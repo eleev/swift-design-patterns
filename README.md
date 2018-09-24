@@ -142,7 +142,7 @@ Architectural patterns addres issues that arise in software engineering within c
 >
 > **Source:** [`swift.org`](https://docs.swift.org/swift-book/ReferenceManual/Patterns.html#//apple_ref/doc/uid/TP40014097-CH36-ID419)
 
-The following patterns are not part of the topic about `design patterns`. However they have some relation to the topic since they offer reusable solutions for common design scenarious. 
+The following patterns are not part of the `design patterns` topic. However, the presented `language patterns` are related to the `design patterns` theme, since they offer reusable solutions for common design scenarious when using the programming language. `IMHO` they are essential to master in order to realise that patterns are everywhere - language, constructions, architectures, approaches etc.
 
 - [**Wildcard:**](/Swift%20Design%20Patterns/Wildcard/Wildcard.md) a wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against 
 - **Identifier:** an identifier pattern matches any value and binds the matched value to a variable or constant name
