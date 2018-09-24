@@ -181,9 +181,9 @@ Method Injection is an another type of *Dependency Injection* that is aimed to i
 ## Ambient Context
 There yet another type of `DI` called `Ambient Context`. It will not be described here, it was included so will be able to reference it and make own research. Maybe later on I will create a good illustration of this type of `DI` and include it here.
 
-## Storyboards & View Controllers
+<!--## Storyboards -->
 
-
+<!--## View Controllers-->
 
 <!--## Testability
 This subsection may be implemented later on. -->
@@ -201,4 +201,4 @@ All the above leads to a simple conclusion: be mindful and don't hurry to apply 
 
 
 ## Conclusion
-
+`Dependency Injection` is a simple yet powerful pattern that helps to structure code, make it more loosely-coupled, testable and configurable. Another big benefit is that it enables two or more developers to work on the same type that has `volatile` dependencies. It's easy to implement and refactor existing code-base to adopt this pattern. However, the pattern may also raise some issues: refactoring on an `IDE` level becomes very hard, more granular structure makes it harder to navigate and just simply understand what is going on in a project (especially for a new developer). Just be careful of typical pitfalls and think twice before adopting this pattern.

@@ -127,4 +127,3 @@ let storage = DataStorage(dataBase: dataBase)
 let propertyList = PropertyList(schemeType: .query)
 storage.dataBase = propertyList
 
-
