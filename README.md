@@ -33,7 +33,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
 - [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
-- [**Memento:**]() provides the ability to restore an object to its previous state (rollback)
+- [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns
 - **State:** a clean way for an object to partially change its type at runtime
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition
