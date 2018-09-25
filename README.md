@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 24/September/2018.**
+**Last Update: 25/September/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -102,7 +102,7 @@ rise of new classes
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
 - [**Delegation:**](/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
 - [**Multicast Delegatation:**](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
-- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is and object that encapsulates lifecycle that is spread over a collection of view controllers
+- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
 ## 🚅 Concurrency Design Patterns
