@@ -1,5 +1,5 @@
 # Memento Design Pattern
-`Memento` is a behavioral design pattern that allows to save and restore an object's state without breaking encapsulation. Our implementation will be slightly differnet than the classic one, which splits the pattern into three components: `memento`, `carataker` and `originator`. `Caretaker` will be responsible for saving and restoring a `memento` object using a concrete implementation of storage and `memento` will be represented as a protocol that defines a contract for all types that should have storing/restoring capabiliy.
+`Memento` is a behavioral design pattern that allows to save and restore an object's state without breaking encapsulation. Our implementation will be slightly different than the classic one, which splits the pattern into three components: `memento`, `caretaker` and `originator`. `Caretaker` will be responsible for saving and restoring a `memento` object using a concrete implementation of storage and `memento` will be represented as a protocol that defines a contract for all types that should have saving/restoring capabilities.
 
 ## Implementation
 We start off from declaring `Memento` protocol:
@@ -18,7 +18,7 @@ protocol Memento {
 ```
 The protocol defines a read-only property for dictionary can be store `Any` type for a `String` key. The dictionary will be used to store and restore the internal state of a particular type. Then we defined a required, failable initializer that accepts a dictionary as an input parameter. The initializer will be used by the `Caretaker` instance to restore an object.
 
-Next, we implement a protocol called `Caretaker`. The protocol will be resposible for declaring contract for all kinds of concrete mechanisms that will actually save and restore *memento* objects.
+Next, we implement a protocol called `Caretaker`. The protocol will be responsible for declaring contract for all kinds of concrete mechanisms that will actually save and restore *memento* objects.
 
 ```swift
 protocol Caretaker {
@@ -35,13 +35,13 @@ protocol Caretaker {
 }
 ```
 
-The `states` property that is dicttionary of types `String` and `String` for keys and values, that will be internally holding states, in order to be able to re-use or reference them at run-time. As an `API` the protocol defines `three` methods for saving a `memento` for a given state, restoring from state and deleting the state of a `memento` object.
+The `states` property that is a dictionary of types `String` and `String` for keys and values, that will be internally holding states, in order to be able to re-use or reference them at run-time. As an `API` the protocol defines `three` methods for saving a `memento` for a given state, restoring from state and deleting the state of a `memento` object.
 
-Let's implement a concrete `Caretaker` called `PropertyListCarataker` that is built around `UserDefaults` mechanism:
+Let's implement a concrete `Caretaker` called `PropertyListCaretaker` that is built around `UserDefaults` mechanism:
 
 ```swift
 @dynamicMemberLookup
-struct PropertyListCarataker: Caretaker {
+struct PropertyListCaretaker: Caretaker {
     
     // MARK: - Private properties
 
@@ -51,7 +51,7 @@ struct PropertyListCarataker: Caretaker {
     // MARK: - Initializers
     
     init() {
-        if let states = standardDefaults.object(forKey: PropertyListCarataker.STATES_KEY) as? [String : String] {
+        if let states = standardDefaults.object(forKey: PropertyListCaretaker.STATES_KEY) as? [String : String] {
             print("restored state keys: ", states)
             self.states = states
         }
@@ -61,7 +61,7 @@ struct PropertyListCarataker: Caretaker {
 
     var states: [String : String] = [:] {
         didSet {
-            standardDefaults.set(states, forKey: PropertyListCarataker.STATES_KEY)
+            standardDefaults.set(states, forKey: PropertyListCaretaker.STATES_KEY)
         }
     }
     
@@ -91,7 +91,7 @@ struct PropertyListCarataker: Caretaker {
 }
 ```
 
-The implementation is based on `struct`. We defiend a private `UserDefaults` property for convenient re-use and added conformance for `Carataker` protocol. The implementation is pretty straightforward, we used the built-in `API` for persistance. The interesting thing here is a relatively new feature of `Swift` called `dynamic member lookup`. We will use it to syntatically make the code more clear, however you may skip it, since it's not mandatory. 
+The implementation is based on `struct`. We defined a private `UserDefaults` property for convenient re-use and added conformance for `Caretaker` protocol. The implementation is pretty straightforward, we used the built-in `API` for persistence. The interesting thing here is a relatively new feature of `Swift` called `dynamic member lookup`. We will use it to syntactically make the code more clear, however you may skip it, since it's not mandatory. 
 
 The final part of our implementation is to create a couple of classes that will conform to `Memento` protocol. Let's implement a `User` and an `Animal` classes:
 
@@ -145,11 +145,11 @@ class Animal: Memento {
     }
 }
 ```
-The approach that is used to save and restore the state using the dictionary is pretty similar to the one used with `NSCoding` protocol: we save the properes for the specified keys and then in the required, failable initializer we restore them. Firther, it can be improved with more type-safe keys, rather than using `String` literals. 
+The approach that is used to save and restore the state using the dictionary is pretty similar to the one used with `NSCoding` protocol: we save the properties for the specified keys and then in the required, failable initializer we restore them. Futher it can be improved with more type-safe keys, rather than using `String` literals. 
 
 ## Usage
 
-The usage of the `Memento` pattern is all about creating objects, saving states by using a concrete `Carataker` and later on restoring a state by using one of the `String` keys.
+The usage of the `Memento` pattern is all about creating objects, saving states by using a concrete `Caretaker` and later on restoring a state by using one of the `String` keys.
 
 ```swift
 // A new user - John
@@ -161,7 +161,7 @@ var animal = Animal(name: "Monkey", age: 8)
 // name: John, age: 26, address: New Ave, 456
 // name: Monkey, age: 8
 
-var caretaker = PropertyListCarataker()
+var caretaker = PropertyListCaretaker()
 
 // We save the default states of the user and animal
 caretaker.save(memento: user, for: "defaultUser")
@@ -184,7 +184,7 @@ animal.name = "Cat"
 // name: Cat, age: 10
 ```
 
-In the presented snippet of code, we created a user and an animal. Then we created a `PropertyListCarataker` instnace and saved the states of the `memento` objects. Then we changed the ages of the objects and again saved then by using different state-keys. Finally, we changed the names of the `memento` objects to be able to verify that we actually are able to save and restore objects using varios state-keys. 
+In the presented snippet of code, we created a user and an animal. Then we created a `PropertyListCaretaker` instance and saved the states of the `memento` objects. Then we changed the ages of the objects and again saved then by using different state-keys. Finally, we changed the names of the `memento` objects to be able to verify that we actually are able to save and restore objects using various state-keys. 
 
 ```swift
 if let restoredUser = caretaker.defaultUser as User? {
@@ -206,3 +206,4 @@ if let restoredAnimal = caretaker.defaultAnimal02 as Animal? {
 The first saved state for the state-key named `defaultUser` is correct! As well as the remaining states. We are able to restart our `macOS` or `iOS` application and be able to restore any object that conforms to the `Memento` protocol to a certain state. 
  
 ## Conclusion
+`Memento` pattern is quite useful in many cases: when implementing undo manager, also to save objects when a user closes an app, so they can be restored when the app is launched again. These are just a few examples, when there are many more practical applications. The presented pattern's implementation can be further improved in order to be used in production code. For example the part that is responsible for *caretaking* of the `memento` objects, can be implemented using more reliable persistence approach. For example, in addition to `UserDefaults` `caretaker` you can implement `CoreData`-based `caretaker` that is more reliable and allows much more than just storing type's properties. 
