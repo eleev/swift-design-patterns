@@ -13,13 +13,15 @@ protocol Memento {
 
 protocol Caretaker {
     
-    var states: [String] { get }
+    // MARK: - Properties
+    
+    var states: [String : String] { get }
     
     // MARK: - Methods
     
     mutating func save<T: Memento>(memento: T, for stateName: String)
     func restore<T: Memento>(state: String) -> T?
-    func delete(state: String)
+    mutating func delete(state: String)
 }
 
 
@@ -29,16 +31,27 @@ struct PropertyListCarataker: Caretaker {
     // MARK: - Private properties
 
     private let standardDefaults = UserDefaults.standard
-
+    private static let STATES_KEY = "KEYS FOR STATES"
+    
     // MARK: - Initializers
     
-    init() { }
+    init() {
+        if let states = standardDefaults.object(forKey: PropertyListCarataker.STATES_KEY) as? [String : String] {
+            print("restored state keys: ", states)
+            self.states = states
+        }
+    }
     
     // MARK: - Conformance to Caretaker protocol
 
-    var states: [String] = []
+    var states: [String : String] = [:] {
+        didSet {
+            standardDefaults.set(states, forKey: PropertyListCarataker.STATES_KEY)
+        }
+    }
     
     mutating func save<T: Memento>(memento: T, for stateName: String) {
+        states.updateValue(stateName, forKey: stateName)
         standardDefaults.set(memento.data, forKey: stateName)
     }
 
@@ -50,7 +63,8 @@ struct PropertyListCarataker: Caretaker {
         return memento
     }
     
-    func delete(state: String) {
+    mutating func delete(state: String) {
+        states.removeValue(forKey: state)
         standardDefaults.removeObject(forKey: state)
     }
     
@@ -60,7 +74,6 @@ struct PropertyListCarataker: Caretaker {
         return restore(state: input)
     }
 }
-
 
 class User: Memento {
     
@@ -124,11 +137,16 @@ extension Animal: CustomStringConvertible {
 }
 
 
-var user = User(name: "Astemir", age: 26, address: "Dovatora st.35")
+var user = User(name: "John", age: 26, address: "New Ave, 456")
 
 var animal = Animal(name: "Monkey", age: 8)
 
 var caretaker = PropertyListCarataker()
+caretaker.states
+if let user = caretaker.restore(state: "defaultUser02") as User? {
+    print("user that was restored from the persistent state key: ", user)
+}
+
 caretaker.save(memento: user, for: "defaultUser")
 caretaker.save(memento: animal, for: "defaultAnimal")
 
@@ -140,33 +158,33 @@ caretaker.save(memento: animal, for: "defaultAnimal01")
 
 user.name = "Alex"
 animal.name = "Cat"
-
-caretaker.save(memento: user, for: "defaultUser02")
-caretaker.save(memento: animal, for: "defaultAnimal02")
+//
+//caretaker.save(memento: user, for: "defaultUser02")
+//caretaker.save(memento: animal, for: "defaultAnimal02")
 
 print(user)
 print(animal)
 
 
 
-if let restoredUser: User? = caretaker.defaultUser, let user = restoredUser {
-    print("restored: ", user)
+if let restoredUser = caretaker.defaultUser as User? {
+    print("restored: ", restoredUser)
 }
 
-if let restoredUser: User? = caretaker.defaultUser01, let user = restoredUser {
-    print("restored: ", user)
+if let restoredUser = caretaker.defaultUser01 as User? {
+    print("restored: ", restoredUser)
 }
 
-if let restoredUser: User? = caretaker.defaultUser02, let user = restoredUser {
-    print("restored: ", user)
+//if let restoredUser = caretaker.defaultUser02 as User? {
+//    print("restored: ", restoredUser)
+//}
+
+if let restoredAnimal = caretaker.defaultAnimal as Animal? {
+    print("restored: ", restoredAnimal)
 }
 
-if let restoredUser: Animal? = caretaker.defaultAnimal, let user = restoredUser {
-    print("restored: ", user)
-}
-
-if let restoredUser: Animal? = caretaker.defaultAnimal02, let user = restoredUser {
-    print("restored: ", user)
+if let restoredAnimal = caretaker.defaultAnimal02 as Animal? {
+    print("restored: ", restoredAnimal)
 }
 
 //if let restoredUser: User? = caretaker.restore(state: "default 01"), let user = restoredUser {
