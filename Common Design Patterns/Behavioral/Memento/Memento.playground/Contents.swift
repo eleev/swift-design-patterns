@@ -26,7 +26,7 @@ protocol Caretaker {
 
 
 @dynamicMemberLookup
-struct PropertyListCarataker: Caretaker {
+struct PropertyListCaretaker: Caretaker {
     
     // MARK: - Private properties
 
@@ -36,7 +36,7 @@ struct PropertyListCarataker: Caretaker {
     // MARK: - Initializers
     
     init() {
-        if let states = standardDefaults.object(forKey: PropertyListCarataker.STATES_KEY) as? [String : String] {
+        if let states = standardDefaults.object(forKey: PropertyListCaretaker.STATES_KEY) as? [String : String] {
             print("restored state keys: ", states)
             self.states = states
         }
@@ -46,7 +46,7 @@ struct PropertyListCarataker: Caretaker {
 
     var states: [String : String] = [:] {
         didSet {
-            standardDefaults.set(states, forKey: PropertyListCarataker.STATES_KEY)
+            standardDefaults.set(states, forKey: PropertyListCaretaker.STATES_KEY)
         }
     }
     
@@ -141,7 +141,7 @@ var user = User(name: "John", age: 26, address: "New Ave, 456")
 
 var animal = Animal(name: "Monkey", age: 8)
 
-var caretaker = PropertyListCarataker()
+var caretaker = PropertyListCaretaker()
 caretaker.states
 if let user = caretaker.restore(state: "defaultUser02") as User? {
     print("user that was restored from the persistent state key: ", user)
