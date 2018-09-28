@@ -81,6 +81,11 @@ public class BackendNetworkingProxy {
 
 The presented `BackendNetrworkingProxy` class wrapps `Networking` class and adds extra logic around the `URL` and `status code` handling. It incapsulates already made functionality and creates a slightly more domain-specific interface aroud it - that is why this variation of `Proxy` is called `Umbrella Proxy`. 
 
+## Proxy Framework
+`Proxy Framework` enables, so to speak, `Playground-Dirven` development. `Playground-Driven` development  is relatively new concept, many big companies (such as `Uber`, `Alpha Bank` etc.) use this approach is fast prototyping, reduced compilation time for testing and the overall flexibility of development. These are just a few application of *Proxy Frameworks*. `Proxy Frameworks` are used to wrap code that needs to be seen by an internal `.playground` files (*internal* in terms of a software project). Otherwise, `.playgrounds` cannot see the files located outside of the file itself. This type of framework is used to wrap the parts of the application that requires to be accessed by `.playground` files. 
+
+We don't dive deep into this topic here, I think it's just a very useful think to know and moreover, it helps to understand that `Proxy` design pattern is a very flexible concept that can be applied in may contexts.
+
 
 ## Conclusion 
 `Proxy` is powerful yet simple to implement structural design pattern. In `iOS` there is even a dedicated abstract class called `NSProxy`.
