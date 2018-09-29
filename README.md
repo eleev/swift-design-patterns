@@ -131,6 +131,8 @@ Architectural patterns addres issues that arise in software engineering within c
 - **MVVM:** is a software architectural pattern that facilitates a separation of development of the graphical user interface – be it via a markup language or `GUI` code – from development of the business logic or back-end logic (the data model). The view model of `MVVM` is a value converter, meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented [[1](#references)]
 - **MVVM-C:** 
 - **VIPER:** `VIPER` is an application of `Clean Architecture` to `iOS` apps. The word `VIPER` is a backronym for `View`, `Interactor`, `Presenter`, `Entity`, and `Routing`. `Clean Architecture` divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers [[8](#references)]
+- **RIBs:** is the cross-platform architecture framework developed by Uber. RIBs means: Router, Interactor and Builder, which are core components of this architecture. The key aspects of the architecure are: modible apps with large number of engineers and nested states [[10](#references)]
+- **Clean-Swift:** is a derivarive of the `Clean Archtiecure` proposed by Uncle Bob
 - **DAO:** - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
 ## 🐦 Swift Patterns
@@ -165,6 +167,7 @@ There were used a number of reference materials such as:
 7. [Coordinator Pattern](http://khanlou.com/2015/01/the-coordinator/)
 8. [VIPER Architecture](https://www.objc.io/issues/13-architecture/viper/)
 9. [Code Complete. Wikipedia](https://en.wikipedia.org/wiki/Code_Complete)
+10. [RIBs. GitHub](https://github.com/uber/RIBs)
 
 # 🙋‍♀️🙋‍♂️ Contributing
 You are very welcome to contribute to this project! There are a few rules that need to be followed:
