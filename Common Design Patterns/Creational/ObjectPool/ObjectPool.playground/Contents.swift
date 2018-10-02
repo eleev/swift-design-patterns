@@ -52,7 +52,7 @@ class ObjectPool<T: ObjectPoolItem> {
         let currentSize = objects.count
         
         if objects.isEmpty {
-            state = .drained
+            state = .drained(size: size)
         } else if currentSize == size {
             state = .full(size: size)
         } else if currentSize < size, !objects.isEmpty {
@@ -229,7 +229,7 @@ DispatchQueue.global(qos: .default).async {
 
 /// The following test is designed to determine the correctness of the ObjectPool pattern by running parallel enqeueuing and checking state of the pool. Then signalling to a closure to check the final result
 func concurrectWriteTest() {
-    objectPool.dequeueAll()
+    let objects = objectPool.dequeueAll()
     
     for object in objects {
         print("Object: ", object)
