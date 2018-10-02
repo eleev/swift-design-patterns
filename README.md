@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 01/October/2018.**
+**Last Update: 02/October/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -132,7 +132,7 @@ Architectural patterns addres issues that arise in software engineering within c
 - **MVVM-C:** basically the same `MVVM` arcitectural pattern, but with an addition of `Routing` layer, which is `Coordinator` pattern
 - **VIPER:** `VIPER` is an application of `Clean Architecture` to `iOS` apps. The word `VIPER` is a backronym for `View`, `Interactor`, `Presenter`, `Entity`, and `Routing`. `Clean Architecture` divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers [[8](#references)]
 - **RIBs:** is the cross-platform architecture framework developed by Uber. RIBs means: Router, Interactor and Builder, which are core components of this architecture. The key aspects of the architecure are: modible apps with large number of engineers and nested states [[10](#references)]
-- **Clean-Swift:** is a derivarive of the `Clean Archtiecure` proposed by Uncle Bob
+- **Clean-Swift:** is a derivarive architecture of the `Clean Archtiecure` proposed by Uncle Bob
 - **DAO:** - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
 ## 🐦 Swift Patterns
