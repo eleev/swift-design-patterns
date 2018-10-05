@@ -13,7 +13,7 @@ The pattern can be implemented by using *inheritance* or *composition*. I person
 ## USB-C Charger for iPhone
 In our example, we are going to create a `Lightning - USB-C` adapter for `iPhones`. I know, we ain't there yet, but hopefully will be someday 😄. 
 
-The first thing that we need to do is to create a protocol for `USB-C Socket` type and the `USB-C Charger` type:
+The first thing that we need to do is to create a protocol for `USB-C Socket` type and the `USB-C Charger` type. This layer is going to represent the `Target` building block of the pattern:
 
 ```swift
 protocol USBCSocketType {
@@ -88,6 +88,8 @@ class iPhone: LightningSocketType {
 }
 ```
 
+The presented `iPhone` type represents the `Adaptee` building block, which needs to be adoped for the `Target` layer.
+
 We assume that `LightningSocketType` protocol cannot be connected, just `attached` which is a different operation from the technical perspective. Again, the actual details aren't important, what is important is that we have two protocols with incompatible set of methods. 
 
 Right now cannot charge our `iPhone` with `USB-C` charger, since it doesn't work with `Lightning` sockets. We could have create a separate charger for `Lightning` socket and be happy about that, but our requirements will not always be that flexible. So we need to create a `Lightning to USB-C` adapter to make the protocols compatible. 
@@ -140,10 +142,10 @@ The implementation of `USBCAdapter` class consists of the following parts:
 As a result we now are able to make the incompitable types to work together using the `Adapter`:
 
 ```swift
-let phone = iPhone()    // 1
-let usbcAdapter = USBCAdapter(for: phone)   // 2
-let charger = USBCCharger(using: usbcAdapter)   // 3
-charger.charge()    // 4
+let phone = iPhone() 							// 1
+let usbcAdapter = USBCAdapter(for: phone) 		// 2
+let charger = USBCCharger(using: usbcAdapter) 	// 3
+charger.charge() 								// 4
 ```
 
 The first thing that we do (1) is to create an instance of an `iPhone` type. Then (2) we create an `Adapter` called `USBCAdapter`, which may accept a type that conforms to `LightningSocketType` protocol. Finally, we can use our charger adapter by passing it to the `USBCCharger` type, since it conforms to `USBCSocketType` and knows how to convert the method calls from one socket to another one. Then we call `charge` method and our `iPhone` is charging via *USB-C* charger 🍾.
