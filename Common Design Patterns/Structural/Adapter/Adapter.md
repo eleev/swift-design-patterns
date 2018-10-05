@@ -140,10 +140,10 @@ The implementation of `USBCAdapter` class consists of the following parts:
 As a result we now are able to make the incompitable types to work together using the `Adapter`:
 
 ```swift
-let phone = iPhone() 							// 1
-let usbcAdapter = USBCAdapter(for: phone) 		// 2
-let charger = USBCCharger(using: usbcAdapter) 	// 3
-charger.charge() 								// 4
+let phone = iPhone()    // 1
+let usbcAdapter = USBCAdapter(for: phone)   // 2
+let charger = USBCCharger(using: usbcAdapter)   // 3
+charger.charge()    // 4
 ```
 
 The first thing that we do (1) is to create an instance of an `iPhone` type. Then (2) we create an `Adapter` called `USBCAdapter`, which may accept a type that conforms to `LightningSocketType` protocol. Finally, we can use our charger adapter by passing it to the `USBCCharger` type, since it conforms to `USBCSocketType` and knows how to convert the method calls from one socket to another one. Then we call `charge` method and our `iPhone` is charging via *USB-C* charger 🍾.
