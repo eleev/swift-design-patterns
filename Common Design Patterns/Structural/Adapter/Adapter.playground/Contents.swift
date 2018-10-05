@@ -10,7 +10,7 @@ import Foundation
 // Class adapter
 
 
-// Let's assume by some reasons our Lightning Socket protocol has no ability to be programmatically connected, just attached, since it immediately stars charging
+// Let's assume by some reasons our Lightning Socket protocol has no ability to be programmatically connected, just attached and it immediately stars charging
 protocol LightningSocketType {
     func attach()
     func charge()
@@ -49,16 +49,22 @@ protocol USBCSocketType {
 /// Adapter
 class USBCAdapter: USBCSocketType {
     
+    // MARK: - Properties
+    
     var lightningSocket: LightningSocketType {
         didSet {
             disableLogging()
         }
     }
     
+    // MARK: - Initializers
+    
     init(for lightningSocket: LightningSocketType) {
         self.lightningSocket = lightningSocket
         disableLogging()
     }
+    
+    // MARK: - Methods
     
     private func disableLogging() {
         (self.lightningSocket as? iPhone)?.isLoggingEnabled = false
