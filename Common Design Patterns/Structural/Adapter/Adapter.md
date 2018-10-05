@@ -11,7 +11,7 @@ The pattern can be implemented by using *inheritance* or *composition*. I person
 
 
 ## USB-C Charger for iPhone
-In our example, we are going to create a `Lightning - USB-C` adapter for `iPhones`. I khow, we ain't there yet, but hopefully will be someday 😄. 
+In our example, we are going to create a `Lightning - USB-C` adapter for `iPhones`. I know, we ain't there yet, but hopefully will be someday 😄. 
 
 The first thing that we need to do is to create a protocol for `USB-C Socket` type and the `USB-C Charger` type:
 
@@ -88,7 +88,7 @@ class iPhone: LightningSocketType {
 }
 ```
 
-We assume that `LightningSocketType` prorocol cannot be connected, just `attached` which is a different operation from the technical perspective. Again, the actual details aren't important, what is important is that we have two protocols with incompatible set of methods. 
+We assume that `LightningSocketType` protocol cannot be connected, just `attached` which is a different operation from the technical perspective. Again, the actual details aren't important, what is important is that we have two protocols with incompatible set of methods. 
 
 Right now cannot charge our `iPhone` with `USB-C` charger, since it doesn't work with `Lightning` sockets. We could have create a separate charger for `Lightning` socket and be happy about that, but our requirements will not always be that flexible. So we need to create a `Lightning to USB-C` adapter to make the protocols compatible. 
 
@@ -147,6 +147,7 @@ charger.charge() 								// 4
 ```
 
 The first thing that we do (1) is to create an instance of an `iPhone` type. Then (2) we create an `Adapter` called `USBCAdapter`, which may accept a type that conforms to `LightningSocketType` protocol. Finally, we can use our charger adapter by passing it to the `USBCCharger` type, since it conforms to `USBCSocketType` and knows how to convert the method calls from one socket to another one. Then we call `charge` method and our `iPhone` is charging via *USB-C* charger 🍾.
+
 
 ## Conclusion
 `Adapter` is a simple, yet powerful structural pattern that can be implemented by various ways. The exact implementation details depend on many factors that is why need to decide whether or not *inheritance*-based approach suits best, or may be *composition*-based approach is the one that needs to be used. It's all up to you, there are no strict rules. Just remember one thing - make your *adapters* thin and be responsible for just a single type. Don't try to make a `super adapter` that does all kinds of crazy things with various types at the same type. Use composite types and built up on top of that. 
