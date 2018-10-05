@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 04/October/2018.**
+**Last Update: 05/October/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -81,7 +81,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- [**Adapter:**]() 'adapts' one interface for a class into one that a client expects
+- [**Adapter:**](/Common%20Design%20Patterns/Structural/Adapter/Adapter.md) 'adapts' one interface for a class into one that a client expects
 - [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently
 - **Composite:** a tree structure of objects where every object has the same interface
 - **Decorator:** allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
