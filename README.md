@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 06/October/2018.**
+**Last Update: 07/October/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -127,7 +127,7 @@ rise of new classes
 ## 🏛 Architectural Patterns
 Architectural patterns addres issues that arise in software engineering within certain contexts. They are similar to design patterns, but have broader scope of responsibilities. Architectural patterns structure the way how software product/application/platform is built by separating different abstractions into reusable layers. Sometimes architectural patterns are documented as design patterns.
 
-- [**MVC:**]() is an architectural pattern commonly used for developing user interfaces that divides an application into three interconnected parts. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. The `MVC` design pattern decouples these major components allowing for efficient code reuse and parallel development [[1](#references)]
+- **MVC:** is an architectural pattern commonly used for developing user interfaces that divides an application into three interconnected parts. This is done to separate internal representations of information from the ways information is presented to and accepted from the user. The `MVC` design pattern decouples these major components allowing for efficient code reuse and parallel development [[1](#references)]
 - **MVP:** is a derivation of the model–view–controller (`MVC`) architectural pattern, and is used mostly for building user interfaces. In `MVP`, the presenter assumes the functionality of the "middle-man". In `MVP`, all presentation logic is pushed to the presenter [[1](#references)]
 - **MVVM:** is a software architectural pattern that facilitates a separation of development of the graphical user interface – be it via a markup language or `GUI` code – from development of the business logic or back-end logic (the data model). The view model of `MVVM` is a value converter, meaning the view model is responsible for exposing (converting) the data objects from the model in such a way that objects are easily managed and presented [[1](#references)]
 - **MVVM-C:** basically the same `MVVM` arcitectural pattern, but with an addition of `Routing` layer, which is `Coordinator` pattern
