@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 07/October/2018.**
+**Last Update: 08/October/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -29,21 +29,21 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
-- [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters
+- [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) [[code]](/Common%20Design%20Patterns/Behavioral/Command/Command.playground/Contents.swift) command objects encapsulate an action and its parameters
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
-- [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
+- [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) [[code]](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.playgroud/Contents.swift) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
-- [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback)
-- [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns
+- [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) [[code]](/Common%20Design%20Patterns/Behavioral/Memento/Memento.playground/Contents.swift) provides the ability to restore an object to its previous state (rollback)
+- [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) [[code]](/Common%20Design%20Patterns/Behavioral/Observer/Observer.playground/Contents.swift) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns
 - **State:** a clean way for an object to partially change its type at runtime
-- [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition
+- [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) [[code]](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.playground/Contents.swift) algorithms can be selected on the fly, using composition
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
 - **Visitor:** a way to separate an algorithm from an object
 
 #### Other
 
 - **Externalize the Stack:** turn a recursive function into an iterative one that uses a stack
-- [**Null Object:**](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) designed to act as a default value of an object
+- [**Null Object:**](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) [[code]](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.playground/Contents.swift) designed to act as a default value of an object
 - **Weak Reference:** de-couple an observer from an observable
 - **Protocol Stack:** communications are handled by multiple layers, which form an encapsulation hierarchy
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
@@ -59,17 +59,17 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly
-- [**Factory Method:**](/Creational/FactoryMethod/FactoryMethod.md) centralize creation of an object of a specific type choosing one of several implementations
-- [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations
-- [**Prototype:**](/Common%20Design%20Patterns/Creational/Prototype/Prototype.md) used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
-- [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object
+- [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) [[code]](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.playground/Contents.swift) a class requests the objects it requires from a factory object instead of creating the objects directly
+- [**Factory Method:**](/Creational/FactoryMethod/FactoryMethod.md) [[code]](/Common%20Design%20Patterns/Creational/FactoryMethod/FactoryMethod.playground/Contents.swift) centralize creation of an object of a specific type choosing one of several implementations
+- [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) [[code]](/Common%20Design%20Patterns/Creational/Builder/Builder.playground/Contents.swift) separates the construction of a complex object from its representation so that the same construction process can create different representations
+- [**Prototype:**](/Common%20Design%20Patterns/Creational/Prototype/Prototype.md) [[code]](/Common%20Design%20Patterns/Creational/Prototype/Prototype.playground/Contents.swift) used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects
+- [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) [[code]](/Common%20Design%20Patterns/Creational/Singleton/Singleton.playground/Sources/Singleton.swift) restrict instantiation of a class to one object
 
 #### Other 
 
-- [**Dependency Injection:**](/Common%20Design%20Patterns/Creational/DependencyInjection/DependencyInjection.md) a type accepts the objects it requires from an injector instead of creating the objects directly
-- [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
-- [**Object Pool:**](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.md) avoid expensive acquisition and release of resources by recycling objects that are no longer in use
+- [**Dependency Injection:**](/Common%20Design%20Patterns/Creational/DependencyInjection/DependencyInjection.md) [[code]](/Common%20Design%20Patterns/Creational/DependencyInjection/DependencyInjection.playground/Contents.swift) a type accepts the objects it requires from an injector instead of creating the objects directly
+- [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) [[code]](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.playground/Contents.swift) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed
+- [**Object Pool:**](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.md) [[code]](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.playground/Contents.swift) avoid expensive acquisition and release of resources by recycling objects that are no longer in use
 - **Simple Factory:** NO DESCRIPTION YET 
 - **Static Factory:** used for instantiation of dependent types. Replaces constructors/initializers for object creation that provides additional capabilities such as caching and/or throwing an error
 
@@ -81,13 +81,13 @@ I want to keep this repo up to date, implement the latest design, architecture a
 
 #### Gang of Four
 
-- [**Adapter:**](/Common%20Design%20Patterns/Structural/Adapter/Adapter.md) 'adapts' one interface for a class into one that a client expects
-- [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently
+- [**Adapter:**](/Common%20Design%20Patterns/Structural/Adapter/Adapter.md) [[code]](/Common%20Design%20Patterns/Structural/Adapter/Adapter.playground/Contents.swift) 'adapts' one interface for a class into one that a client expects
+- [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) [[code]](/Common%20Design%20Patterns/Structural/Bridge) decouple an abstraction from its implementation so that the two can vary independently
 - **Composite:** a tree structure of objects where every object has the same interface
 - **Decorator:** allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
-- [**Facade:**](/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks
+- [**Facade:**](/Common%20Design%20Patterns/Structural/Facade/Facade.md) [[code]](/Common%20Design%20Patterns/Structural/Facade/Facade.playground/Contents.swift) create a simplified interface of an existing interface to ease usage for common tasks
 - **Flyweight:** a large quantity of objects share a common properties object to save space
-- [**Proxy:**](/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) a class functioning as an interface to another thing
+- [**Proxy:**](/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) [[code]](/Common%20Design%20Patterns/Structural/Proxy/Proxy.playground) a class functioning as an interface to another thing
 
 #### Other 
 
@@ -97,12 +97,12 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Tombstone:** an intermediate "lookup" object contains the real location of an object.
 rise of new classes
 - **Extensibility:** a.k.a. `Framework` - hide complex code behind a simple interface
-- [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class.
+- [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) [[code]](/Common%20Design%20Patterns/Structural/Marker/Marker.playground/Contents.swift) an empty interface (or protocol) to associate metadata with a class.
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
-- [**Delegation:**](/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance
-- [**Multicast Delegatation:**](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
-- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers
+- [**Delegation:**](/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) [[code]](/Common%20Design%20Patterns/Structural/Delegation/Delegation.playground) allows object composition to achieve the same code reuse as inheritance
+- [**Multicast Delegatation:**](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.playground/Contents.swift) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls
+- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) [[code]](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)  is an object that encapsulates lifecycle that is spread over a collection of view controllers
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
 ## 🚅 Concurrency Design Patterns
@@ -119,7 +119,7 @@ rise of new classes
 - **Monitor Object:** is a synchronization construct that allows threads to have both mutual exclusion and the ability to wait (block) for a certain condition to become true
 - **Nuclear Reaction:** is a type of computation which allows threads to either spawn new threads or converge many threads to one
 - **Reactor:** is an event handling pattern for handling service requests delivered concurrently to a service handler by one or more inputs
-- [**Read Write Lock:**](/Concurrency%20Design%20Patterns/ReadWriteLock/ReadWriteLock.md) allows concurrent access for read-only operations, while write operations require exclusive access
+- [**Read Write Lock:**](/Concurrency%20Design%20Patterns/ReadWriteLock/ReadWriteLock.md) [[code]](/Concurrency%20Design%20Patterns/ReadWriteLock/ReadWriteLock.playground/Contents.swift) allows concurrent access for read-only operations, while write operations require exclusive access
 - **Scheduler:** is the method by which work specified by some means is assigned to resources that complete the work
 - **Thread Pool:** maintains multiple threads waiting for tasks to be allocated for concurrent execution by the supervising program
 - **Thread-Local Storage:** is a computer programming method that uses static or global memory local to a thread
@@ -147,7 +147,7 @@ Architectural patterns addres issues that arise in software engineering within c
 
 The following patterns are not part of the `design patterns` topic. However, the presented `language patterns` are related to the `design patterns` theme, since they offer reusable solutions for common design scenarious when using the programming language. `IMHO` they are essential to master in order to realise that patterns are everywhere - language, constructions, architectures, approaches etc.
 
-- [**Wildcard:**](/Swift%20Design%20Patterns/Wildcard/Wildcard.md) a wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against 
+- [**Wildcard:**](/Swift%20Design%20Patterns/Wildcard/Wildcard.md) [[code]](/Swift%20Design%20Patterns/Wildcard/Wildcard.playground/Contents.swift) a wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against 
 - **Identifier:** an identifier pattern matches any value and binds the matched value to a variable or constant name
 - **Value-Binding:** a value-binding pattern binds matched values to variable or constant names. Value-binding patterns that bind a matched value to the name of a constant begin with the let keyword; those that bind to the name of variable begin with the var keyword
 - **Tuple Pattern:** a tuple pattern is a comma-separated list of zero or more patterns, enclosed in parentheses. Tuple patterns match values of corresponding tuple types
