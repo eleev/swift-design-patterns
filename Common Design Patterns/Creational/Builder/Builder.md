@@ -183,5 +183,49 @@ Seems shorter and pretty nice! However we just broke the one of the fundamental 
 
 On the other hand, when we used builder protocol we marked all the properties as `get-only` which conforms to the encapsulation principle. 
 
+## Keypath Builder
+
+This is a relatively new approach, available since the introduction of Swift's `Key Path` addition with `Swift 4.0` release. The approach is based on the added dynamism to the language through keypaths and functional chaining. 
+
+We start off from declaring an empty protocol called `BuilderProtocol`:
+
+```swift
+protocol BuilderProtocol { /* empty, implementation is added to the protocol extension*/ }
+```
+Then we implement a small protocol extension with a single method called `init`. `Init` is a reserved keyword in Swift, so we need to escape it by putting backtrick (`) before and after the word:
+
+```swift
+extension BuilderProtocol where Self: AnyObject {
+    
+    @discardableResult
+    func `init`<T>(_ property: ReferenceWritableKeyPath<Self, T>, with value: T) -> Self {
+        self[keyPath: property] = value
+        return self
+    }
+}
+```
+
+The `init` method allows to set a new value to a property by using a `keypath` in a chainable manner by repeatedly  calling `init` method for each single property. By the way, we can implement additional methods for different initialization cases, when several parameters are passed all at one method call. 
+
+In order to use such as builder we need to add a conformance to `BuilderProtocol` to the type that needs to get this functionality:
+
+```swift
+extension Song: BuilderProtocol { /* empty implementation */ }
+```
+
+Then, the usage will look something like this:
+
+```swift
+let song = Song()
+    .init(\.author,         with: "The Heavy")
+    .init(\.name,           with: "Same Ol`")
+    .init(\.genre,          with: .rock)
+    .init(\.duration,       with: 184)
+    .init(\.releaseDate,    with: "2012")
+```
+Separates the initialization from the actual usage of an object! 
+
+However, I find this approach quite dangerous since we can easily misspell a keypath name and get a run-time error. Be wise when selecting an approach, there is no silver bullet for all the cases and situations.
+
 ## Conclusion
 It's always up to you - the developer and architect to decide which approach suits best for your particular case and context. When making decisions related to choosing the way how the pattern is implemented just try to follow the main rules and principles of the paradigms and architectures that you use. Otherwise - you will find yourself in a situation when design wrongly implemented design pattern becomes `anti-pattern` and only gets you troubles and messy code. 
