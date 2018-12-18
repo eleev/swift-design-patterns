@@ -10,6 +10,8 @@
 # ✍️ About 
 🚀 The ultimate collection of various `Software Design Patterns` implemented using `Swift Programming Language`.  This repository aims to collect as many design patterns as possbile with examples and to serve as a reference material for everyone who is willing to learn something new.
 
+Each design pattern has a complete description and source code. You can view the description by clicking the **name** of a design pattern and view the code by clicking the **[code]**. 
+
 # ☢️ Disclamer
 The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that looks strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
 
