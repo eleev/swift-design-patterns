@@ -3,9 +3,11 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 18/December/2018.**
+**Last Update: 19/December/2018.**
 
 ![](logo-swift_design_patterns.jpg)
+
+### If you like the project, please give it a star ⭐ It will show the creator your appreciation and help others to discover the repo.
 
 # ✍️ About 
 🚀 The ultimate collection of various `Software Design Patterns` implemented using `Swift Programming Language`.  This repository aims to collect as many design patterns as possbile with examples and to serve as a reference material for everyone who is willing to learn something new.
