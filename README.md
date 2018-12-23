@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 19/December/2018.**
+**Last Update: 23/December/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -39,7 +39,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
 - [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback) [[code]](/Common%20Design%20Patterns/Behavioral/Memento/Memento.playground/Contents.swift)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns [[code]](/Common%20Design%20Patterns/Behavioral/Observer/Observer.playground/Contents.swift)
-- **State:** a clean way for an object to partially change its type at runtime
+- **State:** allows an object to alter its behavior when its internal state changes
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition [[code]](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.playground/Contents.swift)
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
 - **Visitor:** a way to separate an algorithm from an object
