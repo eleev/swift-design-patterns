@@ -39,7 +39,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Mediator:** provides a unified interface to a set of interfaces in a subsystem
 - [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback) [[code]](/Common%20Design%20Patterns/Behavioral/Memento/Memento.playground/Contents.swift)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns [[code]](/Common%20Design%20Patterns/Behavioral/Observer/Observer.playground/Contents.swift)
-- **State:** allows an object to alter its behavior when its internal state changes
+- [**State:**](/Common%20Design%20Patterns/Behavioral/State/State.md) allows an object to alter its behavior when its internal state changes [[code](/Common%20Design%20Patterns/Behavioral/State/State.playground/Contents.swift)]
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition [[code]](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.playground/Contents.swift)
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
 - **Visitor:** a way to separate an algorithm from an object
