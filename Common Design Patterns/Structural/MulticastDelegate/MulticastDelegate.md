@@ -1,4 +1,4 @@
-# Multicast Delegation Design Pattern
+# Multicast Delegate Design Pattern
 
 `Multicast Delegate` is a multipurpose design pattern (despite it's categorized  here as structural) that further extends the capabilities of the `Delegate` pattern. `Delegate` pattern establishes one-to-one relationship between the delegate and the delegated types. `Multicast Delegate` pattern allows for multiple delegates to be attached to a delegated type by maintaining a weakly-referenced collection of objects. 
 

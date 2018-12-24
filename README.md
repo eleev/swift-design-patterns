@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 23/December/2018.**
+**Last Update: 24/December/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -53,7 +53,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
 - **Single-Serving Visitor:** optimise the implementation of a visitor that is allocated, used only once, and then deleted
 - **Specification:** recombinable business logic in a boolean fashion
-- **Publish/Subscribe:** messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead categorize published messages into classes without knowledge of which subscribers, if any, there may be. The pattern has similarities with `Observer`, `Event Listener` and `Multicast Delegation`, however it has its differences and weaknesses as well
+- **Publish/Subscribe:** messaging pattern where senders of messages, called publishers, do not program the messages to be sent directly to specific receivers, called subscribers, but instead categorize published messages into classes without knowledge of which subscribers, if any, there may be. The pattern has similarities with `Observer`, `Event Listener` and `Multicast Delegate`, however it has its differences and weaknesses as well
 - **Event Listener:** NO DESCRIPTION YET (has differences in comparison to *Observer* and *Publish/Subscribe* patterns - need to formalize it in a sentence or so) 
 
 ### Creational 
@@ -104,8 +104,8 @@ rise of new classes
 - [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class  [[code]](/Common%20Design%20Patterns/Structural/Marker/Marker.playground/Contents.swift)
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
-- [**Delegation:**](/Common%20Design%20Patterns/Structural/Delegation/Delegation.md) allows object composition to achieve the same code reuse as inheritance [[code]](/Common%20Design%20Patterns/Structural/Delegation/Delegation.playground)
-- [**Multicast Delegatation:**](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegation.playground/Contents.swift)
+- [**Delegate:**](/Common%20Design%20Patterns/Structural/Delegate/Delegate.md) allows object composition to achieve the same code reuse as inheritance [[code]](/Common%20Design%20Patterns/Structural/Delegate/Delegate.playground)
+- [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegate.playground/Contents.swift)
 - [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers [[code]](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 

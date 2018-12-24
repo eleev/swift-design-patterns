@@ -1,5 +1,5 @@
 //
-//  MulticastDelegation.swift
+//  MulticastDelegate.swift
 //  swift-design-patterns
 //
 //  Created by Astemir Eleev on 30/08/2018.
