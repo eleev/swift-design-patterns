@@ -105,7 +105,7 @@ rise of new classes
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
 - [**Delegate:**](/Common%20Design%20Patterns/Structural/Delegate/Delegate.md) allows object composition to achieve the same code reuse as inheritance [[code]](/Common%20Design%20Patterns/Structural/Delegate/Delegate.playground)
-- [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegation/MulticastDelegate.playground/Contents.swift)
+- [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.playground/Contents.swift)
 - [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers [[code]](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
