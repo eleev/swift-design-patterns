@@ -1,5 +1,5 @@
-# Delegation Design Pattern
-Delegation is a structural design pattern that is aimed to decompose the responsibilities into smaller, discrete objects called delegates. The pattern is pretty simple and can be constructed by just using a single protocol called delegate protocol.
+# Delegate Design Pattern
+`Delegate` is a structural design pattern that is aimed to decompose the responsibilities into smaller, discrete objects called delegates. The pattern is pretty simple and can be constructed by just using a single protocol called delegate protocol.
 
 ```swift
 public protocol DelegateProtocol: class {
