@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 25/December/2018.**
+**Last Update: 26/December/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -36,7 +36,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters [[code]](/Common%20Design%20Patterns/Behavioral/Command/Command.playground/Contents.swift)
 - **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
 - [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation [[code]](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.playground/Contents.swift)
-- **Mediator:** provides a unified interface to a set of interfaces in a subsystem
+- **Mediator:** defines an object that encapsulates how a set of objects interact
 - [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback) [[code]](/Common%20Design%20Patterns/Behavioral/Memento/Memento.playground/Contents.swift)
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns [[code]](/Common%20Design%20Patterns/Behavioral/Observer/Observer.playground/Contents.swift)
 - [**State:**](/Common%20Design%20Patterns/Behavioral/State/State.md) allows an object to alter its behavior when its internal state changes [[code](/Common%20Design%20Patterns/Behavioral/State/State.playground/Contents.swift)]
