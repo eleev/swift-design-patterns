@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 27/December/2018.**
+**Last Update: 28/December/2018.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -64,7 +64,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 #### Gang of Four
 
 - [**Abstract Factory:**](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.md) a class requests the objects it requires from a factory object instead of creating the objects directly [[code]](/Common%20Design%20Patterns/Creational/AbstractFactory/AbstractFactory.playground/Contents.swift)
-- [**Factory Method:**](/Creational/FactoryMethod/FactoryMethod.md) centralize creation of an object of a specific type choosing one of several implementations [[code]](/Common%20Design%20Patterns/Creational/FactoryMethod/FactoryMethod.playground/Contents.swift) 
+- [**Factory Method:**](/Common%20Design%20Patterns/Creational/FactoryMethod/FactoryMethod.md) centralize creation of an object of a specific type choosing one of several implementations [[code]](/Common%20Design%20Patterns/Creational/FactoryMethod/FactoryMethod.playground/Contents.swift) 
 - [**Builder:**](/Common%20Design%20Patterns/Creational/Builder/Builder.md) separates the construction of a complex object from its representation so that the same construction process can create different representations [[code]](/Common%20Design%20Patterns/Creational/Builder/Builder.playground/Contents.swift)
 - [**Prototype:**](/Common%20Design%20Patterns/Creational/Prototype/Prototype.md) used when the type of objects to create is determined by a prototypical instance, which is cloned to produce new objects [[code]](/Common%20Design%20Patterns/Creational/Prototype/Prototype.playground/Contents.swift)
 - [**Singleton:**](/Common%20Design%20Patterns/Creational/Singleton/Sinpleton.md) restrict instantiation of a class to one object [[code]](/Common%20Design%20Patterns/Creational/Singleton/Singleton.playground/Sources/Singleton.swift) 
