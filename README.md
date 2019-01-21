@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 28/December/2018.**
+**Last Update: 21/January/2019.**
 
 ![](logo-swift_design_patterns.jpg)
 
