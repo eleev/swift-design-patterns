@@ -3,7 +3,7 @@
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 21/January/2019.**
+**Last Update: 31/January/2019.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -94,19 +94,19 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - [**Proxy:**](/Common%20Design%20Patterns/Structural/Proxy/Proxy.md) a class functioning as an interface to another thing [[code]](/Common%20Design%20Patterns/Structural/Proxy/Proxy.playground)
 
 #### Other 
-
+- [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class  [[code]](/Common%20Design%20Patterns/Structural/Marker/Marker.playground/Contents.swift)
+- [**Delegate:**](/Common%20Design%20Patterns/Structural/Delegate/Delegate.md) allows object composition to achieve the same code reuse as inheritance [[code]](/Common%20Design%20Patterns/Structural/Delegate/Delegate.playground)
+- [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.playground/Contents.swift)
+- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers [[code]](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)
+- [**Type Erasure**](/Common%20Design%20Patterns/Structural/TypeErasure/TypeErasure.md) turns an associated type into a generic constraint. Resolves an issue that does not allow to treat a collection of objects that conform to a protocol with an associated type as a collection of regular protocols [[code](/Common%20Design%20Patterns/Structural/TypeErasure/TypeErasure.playground/Contents.swift)]
 - **Adapter Pipeline:** use multiple adapters for debugging purposes
 - **Retrofit Interface:** an adapter used as a new interface for multiple classes at the same time
 - **Aggregate pattern:** a version of the Composite pattern with methods for aggregation of children
 - **Tombstone:** an intermediate "lookup" object contains the real location of an object.
 rise of new classes
 - **Extensibility:** a.k.a. `Framework` - hide complex code behind a simple interface
-- [**Marker:**](/Common%20Design%20Patterns/Structural/Marker/Marker.md) an empty interface (or protocol) to associate metadata with a class  [[code]](/Common%20Design%20Patterns/Structural/Marker/Marker.playground/Contents.swift)
 - **Pipes and Filters:** a chain of processes where the output of each process is the input of the next
 - **Opaque Pointer:** a pointer to an undeclared or private type, to hide implementation details
-- [**Delegate:**](/Common%20Design%20Patterns/Structural/Delegate/Delegate.md) allows object composition to achieve the same code reuse as inheritance [[code]](/Common%20Design%20Patterns/Structural/Delegate/Delegate.playground)
-- [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.playground/Contents.swift)
-- [**Coordinator:**](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.md) is an object that encapsulates lifecycle that is spread over a collection of view controllers [[code]](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)
 - **Humble Object:** extracts the logic into a separate easy-to-test component that is decoupled from its environment
 
 ## 🚅 Concurrency Design Patterns
