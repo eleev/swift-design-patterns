@@ -99,6 +99,7 @@ I want to keep this repo up to date, implement the latest design, architecture a
 - [**Multicast Delegate:**](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.md) advanced version of `Delegate pattern` which allows multiple delegates to be notified about method calls [[code]](/Common%20Design%20Patterns/Structural/MulticastDelegate/MulticastDelegate.playground/Contents.swift)
 - [**Coordinator:**](https://github.com/jVirus/coordinator-kit#%EF%B8%8F-coordinator-pattern) is an object that encapsulates lifecycle that is spread over a collection of view controllers [[code](https://github.com/jVirus/coordinator-kit/tree/master/coordinator-kit)](/Common%20Design%20Patterns/Structural/Coordinator/Coordinator.playground)
 - [**Type Erasure**](/Common%20Design%20Patterns/Structural/TypeErasure/TypeErasure.md) turns an associated type into a generic constraint. Resolves an issue that does not allow to treat a collection of objects that conform to a protocol with an associated type as a collection of regular protocols [[code](/Common%20Design%20Patterns/Structural/TypeErasure/TypeErasure.playground/Contents.swift)]
+- **DAO:** - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism
 - **Adapter Pipeline:** use multiple adapters for debugging purposes
 - **Retrofit Interface:** an adapter used as a new interface for multiple classes at the same time
 - **Aggregate pattern:** a version of the Composite pattern with methods for aggregation of children
@@ -138,7 +139,6 @@ Architectural patterns addres issues that arise in software engineering within c
 - **VIPER:** `VIPER` is an application of `Clean Architecture` to `iOS` apps. The word `VIPER` is a backronym for `View`, `Interactor`, `Presenter`, `Entity`, and `Routing`. `Clean Architecture` divides an app’s logical structure into distinct layers of responsibility. This makes it easier to isolate dependencies (e.g. your database) and to test the interactions at the boundaries between layers [[8](#references)]
 - **RIBs:** is the cross-platform architecture framework developed by Uber. RIBs means: Router, Interactor and Builder, which are core components of this architecture. The key aspects of the architecure are: modible apps with large number of engineers and nested states [[10](#references)]
 - **Clean-Swift:** is a derivarive architecture of the `Clean Archtiecure` proposed by Uncle Bob
-- **DAO:** - `DAO` stands for `Data Access Object`. `DAO` provides abstract interface to a database or other persistence storage mechanism. 
 
 ## 🐦 Swift Patterns
 > In `Swift`, there are two basic kinds of patterns: those that successfully match any kind of value, and those that may fail to match a specified value at runtime. 
