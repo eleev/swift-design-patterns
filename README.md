@@ -1,9 +1,10 @@
 # swift-design-patterns [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
+[![Progress](https://img.shields.io/badge/progress-28/79-green.svg)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 06/February/2019.**
+**Last Update: 30/July/2019.**
 
 ![](logo-swift_design_patterns.jpg)
 
