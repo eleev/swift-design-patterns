@@ -2,9 +2,10 @@
 
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![Progress](https://img.shields.io/badge/progress-28/79-green.svg)]()
+[![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
-**Last Update: 30/July/2019.**
+**Last Update: 19/April/2022.**
 
 ![](logo-swift_design_patterns.jpg)
 
