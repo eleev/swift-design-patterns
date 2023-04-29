@@ -3,7 +3,7 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![Progress Patterns](https://img.shields.io/badge/patters-28/79-green.svg)]()
-[![Progress Principles](https://img.shields.io/badge/principles-0/42-red.svg)]()
+[![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
 
