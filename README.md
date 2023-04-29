@@ -76,7 +76,7 @@ My goal is to keep this repository up to date by incorporating the latest design
 - [**Dependency Injection:**](/Common%20Design%20Patterns/Creational/DependencyInjection/DependencyInjection.md) a type accepts the objects it requires from an injector instead of creating the objects directly [[code]](/Common%20Design%20Patterns/Creational/DependencyInjection/DependencyInjection.playground/Contents.swift)
 - [**Lazy Initialization:**](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.md) tactic of delaying the creation of an object, the calculation of a value, or some other expensive process until the first time it is needed [[code]](/Common%20Design%20Patterns/Creational/LazyInitialization/LazyInitialization.playground/Contents.swift)
 - [**Object Pool:**](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.md) avoid expensive acquisition and release of resources by recycling objects that are no longer in use [[code]](/Common%20Design%20Patterns/Creational/ObjectPool/ObjectPool.playground/Contents.swift)
-- **Simple Factory:** NO DESCRIPTION YET 
+- **Simple Factory:** provides an interface for creating objects in a superclass while allowing subclasses to define the type of objects that will be created. It is called a `simple factory` because it centralizes the object creation process, making it easier to manage and maintain.
 - **Static Factory:** used for instantiation of dependent types. Replaces constructors/initializers for object creation that provides additional capabilities such as caching and/or throwing an error
 
 ### Structural 
