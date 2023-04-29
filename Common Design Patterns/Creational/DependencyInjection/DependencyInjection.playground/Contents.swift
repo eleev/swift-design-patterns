@@ -1,34 +1,5 @@
 import Foundation
 
-//class DataStorage {
-//
-//    // MARK: - Properties
-//
-//    private let dataBase: DataBase
-//
-//    // MARK: - Initailizers
-//
-//    init() {
-//        dataBase = DataBase(schemeType: .queue)
-//    }
-//    // ... the rest of the implementation
-//}
-
-//class DataStorage {
-//
-//    // MARK: - Properties
-//
-//    private let dataBase: Persistance
-//
-//    // MARK: - Initailizers
-//
-//    init(dataBase: Persistance) {
-//        self.dataBase = dataBase
-//    }
-//
-//    // ... the rest of the implementation
-//}
-
 class DataStorage {
     
     // MARK: - Properties
@@ -127,3 +98,5 @@ let storage = DataStorage(dataBase: dataBase)
 let propertyList = PropertyList(schemeType: .query)
 storage.dataBase = propertyList
 
+
+// TODO: property wrapper based dependency injection sample

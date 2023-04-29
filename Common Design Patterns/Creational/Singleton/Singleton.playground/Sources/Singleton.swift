@@ -143,7 +143,7 @@ public extension DispatchQueue {
     /// - Parameters:
     ///   - token: is a unique reverse DNS-style name such as io.eleev.astemir or a GUID
     ///   - block: is a non-escaping closure that is executed only once
-    public class func once(token: String, block: ()->Void) {
+    class func once(token: String, block: () -> Void ) {
         objc_sync_enter(self); defer { objc_sync_exit(self) }
         
         if _onceTracker.contains(token) {

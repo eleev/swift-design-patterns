@@ -21,5 +21,5 @@ networking.dataTask(for: url) { response in
 
 let backendProxy = BackendNetworkingProxy()
 backendProxy.requestDataUpdate { dataUpdateStatus in
-    debugPrint(dataUpdateStatus)
+    debugPrint(dataUpdateStatus.debugDescription)
 }

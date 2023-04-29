@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol DelegateProtocol: class {
+public protocol DelegateProtocol: AnyObject {
     
     // MARK: - Methods
     

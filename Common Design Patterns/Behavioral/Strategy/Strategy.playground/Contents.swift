@@ -1,7 +1,18 @@
 import Foundation
 
+/**
+ A protocol that defines a common interface for sorting algorithms.
+
+ This protocol requires the implementation of a single method, `sort(items:)`, which accepts an array of `Comparable` items and returns a sorted array of the same items. By conforming to this protocol, any sorting algorithm can be easily interchangeable in your code, allowing for flexibility and maintainability.
+ */
 protocol SortingStrategy {
-    func sort <T>(items: [T]) -> [T] where T: Comparable
+    /**
+     Sorts an array of elements conforming to the `Comparable` protocol.
+     
+     - Parameter items: An array of elements conforming to the `Comparable` protocol.
+     - Returns: A sorted array of the input elements.
+     */
+    func sort<T>(items: [T]) -> [T] where T: Comparable
 }
 
 struct QuickSortStrategy: SortingStrategy {
@@ -84,9 +95,7 @@ extension Array where Element: Comparable {
         
         return temp
     }
-    
 }
-
 
 extension Array where Element: Comparable {
     

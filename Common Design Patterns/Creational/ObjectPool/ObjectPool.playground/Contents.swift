@@ -1,6 +1,6 @@
 import Foundation
 
-protocol ObjectPoolItem: class {
+protocol ObjectPoolItem: AnyObject {
     
     /// Determines a rule that is used by the ObjectPool instnace to determine whether this object is eligible to be reused
     var canReuse: Bool { get }
