@@ -103,22 +103,24 @@ class MarketViewController: UIViewController {
     // MARK: - Initializers
     
     init() {
-//        let banana = Product(name: "Banana", calories: 85, price: 5)
-//        let apple = Product(name: "Apple", calories: 50, price: 3)
-//        let juice = Product(name: "Orange Juice", calories: 150, price: 20)
+        /*
+        let banana = Product(name: "Banana", calories: 85, price: 5)
+        let apple = Product(name: "Apple", calories: 50, price: 3)
+        let juice = Product(name: "Orange Juice", calories: 150, price: 20)
         
-//        basket.add(product: banana)
-//        basket.add(product: apple)
-//        basket.add(product: juice)
-//
-//        print(basket)
-//
-//        if let thirdProduct = basket[3] {
-//            print("Third product: ", thirdProduct)
-//        } else {
-//            print("nil")
-//        }
+        basket.add(product: banana)
+        basket.add(product: apple)
+        basket.add(product: juice)
 
+        print(basket)
+
+        if let thirdProduct = basket[3] {
+            print("Third product: ", thirdProduct)
+        } else {
+            print("nil")
+        }
+         */
+         
         basket.add(product: Banana())
         basket.add(product: Apple())
         basket.add(product: Juice())

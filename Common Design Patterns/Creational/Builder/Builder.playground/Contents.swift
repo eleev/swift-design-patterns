@@ -78,8 +78,8 @@ extension BuilderProtocol where Self: AnyObject {
 extension Song: BuilderProtocol { /* empty implementation */ }
 
 let song = Song()
-    .init(\.author,         with: "The Heavy")
-    .init(\.name,           with: "Same Ol`")
-    .init(\.genre,          with: .rock)
-    .init(\.duration,       with: 184)
-    .init(\.releaseDate,    with: "2012")
+    .`init`(\.author,         with: "The Heavy")
+    .`init`(\.name,           with: "Same Ol`")
+    .`init`(\.genre,          with: .rock)
+    .`init`(\.duration,       with: 184)
+    .`init`(\.releaseDate,    with: "2012")

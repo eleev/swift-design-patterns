@@ -394,8 +394,8 @@ let vehicleFactory = VehicleFactory()
 let steampunkTruck = vehicleFactory.produce(areThereZombies: false, hasWeapSystem: true) as? SteampunkTruck
 steampunkTruck?.shoot()
 
-print(steampunkTruck)
+print(steampunkTruck?.description ?? "steampunkTruck is nil")
 
 let sportCar = vehicleFactory.produce(areThereZombies: true, hasWeapSystem: false) as? SportCar
 sportCar?.accelerate()
-print(sportCar)
+print(sportCar?.description ?? "sportCar is nil")

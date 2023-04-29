@@ -5,7 +5,7 @@ import UIKit
 
 // Let's assume that we have aprotocol with an associated type
 
-protocol ShelfProtocol: class {
+protocol ShelfProtocol: AnyObject {
     
     associatedtype Contents: Storable
 

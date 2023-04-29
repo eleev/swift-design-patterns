@@ -1,10 +1,10 @@
 import Foundation
 
-protocol Notification: class {
+protocol Notification: AnyObject {
     var data: Any? { get }
 }
 
-protocol Observer: class {
+protocol Observer: AnyObject {
     func notify(with notification: Notification)
 }
 
@@ -45,7 +45,7 @@ class Subject {
     /// Searches for the observer and returns its index
     public subscript(observer: Observer) -> Int? {
         get {
-            guard let index = observers.index(where: { $0.value === observer }) else {
+            guard let index = observers.firstIndex(where: { $0.value === observer }) else {
                 return nil
             }
             return index
@@ -222,82 +222,84 @@ subject ~> [notificationOne, notificationTwo, notificationThree]
 
 //: Experimental code:
 
-//public final class Disposable {
-//
-//    private let recycle: () -> ()
-//
-//    init(_ recycle: @escaping () -> ()) {
-//        self.recycle = recycle
-//    }
-//
-//    deinit {
-//        recycle()
-//    }
-//
-//    public func add(to bag: DisposeBag) {
-//        bag.insert(self)
-//    }
-//
-//    public func dispose() {
-//        recycle()
-//    }
-//}
-//
-//public class DisposeBag {
-//    /// Keep a reference to all Disposable instances -> this is the actual bag
-//    private let disposables = Atomic<[Disposable]>([])
-//
-//    /// To be able to create a bag
-//    public init() {}
-//
-//    /// Called by a Disposable instance
-//    fileprivate func insert(_ disposable: Disposable) {
-//        disposables.apply { _disposables in
-//            _disposables.append(disposable)
-//        }
-//    }
-//
-//    /// Clean everything when the bag is deinited by calling dispose()
-//    /// on all Disposable instances
-//    deinit {
-//        disposables.apply { _disposables in
-//            _disposables.forEach { $0.dispose() }
-//        }
-//    }
-//}
-//
-//private class UnfairLock {
-//    private let _lock: os_unfair_lock_t
-//
-//    fileprivate init() {
-//        _lock = .allocate(capacity: 1)
-//        _lock.initialize(to: os_unfair_lock())
-//    }
-//
-//    fileprivate func lock() {
-//        os_unfair_lock_lock(_lock)
-//    }
-//
-//    fileprivate func unlock() {
-//        os_unfair_lock_unlock(_lock)
-//    }
-//
-//    deinit {
-//        _lock.deallocate()
-//    }
-//}
-//
-//internal class Atomic<Value> {
-//    private let lock = UnfairLock()
-//    private var _value: Value
-//
-//    internal init(_ value: Value) {
-//        _value = value
-//    }
-//
-//    internal func apply(_ action: (inout Value) -> Void) {
-//        lock.lock()
-//        defer { lock.unlock() }
-//        action(&_value)
-//    }
-//}
+/*
+public final class Disposable {
+
+    private let recycle: () -> ()
+
+    init(_ recycle: @escaping () -> ()) {
+        self.recycle = recycle
+    }
+
+    deinit {
+        recycle()
+    }
+
+    public func add(to bag: DisposeBag) {
+        bag.insert(self)
+    }
+
+    public func dispose() {
+        recycle()
+    }
+}
+
+public class DisposeBag {
+    /// Keep a reference to all Disposable instances -> this is the actual bag
+    private let disposables = Atomic<[Disposable]>([])
+
+    /// To be able to create a bag
+    public init() {}
+
+    /// Called by a Disposable instance
+    fileprivate func insert(_ disposable: Disposable) {
+        disposables.apply { _disposables in
+            _disposables.append(disposable)
+        }
+    }
+
+    /// Clean everything when the bag is deinited by calling dispose()
+    /// on all Disposable instances
+    deinit {
+        disposables.apply { _disposables in
+            _disposables.forEach { $0.dispose() }
+        }
+    }
+}
+
+private class UnfairLock {
+    private let _lock: os_unfair_lock_t
+
+    fileprivate init() {
+        _lock = .allocate(capacity: 1)
+        _lock.initialize(to: os_unfair_lock())
+    }
+
+    fileprivate func lock() {
+        os_unfair_lock_lock(_lock)
+    }
+
+    fileprivate func unlock() {
+        os_unfair_lock_unlock(_lock)
+    }
+
+    deinit {
+        _lock.deallocate()
+    }
+}
+
+internal class Atomic<Value> {
+    private let lock = UnfairLock()
+    private var _value: Value
+
+    internal init(_ value: Value) {
+        _value = value
+    }
+
+    internal func apply(_ action: (inout Value) -> Void) {
+        lock.lock()
+        defer { lock.unlock() }
+        action(&_value)
+    }
+}
+*/

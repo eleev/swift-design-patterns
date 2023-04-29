@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public protocol Chargeable: class {
+public protocol Chargeable: AnyObject {
     
     // MARK: - Properties
     

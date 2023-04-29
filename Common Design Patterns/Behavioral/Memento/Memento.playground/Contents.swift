@@ -158,9 +158,6 @@ caretaker.save(memento: animal, for: "defaultAnimal01")
 
 user.name = "Alex"
 animal.name = "Cat"
-//
-//caretaker.save(memento: user, for: "defaultUser02")
-//caretaker.save(memento: animal, for: "defaultAnimal02")
 
 print(user)
 print(animal)
@@ -175,10 +172,6 @@ if let restoredUser = caretaker.defaultUser01 as User? {
     print("restored: ", restoredUser)
 }
 
-//if let restoredUser = caretaker.defaultUser02 as User? {
-//    print("restored: ", restoredUser)
-//}
-
 if let restoredAnimal = caretaker.defaultAnimal as Animal? {
     print("restored: ", restoredAnimal)
 }
@@ -186,7 +179,3 @@ if let restoredAnimal = caretaker.defaultAnimal as Animal? {
 if let restoredAnimal = caretaker.defaultAnimal02 as Animal? {
     print("restored: ", restoredAnimal)
 }
-
-//if let restoredUser: User? = caretaker.restore(state: "default 01"), let user = restoredUser {
-//    print("restored: ", user)
-//}
