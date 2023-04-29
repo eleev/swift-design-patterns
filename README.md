@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-28/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-30/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -36,7 +36,7 @@ My goal is to keep this repository up to date by incorporating the latest design
 
 - **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
 - [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters [[code]](/Common%20Design%20Patterns/Behavioral/Command/Command.playground/Contents.swift)
-- **Interpreter:** implement a specialized computer language to rapidly solve a specific set of problems
+- [**Interpreter:**](/Common%20Design%20Patterns/Behavioral/Interpreter/Interpreter.md) implement a specialized computer language to rapidly solve a specific set of problems
 - [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation [[code]](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.playground/Contents.swift)
 - [**Mediator:**](/Common%20Design%20Patterns/Behavioral/Mediator/Mediator.md) defines an object that encapsulates how a set of objects interact [[code](/Common%20Design%20Patterns/Behavioral/Mediator/Mediator.playground/Contents.swift)]
 - [**Memento:**](/Common%20Design%20Patterns/Behavioral/Memento/Memento.md) provides the ability to restore an object to its previous state (rollback) [[code]](/Common%20Design%20Patterns/Behavioral/Memento/Memento.playground/Contents.swift)
@@ -44,7 +44,7 @@ My goal is to keep this repository up to date by incorporating the latest design
 - [**State:**](/Common%20Design%20Patterns/Behavioral/State/State.md) allows an object to alter its behavior when its internal state changes [[code](/Common%20Design%20Patterns/Behavioral/State/State.playground/Contents.swift)]
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition [[code]](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.playground/Contents.swift)
 - **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
-- **Visitor:** a way to separate an algorithm from an object
+- [**Visitor:**](/Common%20Design%20Patterns/Behavioral/Visitor/Visitor.md) a way to separate an algorithm from an object
 
 #### Other
 
