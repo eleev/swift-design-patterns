@@ -1,11 +1,10 @@
 # swift-design-patterns [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 
+![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
 [![Progress](https://img.shields.io/badge/progress-28/79-green.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
-
-**Last Update: 19/April/2022.**
 
 ![](logo-swift_design_patterns.jpg)
 
@@ -17,11 +16,11 @@
 Each design pattern has a complete description and source code. You can view the description by clicking the **name** of a design pattern and view the code by clicking the **[code]**. 
 
 # ☢️ Disclamer
-The motivation behind this porject is to help the others to learn by compiling the knowlege that I have. The material to write down is enourmous, sometimes I may formalize my thoughts in a way that looks strange or unclear. I provide reference materials, so you are able to take a look at the same patterns but from a different perspective or original source. 
+The primary objective of this project is to assist others in learning by compiling and sharing the knowledge I have acquired. Given the vast amount of material to be documented, there may be instances when my thoughts are expressed in a manner that appears peculiar or unclear. I have included reference materials to enable you to examine similar patterns from different perspectives or original sources.
 
-If you find that something is not clear or has an issue, please, don't judge immediately in a negative way. It's an open source and you have such an opportunity to polietly tell me about that or even create a pool request (which is the best way to contribute). The other piece of motivation is that I really want to create learning material that is `solid` and yet `easy` to understand for developers that know basics of `OOP` and `POP` paradigms (since it's `Swift` and `POP` is almost as important as `OOP` IMHO).
+If you come across any unclear or problematic content, please refrain from forming an immediate negative judgment. As this is an open-source project, you have the opportunity to politely inform me of any issues or even submit a pull request, which is the most effective way to contribute. Another motivating factor for this project is my desire to create learning materials that are both 'solid' and 'easy' to comprehend for developers who are familiar with the basics of OOP and POP paradigms, as these are crucial for working with Swift.
 
-I want to keep this repo up to date, implement the latest design, architecture and concurrency patterns. Open-source for eveyone :octocat:
+My goal is to keep this repository up to date by incorporating the latest design, architecture, and concurrency patterns. Open-source for everyone! :octocat:
 
 # 📚 List of Contents
 
