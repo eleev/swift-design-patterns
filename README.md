@@ -169,13 +169,14 @@ The following patterns are not part of the `design patterns` topic. However, the
 - **Expression:** an expression pattern represents the value of an expression. Expression patterns appear only in `switch` statement `case` labels
 
 ## Software Design Principles
-There are numerous software design principles that help to create maintainable, scalable, and efficient software systems.
+There are numerous software design principles that help to create maintainable, scalable, and efficient software systems. These principles, along with other best practices, can guide developers in creating high-quality software systems that are easy to understand, maintain, and extend.
+
 1. SOLID Principles:
-a. Single Responsibility Principle (SRP): A class should have only one reason to change, which means it should have only one responsibility.
-b. Open/Closed Principle (OCP): Software entities should be open for extension but closed for modification.
-c. Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types without altering the correctness of the program.
-d. Interface Segregation Principle (ISP): Clients should not be forced to implement interfaces they don't use; instead, create specific interfaces for each client.
-e. Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions. Additionally, abstractions should not depend on details; details should depend on abstractions.
+  a. Single Responsibility Principle (SRP): A class should have only one reason to change, which means it should have only one responsibility.
+  b. Open/Closed Principle (OCP): Software entities should be open for extension but closed for modification.
+  c. Liskov Substitution Principle (LSP): Subtypes should be substitutable for their base types without altering the correctness of the program.
+  d. Interface Segregation Principle (ISP): Clients should not be forced to implement interfaces they don't use; instead, create specific interfaces for each client.
+  e. Dependency Inversion Principle (DIP): High-level modules should not depend on low-level modules; both should depend on abstractions.   Additionally, abstractions should not depend on details; details should depend on abstractions.
 2. DRY (Don't Repeat Yourself): Avoid duplicating code and functionality; aim for modularity and reusability.
 3. KISS (Keep It Simple, Stupid): Design should be as simple as possible, and complexity should be avoided whenever possible.
 4. YAGNI (You Aren't Gonna Need It): Do not implement features or functionality until they are actually needed, as it can lead to unnecessary complexity.
@@ -185,6 +186,16 @@ e. Dependency Inversion Principle (DIP): High-level modules should not depend on
 8. Law of Demeter (LoD) / Principle of Least Knowledge: An object should only communicate with its immediate neighbors and should not have knowledge of the inner workings of other objects.
 9. Principle of Proximity: Related code and functionality should be placed close together, promoting cohesion and making it easier to understand the relationships between components.
 10. Fail-Fast: Design the system to fail as soon as possible when something goes wrong, making it easier to identify and fix problems.
+11. `GRASP` (General Responsibility Assignment Software Patterns):
+  a. `Information Expert`: Assign a responsibility to the class that has the necessary information.
+  b. `Creator`: Assign the responsibility of creating an object to the class that uses it the most or has the necessary information to create it.
+  c. `Controller`: Assign the responsibility of handling external events to a specific class, often referred to as a controller.
+  d. `Low Coupling`: Minimize dependencies between classes to promote modularity and ease of maintenance.
+  e. `High Cohesion`: Keep related responsibilities within the same class, making the class easier to understand and maintain.
+  f. `Polymorphism`: Use inheritance and interfaces to create flexible and reusable solutions.
+  g. `Pure Fabrication`: Create artificial classes to achieve low coupling and high cohesion when necessary.
+  h. `Indirection`: Introduce an intermediate class to manage relationships between other classes, reducing coupling.
+  i. `Protected Variations`: Identify points of potential variation and create stable interfaces around them to minimize the impact of changes.
 
 
 # 📝 References
