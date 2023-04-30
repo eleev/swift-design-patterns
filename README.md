@@ -177,17 +177,17 @@ There were used a number of reference materials such as:
 10. [RIBs. GitHub](https://github.com/uber/RIBs)
 
 # 🙋‍♀️🙋‍♂️ Contributing
-You are very welcome to contribute to this project! There are a few rules that need to be followed:
+Your contributions to this project are warmly welcomed! To ensure a smooth collaboration, please follow these guidelines:
 
-- If you want to implement an example code for an existing `Design Pattern` then you need to wrap it up in `.playground` file. That makes code compilation is a matter of launching a file and not worrying about managing a gigantic `Xcode` project.
-- If you want to write about a `Design Pattern` that is in the list, but has not been implemented yet, then you need to follow the following style guide:
-  - Write the description of a design pattern
-  - Split the example code into subsections
-  - Write explanation for each snippet of code
-  - Don't make your example complicated and too many details
-  - Write conclusion where you highlight the pattern 
-- If you want to write about a `Design Pattern` that is not in the list, then please use the aforementioned rules + write a short description and specify the category of a pattern.  
-- If you find that some important detail is missing in an existing `Design Pattern` then, please politely write it down. The more details and arguments you use, the more easier it will be to address the issues.
+- If you want to implement example code for an existing Design Pattern, wrap it up in a `.playground` file. This way, code compilation is as simple as launching the file, and there's no need to manage a large `Xcode` project.
+- If you want to write about a Design Pattern that's on the list but hasn't been implemented yet, adhere to the following style guide:
+  - Write a clear description of the design pattern.
+  - Divide the example code into subsections.
+  - Provide explanations for each code snippet.
+  - Keep your example simple and avoid unnecessary details.
+  - Conclude with a summary highlighting the pattern's key points.
+- If you want to write about a Design Pattern or Design Principle not on the list, follow the rules mentioned above and add a brief description along with the pattern's category.
+- If you notice an important detail missing in an existing Design Pattern or Design Principle, kindly point it out in a polite manner. Providing more details and arguments will make it easier to address the issue.
 
 # 👨‍💻 Author 
 [Astemir Eleev](https://github.com/jVirus)
