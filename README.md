@@ -168,7 +168,7 @@ The following patterns are not part of the `design patterns` topic. However, the
 - **Type-Casting:** there are two type-casting patterns, the is pattern and the as pattern. The is pattern appears only in switch statement case labels
 - **Expression:** an expression pattern represents the value of an expression. Expression patterns appear only in `switch` statement `case` labels
 
-## Software Design Principles
+## 🧑‍🎨 Software Design Principles
 There are numerous software design principles that help to create maintainable, scalable, and efficient software systems. These principles, along with other best practices, can guide developers in creating high-quality software systems that are easy to understand, maintain, and extend.
 
 1. `SOLID` Principles:
@@ -205,6 +205,36 @@ There are numerous software design principles that help to create maintainable, 
 18. `Scalability`: Design the system to handle increased workload efficiently by adding more resources or optimizing resource utilization.
 19. `Modularity`: Break down a complex system into smaller, manageable modules that can be developed, tested, and maintained independently.
 20. `Maintainability`: Design the software to be easy to understand, modify, and extend, allowing for efficient long-term maintenance.
+21. `Readability`: Write code that is easy to read and understand, which makes it easier for others (and yourself) to maintain and modify the software.
+22. `Self-Documenting Code`: Write code that clearly communicates its intent, reducing the need for separate documentation and making it easier to maintain.
+23. `Loose Coupling`: Strive to minimize dependencies between components, allowing them to evolve independently and reducing the risk of cascading changes.
+24. `Orthogonality`: Design components to have a single, well-defined responsibility and ensure that their behavior is independent of other components. This makes the system more modular, maintainable, and less error-prone.
+25. `Principle of Least Privilege`: Give components the minimum level of access and authority required to perform their tasks, reducing the potential impact of security breaches or bugs.
+26. `Defensive Programming`: Write code that anticipates and handles potential errors and exceptional situations, ensuring that the system remains stable and secure even in unexpected circumstances.
+27. `Design by Contract`: Clearly define the responsibilities and expectations of components (preconditions, postconditions, and invariants), improving the overall robustness and reliability of the system.
+28. `Feature Toggle`: Use feature flags or toggles to enable or disable features in the software, allowing for easier management of experimental features and phased rollouts.
+29. `Continuous Improvement`: Regularly review and refine the codebase, adopting new best practices and technologies as they emerge, and addressing technical debt to keep the system maintainable and efficient.
+30. `Domain-Driven Design` (DDD): Focus on the core domain and its logic, using a common language (ubiquitous language) among developers and domain experts, and creating a model that accurately represents the domain.
+31. `Separation of Interface and Implementation`: Keep the interface of a component separate from its implementation, allowing for flexibility and interchangeability without affecting the rest of the system.
+32. `Code Consistency`: Establish and follow coding standards and conventions across the entire codebase, making it easier to read, understand, and maintain.
+33. `Performance Optimization`: Design the software with performance in mind, using appropriate data structures, algorithms, and techniques to minimize resource usage and response times.
+34. `Flexibility and Adaptability`: Design the system to be easily modified and extended to accommodate changing requirements and new features.
+35. `Security by Design`: Integrate security best practices and considerations into every stage of the software development process, minimizing the risk of vulnerabilities and breaches.
+36. `Cost-Effective Development`: Strive to balance the trade-offs between development time, code quality, and performance, aiming for a cost-effective approach that meets the project requirements.
+37. `Design Patterns`: Leverage proven design patterns that solve common problems, making the code more reusable, modular, and maintainable.
+38. `Antifragility`: Design systems that not only tolerate failures and stress but also improve and adapt when faced with challenges.
+39. `Microservices Architecture`: Decompose a monolithic system into smaller, loosely-coupled services, each with a single responsibility, which can be developed, deployed, and scaled independently.
+40. `Resource Management`: Ensure efficient allocation, use, and release of resources (e.g., memory, file handles, sockets) to prevent leaks and other performance issues.
+41. `Cross-Platform Compatibility`: Design the software to work across multiple platforms and environments, ensuring a consistent user experience and broad accessibility.
+42. `Versioning`: Implement version control for both code and APIs, enabling better collaboration, easier rollback of changes, and compatibility between different versions of the software.
+43. `Design for Testability`: Develop the software in a way that facilitates testing at various levels (unit, integration, system), ensuring that issues can be identified and addressed early in the development process.
+44. `Monitoring and Observability`: Build monitoring and observability features into the system, allowing for easy identification and diagnosis of issues in production environments.
+45. `Design for Accessibility`: Consider the needs of users with disabilities, ensuring that the software is usable by as many people as possible.
+46. `Localization and Internationalization`: Design the software to support multiple languages, currencies, and cultural conventions, making it easier to adapt the product for different regions.
+47. `Graceful Degradation`: Ensure that the software continues to function, albeit with reduced capabilities, in the face of partial failures or adverse conditions.
+48. `Progressive Enhancement`: Start with a basic, functional version of the software and incrementally add enhancements, ensuring that the application remains usable and accessible even on older or less-capable devices.
+49. `Cache Management`: Use caching techniques to store and quickly retrieve frequently used data, improving performance and reducing the load on external systems.
+50. `Responsiveness`: Design the software to provide quick and timely feedback to user actions, ensuring a smooth and satisfying user experience.
 
 
 # 📝 References
