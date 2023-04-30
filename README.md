@@ -25,6 +25,12 @@ My goal is to keep this repository up to date by incorporating the latest design
 
 # 📚 List of Contents
 
+- [Common Design Patterns](#Common Design Patterns)
+- [Concurrency Design Patterns](#Concurrency Design Patterns)
+- [Swift Patterns](#Swift Patterns)
+- [Architectural Patterns](#Architectural Patterns)
+- [Design Principles](#Design Principles)
+
 ## 🏗 Common Design Patterns
 
 ### Behavioral
