@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-30/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-32/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -21,7 +21,7 @@ The primary objective of this project is to assist others in learning by compili
 
 If you come across any unclear or problematic content, please refrain from forming an immediate negative judgment. As this is an open-source project, you have the opportunity to politely inform me of any issues or even submit a pull request, which is the most effective way to contribute. Another motivating factor for this project is my desire to create learning materials that are both 'solid' and 'easy' to comprehend for developers who are familiar with the basics of OOP and POP paradigms, as these are crucial for working with Swift.
 
-My goal is to keep this repository up to date by incorporating the latest design, architecture, and concurrency patterns. Open-source for everyone! :octocat:
+**Nonetheless, in some contexts and literature certain terminology is not reffered as design pattern (for example ***Weak Reference***). My intention here is to provide explanations and use cases without initiating any heated debates.**
 
 # 📚 List of Contents
 
@@ -54,9 +54,9 @@ My goal is to keep this repository up to date by incorporating the latest design
 
 #### Other
 
-- **Externalize the Stack:** turn a recursive function into an iterative one that uses a stack
-- [**Null Object:**](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.md) designed to act as a default value of an object [[code]](/Common%20Design%20Patterns/Behavioral/NullObject/NullObject.playground/Contents.swift) 
-- **Weak Reference:** de-couple an observer from an observable
+- [**Externalize the Stack:**](/Common%20Design%20Patterns/Behavioral/Other/ExternalizeTheStack/ExternalizeTheStack.md) turn a recursive function into an iterative one that uses a stack
+- [**Null Object:**](/Common%20Design%20Patterns/Behavioral/Other/NullObject/NullObject.md) designed to act as a default value of an object [[code]](/Common%20Design%20Patterns/Behavioral/Other/NullObject/NullObject.playground/Contents.swift) 
+- [**Weak Reference:**](/Common%20Design%20Patterns/Behavioral/Other/WeakReference/WeakReference.md) de-couple an observer from an observable
 - **Protocol Stack:** communications are handled by multiple layers, which form an encapsulation hierarchy
 - **Scheduled-Task:** a task is scheduled to be performed at a particular interval or clock time (used in real-time computing)
 - **Single-Serving Visitor:** optimise the implementation of a visitor that is allocated, used only once, and then deleted
