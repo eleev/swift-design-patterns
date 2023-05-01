@@ -110,6 +110,5 @@ As you can see we can easily change the *concrete command type* and change the r
 
 We used *aggregation* as a form of `composition` because doors can outlive the remote control, which means that the remote control doesn't own the door that it is communicating to. This is an important distinction with an another form of `composition` called *association*, however it's not always the case - *aggregation* is just more suitable for this particular example.
 
-## Conclusion
-`Command` design pattern is very useful in cases when we need one object to be able to perform various actions without the need to store all the possible actions in a single object. The pattern decomposes the actions into concrete types by using protocol conformance and the *invoker* type that holds a command object to perform concrete actions. Concrete command objects hold actions that can be executed later depending on requirements. 
-
+## Conclusion 
+The `Command` design pattern is highly beneficial when an object is required to perform various actions without storing all possible actions within a single object. This pattern separates actions into concrete types through protocol conformance, utilizing an *invoker* type to hold a command object responsible for executing specific actions. The concrete command objects contain actions that can be executed at a later time based on requirements.
