@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-32/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-33/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -125,7 +125,7 @@ rise of new classes
 
 - **Active Object:** decouples method execution from method invocation for objects that each reside in their own thread of control
 - **Balking Pattern:** executes an action on an object when the object is in a particular state
-- **Barrier:** is a type of synchronization method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier
+- [**Barrier:**]((/Concurrency%20Design%20Patterns/Barrier/Barrier.md)) is a type of synchronization method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier
 - **Binding Pattern:** combines multiple observers to force properties in different objects to be synchronized or coordinated in some way
 - **Double-Checked Locking:** used to reduce the overhead of acquiring a lock by first testing the locking criterion (the "lock hint") without actually acquiring the lock. Only if the locking criterion check indicates that locking is required does the actual locking logic proceed
 - **Guarded Suspension:** manages operations that require both a lock to be acquired and a precondition to be satisfied before the operation can be executed
