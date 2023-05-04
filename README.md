@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-33/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-35/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -124,7 +124,7 @@ rise of new classes
 > **Source:** [wikipedia.org](https://en.wikipedia.org/wiki/Concurrency_pattern)
 
 - **Active Object:** decouples method execution from method invocation for objects that each reside in their own thread of control
-- **Balking Pattern:** executes an action on an object when the object is in a particular state
+- [**Balking Pattern:**](/Concurrency%20Design%20Patterns/BalkingPattern/BalkingPattern.md) executes an action on an object when the object is in a particular state
 - [**Barrier:**](/Concurrency%20Design%20Patterns/Barrier/Barrier.md) is a type of synchronization method. A barrier for a group of threads or processes in the source code means any thread/process must stop at this point and cannot proceed until all other threads/processes reach this barrier
 - **Binding Pattern:** combines multiple observers to force properties in different objects to be synchronized or coordinated in some way
 - **Double-Checked Locking:** used to reduce the overhead of acquiring a lock by first testing the locking criterion (the "lock hint") without actually acquiring the lock. Only if the locking criterion check indicates that locking is required does the actual locking logic proceed
@@ -161,7 +161,7 @@ The following patterns are not part of the `design patterns` topic. However, the
 
 - [**Wildcard:**](/Swift%20Design%20Patterns/Wildcard/Wildcard.md) a wildcard pattern matches and ignores any value and consists of an underscore (_). Use a wildcard pattern when you don’t care about the values being matched against [[code]](/Swift%20Design%20Patterns/Wildcard/Wildcard.playground/Contents.swift)
 - [**Identifier:**](/Swift%20Design%20Patterns/Identifier/Identifier.md) an identifier pattern matches any value and binds the matched value to a variable or constant name [[code](/Swift%20Design%20Patterns/Identifier/Identifier.playground/Contents.swift)]
-- **Value-Binding:** a value-binding pattern binds matched values to variable or constant names. Value-binding patterns that bind a matched value to the name of a constant begin with the let keyword; those that bind to the name of variable begin with the var keyword
+- [**Value-Binding:**](/Swift%20Design%20Patterns/ValueBinding/ValueBinding.md) a value-binding pattern binds matched values to variable or constant names. Value-binding patterns that bind a matched value to the name of a constant begin with the let keyword; those that bind to the name of variable begin with the var keyword
 - **Tuple Pattern:** a tuple pattern is a comma-separated list of zero or more patterns, enclosed in parentheses. Tuple patterns match values of corresponding tuple types
 - **Enumeration Case:** an enumeration case pattern matches a case of an existing enumeration type. Enumeration case patterns appear in switch statement case labels and in the case conditions of `if`, `while`, `guard`, and `for-in` statements
 - **Optional:** an optional pattern matches values wrapped in a `some(Wrapped)` case of an `Optional<Wrapped>` enumeration. Optional patterns consist of an identifier pattern followed immediately by a question mark and appear in the same places as enumeration case patterns
