@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-35/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-36/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -40,7 +40,7 @@ If you come across any unclear or problematic content, please refrain from formi
 
 #### Gang of Four
 
-- **Chain of Responsibility:** command objects are handled or passed on to other objects by logic-containing processing objects
+- [**Chain of Responsibility:**](/Common%20Design%20Patterns/Behavioral/ChainOfResponsibility/ChainOfResponsibility.md) command objects are handled or passed on to other objects by logic-containing processing objects
 - [**Command:**](/Common%20Design%20Patterns/Behavioral/Command/Command.md) command objects encapsulate an action and its parameters [[code]](/Common%20Design%20Patterns/Behavioral/Command/Command.playground/Contents.swift)
 - [**Interpreter:**](/Common%20Design%20Patterns/Behavioral/Interpreter/Interpreter.md) implement a specialized computer language to rapidly solve a specific set of problems
 - [**Iterator:**](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.md) iterators are used to access the elements of an aggregate object sequentially without exposing its underlying representation [[code]](/Common%20Design%20Patterns/Behavioral/Iterator/Iterator.playground/Contents.swift)
