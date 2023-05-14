@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-36/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-37/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -95,7 +95,7 @@ If you come across any unclear or problematic content, please refrain from formi
 
 - [**Adapter:**](/Common%20Design%20Patterns/Structural/Adapter/Adapter.md) 'adapts' one interface for a class into one that a client expects [[code]](/Common%20Design%20Patterns/Structural/Adapter/Adapter.playground/Contents.swift)
 - [**Bridge:**](/Common%20Design%20Patterns/Structural/Bridge/Bridge.md) decouple an abstraction from its implementation so that the two can vary independently [[code]](/Common%20Design%20Patterns/Structural/Bridge)
-- **Composite:** a tree structure of objects where every object has the same interface
+- [**Composite:**](/Common%20Design%20Patterns/Structural/Composite/Composite.md) a tree structure of objects where every object has the same interface
 - **Decorator:** allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class
 - [**Facade:**](/Common%20Design%20Patterns/Structural/Facade/Facade.md) create a simplified interface of an existing interface to ease usage for common tasks [[code]](/Common%20Design%20Patterns/Structural/Facade/Facade.playground/Contents.swift)
 - **Flyweight:** a large quantity of objects share a common properties object to save space
