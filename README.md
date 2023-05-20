@@ -2,7 +2,7 @@
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/jvirus/swift-design-patterns?label=Last%20Commit)
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg)]()
-[![Progress Patterns](https://img.shields.io/badge/patters-37/79-green.svg)]()
+[![Progress Patterns](https://img.shields.io/badge/patters-38/79-green.svg)]()
 [![Progress Principles](https://img.shields.io/badge/principles-0/50-red.svg)]()
 [![NLOC](https://img.shields.io/tokei/lines/github/jvirus/swift-design-patterns)]()
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)]()
@@ -49,7 +49,7 @@ If you come across any unclear or problematic content, please refrain from formi
 - [**Observer:**](/Common%20Design%20Patterns/Behavioral/Observer/Observer.md) objects register to observe an event that may be raised by another object. The pattern has similarities with `Publish/Subscribe` and `Multicast Delegate`patterns [[code]](/Common%20Design%20Patterns/Behavioral/Observer/Observer.playground/Contents.swift)
 - [**State:**](/Common%20Design%20Patterns/Behavioral/State/State.md) allows an object to alter its behavior when its internal state changes [[code](/Common%20Design%20Patterns/Behavioral/State/State.playground/Contents.swift)]
 - [**Strategy:**](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.md) algorithms can be selected on the fly, using composition [[code]](/Common%20Design%20Patterns/Behavioral/Strategy/Strategy.playground/Contents.swift)
-- **Template Method:** describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
+- [**Template Method:**](/Common%20Design%20Patterns/Behavioral/TemplateMethod/TemplateMethod.md) describes the program skeleton of a program; algorithms can be selected on the fly, using inheritance
 - [**Visitor:**](/Common%20Design%20Patterns/Behavioral/Visitor/Visitor.md) a way to separate an algorithm from an object
 
 #### Other
