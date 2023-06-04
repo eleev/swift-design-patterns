@@ -1,5 +1,5 @@
 # Command Design Pattern
-`Command` is a behavioral design pattern that incapsulates an action and is used to define concrete command actions. Those concerete commands are used for delayed execution or adding dynamic behavior to the *invoker*. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on concrete implementations that are assigned to *invoker* via *aggregation*. 
+`Command` is a behavioral design pattern that incapsulates an action and is used to define concrete command actions. Those concrete commands are used for delayed execution or adding dynamic behavior to the *invoker*. `Command` types make very easy to construct generic components that delegate or execute method calls dynamically, depending on concrete implementations that are assigned to *invoker* via *aggregation*. 
 
 Command pattern is implemented using several building blocks: `command` protocol, `concrete command types`, `invoker` and `caller`. Let's break each component down one by one:
 
