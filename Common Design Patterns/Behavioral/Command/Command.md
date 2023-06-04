@@ -6,7 +6,7 @@ Command pattern is implemented using several building blocks: `command` protocol
 - `Command` protocol is a protocol that defines actions to be executed
 - `Concrete command types` are types that conform to the Command protocol
 - `Invoker` is a type that is connected with Command protocol via *aggregation* - it receives commands to be executed by the *caller*
-- `Caller` is a type that acts as a source that initiates actions and possibly needs to get some resutls back
+- `Caller` is a type that acts as a source that initiates actions and possibly needs to get some results back
 
 If you are confused a bit by all the termonology, don't worry, we will implement each building block programmatically. We could skip all of that and dive straight into the code, but it's important to know the exact terms since it is a common practice and it will help to establish common vocabulary when working in a team. 
 
